@@ -2160,13 +2160,64 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// resoureces/js/app.js
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // React Components
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _css_App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/App.css */ "./resources/css/App.css");
+/* harmony import */ var _component_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./component/Header */ "./resources/js/component/Header.js");
+/* harmony import */ var _component_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component/Home */ "./resources/js/component/Home.js");
+/* harmony import */ var _component_About__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./component/About */ "./resources/js/component/About.js");
+/* harmony import */ var _component_Info__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./component/Info */ "./resources/js/component/Info.js");
+/* harmony import */ var _component_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./component/Footer */ "./resources/js/component/Footer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-__webpack_require__(/*! ./components/HelloReact */ "./resources/js/components/HelloReact.js");
+
+
+ // import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+
+
+
+
+
+function App() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "App",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_component_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "/",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_component_Home__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "/how_it_work",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_component_About__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "/info",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_component_Info__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_component_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(App, {})
+  })
+}), document.getElementById('root'));
 
 /***/ }),
 
@@ -2201,34 +2252,1431 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/HelloReact.js":
-/*!***********************************************!*\
-  !*** ./resources/js/components/HelloReact.js ***!
-  \***********************************************/
+/***/ "./resources/js/component/About.js":
+/*!*****************************************!*\
+  !*** ./resources/js/component/About.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ HelloReact)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _About_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About.css */ "./resources/js/component/About.css");
+/* harmony import */ var _public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/assets/img/home_img.png */ "./public/assets/img/home_img.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var About = function About() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "container about",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "col-md about-image",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          className: "about-img",
+          src: _public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+          alt: "about-img"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "col-md about-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "title about-title",
+          children: "C\xE1ch Ho\u1EA1t \u0110\u1ED9ng"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "about-des",
+          children: "C\xE1c b\u01B0\u1EDBc \u0111\u1EC3 c\xF3 th\xF4ng tin b\u1EA1n mu\u1ED1n:"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "step",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "about-step",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              "class": "fa-brands fa-sistrix step-icon"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "title-step",
+              children: "B\u01B0\u1EDBc 1"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "des-step",
+              children: "G\xF5 t\u1EEB kh\xF3a c\u1EA7n t\xECm v\xE0o \xF4 t\xECm ki\u1EBFm."
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "about-step",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              "class": "fa-solid fa-list step-icon"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "title-step",
+              children: "B\u01B0\u1EDBc 2"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              className: "des-step",
+              children: "M\u1ED9t danh s\xE1ch \u0111\u1ED9ng v\u1EADt tr\xF9ng kh\u1EDBp v\u1EDBi t\u1EEB kh\xF3a s\u1EBD \u0111\u01B0\u1EE3c hi\u1EC3n th\u1ECB."
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/",
+          className: "about-btn",
+          children: "H\xE3y th\u1EED n\xE0o"
+        })]
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
+
+/***/ }),
+
+/***/ "./resources/js/component/AnimalItem.js":
+/*!**********************************************!*\
+  !*** ./resources/js/component/AnimalItem.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _AnimalItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AnimalItem.css */ "./resources/js/component/AnimalItem.css");
+/* harmony import */ var _public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/assets/img/home_img.png */ "./public/assets/img/home_img.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var AnimalItem = function AnimalItem() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "col-md-2 animal",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "animal-item",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "animal-item__img",
+        style: {
+          backgroundImage: "url(".concat(_public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__["default"], ")")
+        },
+        alt: "animal-img"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "animal-item__name",
+        children: "Kaloula Pulchra Gray"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "animal-item__des",
+        children: "Small body size; The back is flat, gray or brown above, often with a mid-dorsal line and one or two dark spots in the center of the back."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "animal-item__more",
+        children: "T\xECm hi\u1EC3u th\xEAm"
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnimalItem);
+
+/***/ }),
+
+/***/ "./resources/js/component/Footer.js":
+/*!******************************************!*\
+  !*** ./resources/js/component/Footer.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer.css */ "./resources/js/component/Footer.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-// resources/js/components/HelloReact.js
 
 
 
-function HelloReact() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-    children: "Hello React!"
+
+var Footer = function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "container footer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "row",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "footer-content",
+        children: ".theAnimals 2022 All Rights Reserved"
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
+/***/ "./resources/js/component/Header.js":
+/*!******************************************!*\
+  !*** ./resources/js/component/Header.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.css */ "./resources/js/component/Header.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function Header() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "container header",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+      to: "/",
+      className: "logo",
+      children: ".theAnimals"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "nav",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+        className: "nav-list",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          className: "nav-list-item",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/",
+            className: "nav-list-item__link",
+            children: "Trang ch\u1EE7"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          className: "nav-list-item",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/how_it_work",
+            className: "nav-list-item__link",
+            children: "C\xE1ch ho\u1EA1t \u0111\u1ED9ng"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          className: "nav-list-item",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/info",
+            className: "nav-list-item__link",
+            children: "Th\xF4ng tin"
+          })
+        })]
+      })
+    })]
   });
 }
 
-if (document.getElementById('hello-react')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(HelloReact, {}), document.getElementById('hello-react'));
+/***/ }),
+
+/***/ "./resources/js/component/Home.js":
+/*!****************************************!*\
+  !*** ./resources/js/component/Home.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Home_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.css */ "./resources/js/component/Home.css");
+/* harmony import */ var _public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/assets/img/home_img.png */ "./public/assets/img/home_img.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var Home = function Home() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "container home",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "col-md home-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "title home-title",
+          children: "Gi\xFAp B\u1EA1n"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+          className: "home-description",
+          children: ["D\u1EC5 D\xE0ng Tra C\u1EE9u Th\xF4ng Tin ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), " V\u1EC1 Nh\u1EEFng Con V\u1EADt M\xE0 B\u1EA1n Y\xEAu Th\xEDch"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "home-search",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: "search-input",
+            type: "search",
+            placeholder: "Nh\u1EADp v\xE0o \u0111\xE2y \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u t\xECm ki\u1EBFm..."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+            "class": "fas fa-search search-icon"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "col-md home-image",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          className: "home-img",
+          src: _public_assets_img_home_img_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+          alt: "home-img"
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/component/Info.js":
+/*!****************************************!*\
+  !*** ./resources/js/component/Info.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Info_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Info.css */ "./resources/js/component/Info.css");
+/* harmony import */ var _AnimalItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AnimalItem */ "./resources/js/component/AnimalItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var Info = function Info() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "container info",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "row info-heading",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "title info-title",
+        children: "Th\xF4ng Tin C\xE1c Lo\xE0i \u0110\u1ED9ng V\u1EADt"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "info-des",
+        children: "C\u1EADp nh\u1EADt th\xF4ng tin c\xE1c lo\xE0i \u0111\u1ED9ng v\u1EADt t\u1EEB kh\u1EAFp n\u01A1i tr\xEAn th\u1EBF gi\u1EDBi."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "info-filter",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "title-filter",
+          children: "S\u1EAFp x\u1EBFp"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "filter-btn filter-btn__a-z",
+          children: "T\u1EEB A - Z"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "filter-btn filter-btn__z-a",
+          children: "T\u1EEB Z - A"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "row info-list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "info-load-more",
+      children: "T\u1EA3i th\xEAm..."
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Info);
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/App.css":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/App.css ***!
+  \*****************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: 'Roboto', sans-serif;\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n  border: none;\n  text-decoration: none;\n}\n\n:root {\n  --primary-color: #37D747;\n  --black-color: #130f40;\n  --light-color: #666666;\n  --white-color: #fff;\n  --bg-color: #F3FFF4;\n  --bg-footer: #F1F1F1;\n  --box-shadow-color: 0 1rem 1rem rgba(0, 0, 0, .05);\n}\n\nul {\n  list-style: none;\n}\n\n.title {\n  font-size: 6rem;\n  font-weight: 900;\n  color: var(--black-color);\n}\n\nhtml {\n  font-size: 62.5%;\n  scroll-behavior: smooth;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/About.css":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/About.css ***!
+  \****************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".about {\r\n    padding: 100px 0;\r\n}\r\n\r\n.about-img {\r\n    width: 100%;\r\n}\r\n\r\n.about-des {\r\n    font-size: 2.4rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.step {\r\n    display: flex;\r\n    flex: 1;\r\n    justify-content: space-between;\r\n    padding: 40px 0 30px;\r\n}\r\n\r\n.about-step {\r\n    width: 50%;\r\n    padding: 0 20px 0 0;\r\n}\r\n\r\n.step-icon {\r\n    font-size: 3.2rem;\r\n    padding: 1.4rem;\r\n    border: 1px solid var(--black-color);\r\n    border-radius: 10px;\r\n    box-shadow: 0 4rem 6rem rgba(0, 0, 0, .15);\r\n}\r\n\r\n.title-step {\r\n    font-size: 3rem;\r\n    font-weight: 700;\r\n    line-height: 6rem;\r\n}\r\n\r\n.des-step {\r\n    font-size: 2.4rem;\r\n}\r\n\r\n.about-btn {\r\n    font-size: 2.4rem;\r\n    font-weight: 700;\r\n    padding: 1rem 6rem;\r\n    border-radius: 30px;\r\n    color: var(--black-color);\r\n    background-color: var(--white-color);\r\n    border: 1px solid var(--primary-color);\r\n    text-decoration: none;\r\n}\r\n\r\n.about-btn:hover {\r\n    background-color: var(--primary-color);\r\n    color: var(--white-color);\r\n}\r\n\r\n.about-btn:active {\r\n    color: var(--primary-color);\r\n    background-color: var(--white-color);\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/AnimalItem.css":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/AnimalItem.css ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".animal {\r\n    transition: transform ease-in 0.1s;\r\n  will-change: transform;\r\n}\r\n\r\n.animal:hover {\r\n    transform: translateY(-1px);\r\n    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 5%);\r\n}\r\n\r\n.animal-item {\r\n    position: relative;\r\n    display: block;\r\n    text-decoration: none;\r\n    margin-top: 10px;\r\n    background-color: var(--white-color);\r\n    /* border-bottom-left-radius: 2px;\r\n    border-bottom-right-radius: 2px; */\r\n    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);\r\n    border-radius: 10px;\r\n}\r\n\r\n.animal-item__img {\r\n    padding-top: 100%;\r\n    background-repeat: no-repeat;\r\n    background-size: contain;\r\n    background-position: center;\r\n}\r\n\r\n.animal-item__name {\r\n    font-size: 1.8rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    color: var(--black-color);\r\n    line-height: 1.8rem;\r\n    height: 3.6rem;\r\n    margin: 10px 10px 6px;\r\n    overflow: hidden;\r\n    display: block;\r\n    display: -webkit-box;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-line-clamp: 2;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.animal-item__des {\r\n    font-size: 1.4rem;\r\n    font-weight: 400;\r\n    color: var(--black-color);\r\n    line-height: 1.8rem;\r\n    height: 5.2rem;\r\n    margin: 10px 10px 6px;\r\n    overflow: hidden;\r\n    display: block;\r\n    display: -webkit-box;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-line-clamp: 3;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.animal-item__more {\r\n    font-size: 1.4rem;\r\n    font-weight: 300;\r\n    line-height: 2rem;\r\n    padding: 1rem;\r\n    text-align: center;\r\n    color: var(--primary-color);\r\n    cursor: pointer;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Footer.css":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Footer.css ***!
+  \*****************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".footer {\r\n    padding: 60px 0;\r\n    /* background-color: var(--bg-footer); */\r\n}\r\n\r\n.footer-content {\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Header.css":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Header.css ***!
+  \*****************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: var(--white-color);\r\n  box-shadow: var(--box-shadow-color);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 2rem 0;\r\n  z-index: 10000;\r\n}\r\n\r\n.logo {\r\n  font-size: 2.5rem;\r\n  font-weight: 900;\r\n  color: var(--black-color);\r\n  cursor: pointer;\r\n  text-decoration: none;\r\n}\r\n\r\n.logo:hover {\r\n  opacity: 0.8;\r\n  color: var(--black-color);\r\n}\r\n\r\n.nav-list {\r\n  display: flex;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n.nav-list-item__link {\r\n  text-decoration: none;\r\n  color: var(--black-color);\r\n  font-size: 1.7rem;\r\n  font-weight: 500;\r\n  margin: 0 1.5rem;\r\n  padding: 0.75rem;\r\n  cursor: pointer;\r\n  transition: all ease-in 0.1s;\r\n}\r\n\r\n.nav-list-item__link:hover {\r\n  background-color: var(--primary-color);\r\n  color: var(--white-color);\r\n  border-radius: 1rem;\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Home.css":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Home.css ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".home {\r\n    padding: 100px 0;\r\n}\r\n\r\n.home-content {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n}\r\n\r\n.home-title {\r\n    font-size: 10rem;\r\n    line-height: 9rem;\r\n    font-weight: 900;\r\n    color: var(--black-color);\r\n    padding-left: 40px;\r\n}\r\n\r\n.home-description {\r\n    font-size: 3rem;\r\n    line-height: 4rem;\r\n    font-weight: 500;\r\n    color: var(--black-color);\r\n    padding-left: 40px;\r\n}\r\n\r\n.search-input {\r\n    border: 1px solid black;\r\n    font-size: 1.6rem;\r\n    padding: .75rem;\r\n    margin-left: 40px;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n}\r\n\r\n.search-icon {\r\n    font-size: 2.2rem;\r\n    background-color: var(--primary-color);\r\n    padding: 1.2rem;\r\n    border-radius: 50%;\r\n}\r\n\r\n.search-icon:hover {\r\n    opacity: .85;\r\n}\r\n\r\n.home-img {\r\n    width: 100%;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Info.css":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Info.css ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".info {\r\n    padding: 70px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.info-heading {\r\n    margin-left: 10px;\r\n}\r\n\r\n.info-des {\r\n    font-size: 2.4rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.info-filter {\r\n    display: flex;\r\n    width: 30%;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin: 20px 0 20px 20px;\r\n}\r\n\r\n.title-filter {\r\n    font-size: 2rem;\r\n    font-weight: 500;\r\n    color: var(--black-color);\r\n    padding-top: 10px;\r\n}\r\n\r\n.filter-btn {\r\n    font-size: 2rem;\r\n    padding: .75rem 2.4rem;\r\n    background-color: var(--white-color);\r\n    border: 1px solid var(--primary-color);\r\n    border-radius: 10px;\r\n}\r\n\r\n.filter-btn:hover {\r\n    background-color: var(--primary-color);\r\n    color: var(--white-color);\r\n}\r\n\r\n.filter-btn:active {\r\n    color: var(--primary-color);\r\n    background-color: var(--white-color);\r\n}\r\n\r\n.info-list {\r\n    margin: 5px;\r\n}\r\n\r\n.info-load-more {\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n    padding: 20px 0;\r\n    color: var(--black-color);\r\n    cursor: pointer;\r\n    width: 10%;\r\n    margin: auto;\r\n}\r\n\r\n.info-load-more:hover {\r\n    color: var(--primary-color);\r\n}\r\n\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join("");
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === "string") {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, ""]];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+/***/ }),
+
+/***/ "./public/assets/img/home_img.png":
+/*!****************************************!*\
+  !*** ./public/assets/img/home_img.png ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/home_img.png?e937ae491154f490432bd8f36f9b9b9e");
+
+/***/ }),
+
+/***/ "./node_modules/history/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/history/index.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Action": () => (/* binding */ Action),
+/* harmony export */   "createBrowserHistory": () => (/* binding */ createBrowserHistory),
+/* harmony export */   "createHashHistory": () => (/* binding */ createHashHistory),
+/* harmony export */   "createMemoryHistory": () => (/* binding */ createMemoryHistory),
+/* harmony export */   "createPath": () => (/* binding */ createPath),
+/* harmony export */   "parsePath": () => (/* binding */ parsePath)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+
+
+/**
+ * Actions represent the type of change to a location value.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#action
+ */
+var Action;
+
+(function (Action) {
+  /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */
+  Action["Pop"] = "POP";
+  /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */
+
+  Action["Push"] = "PUSH";
+  /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */
+
+  Action["Replace"] = "REPLACE";
+})(Action || (Action = {}));
+
+var readOnly =  true ? function (obj) {
+  return Object.freeze(obj);
+} : 0;
+
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== 'undefined') console.warn(message);
+
+    try {
+      // Welcome to debugging history!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
 }
+
+var BeforeUnloadEventType = 'beforeunload';
+var HashChangeEventType = 'hashchange';
+var PopStateEventType = 'popstate';
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */
+
+function createBrowserHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options = options,
+      _options$window = _options.window,
+      window = _options$window === void 0 ? document.defaultView : _options$window;
+  var globalHistory = window.history;
+
+  function getIndexAndLocation() {
+    var _window$location = window.location,
+        pathname = _window$location.pathname,
+        search = _window$location.search,
+        hash = _window$location.hash;
+    var state = globalHistory.state || {};
+    return [state.idx, readOnly({
+      pathname: pathname,
+      search: search,
+      hash: hash,
+      state: state.usr || null,
+      key: state.key || 'default'
+    })];
+  }
+
+  var blockedPopTx = null;
+
+  function handlePop() {
+    if (blockedPopTx) {
+      blockers.call(blockedPopTx);
+      blockedPopTx = null;
+    } else {
+      var nextAction = Action.Pop;
+
+      var _getIndexAndLocation = getIndexAndLocation(),
+          nextIndex = _getIndexAndLocation[0],
+          nextLocation = _getIndexAndLocation[1];
+
+      if (blockers.length) {
+        if (nextIndex != null) {
+          var delta = index - nextIndex;
+
+          if (delta) {
+            // Revert the POP
+            blockedPopTx = {
+              action: nextAction,
+              location: nextLocation,
+              retry: function retry() {
+                go(delta * -1);
+              }
+            };
+            go(delta);
+          }
+        } else {
+          // Trying to POP to a location with no index. We did not create
+          // this location, so we can't effectively block the navigation.
+           true ? warning(false, // TODO: Write up a doc that explains our blocking strategy in
+          // detail and link to it here so people can understand better what
+          // is going on and how to avoid it.
+          "You are trying to block a POP navigation to a location that was not " + "created by the history library. The block will fail silently in " + "production, but in general you should do all navigation with the " + "history library (instead of using window.history.pushState directly) " + "to avoid this situation.") : 0;
+        }
+      } else {
+        applyTx(nextAction);
+      }
+    }
+  }
+
+  window.addEventListener(PopStateEventType, handlePop);
+  var action = Action.Pop;
+
+  var _getIndexAndLocation2 = getIndexAndLocation(),
+      index = _getIndexAndLocation2[0],
+      location = _getIndexAndLocation2[1];
+
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, globalHistory.state, {
+      idx: index
+    }), '');
+  }
+
+  function createHref(to) {
+    return typeof to === 'string' ? to : createPath(to);
+  } // state defaults to `null` because `window.history.state` does
+
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      hash: '',
+      search: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function getHistoryStateAndUrl(nextLocation, index) {
+    return [{
+      usr: nextLocation.state,
+      key: nextLocation.key,
+      idx: index
+    }, createHref(nextLocation)];
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction) {
+    action = nextAction;
+
+    var _getIndexAndLocation3 = getIndexAndLocation();
+
+    index = _getIndexAndLocation3[0];
+    location = _getIndexAndLocation3[1];
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr = getHistoryStateAndUrl(nextLocation, index + 1),
+          historyState = _getHistoryStateAndUr[0],
+          url = _getHistoryStateAndUr[1]; // TODO: Support forced reloading
+      // try...catch because iOS limits us to 100 pushState calls :/
+
+
+      try {
+        globalHistory.pushState(historyState, '', url);
+      } catch (error) {
+        // They are going to lose state here, but there is no real
+        // way to warn them about it since the page will refresh...
+        window.location.assign(url);
+      }
+
+      applyTx(nextAction);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr2 = getHistoryStateAndUrl(nextLocation, index),
+          historyState = _getHistoryStateAndUr2[0],
+          url = _getHistoryStateAndUr2[1]; // TODO: Support forced reloading
+
+
+      globalHistory.replaceState(historyState, '', url);
+      applyTx(nextAction);
+    }
+  }
+
+  function go(delta) {
+    globalHistory.go(delta);
+  }
+
+  var history = {
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      var unblock = blockers.push(blocker);
+
+      if (blockers.length === 1) {
+        window.addEventListener(BeforeUnloadEventType, promptBeforeUnload);
+      }
+
+      return function () {
+        unblock(); // Remove the beforeunload listener so the document may
+        // still be salvageable in the pagehide event.
+        // See https://html.spec.whatwg.org/#unloading-documents
+
+        if (!blockers.length) {
+          window.removeEventListener(BeforeUnloadEventType, promptBeforeUnload);
+        }
+      };
+    }
+  };
+  return history;
+}
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+ */
+
+function createHashHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options2 = options,
+      _options2$window = _options2.window,
+      window = _options2$window === void 0 ? document.defaultView : _options2$window;
+  var globalHistory = window.history;
+
+  function getIndexAndLocation() {
+    var _parsePath = parsePath(window.location.hash.substr(1)),
+        _parsePath$pathname = _parsePath.pathname,
+        pathname = _parsePath$pathname === void 0 ? '/' : _parsePath$pathname,
+        _parsePath$search = _parsePath.search,
+        search = _parsePath$search === void 0 ? '' : _parsePath$search,
+        _parsePath$hash = _parsePath.hash,
+        hash = _parsePath$hash === void 0 ? '' : _parsePath$hash;
+
+    var state = globalHistory.state || {};
+    return [state.idx, readOnly({
+      pathname: pathname,
+      search: search,
+      hash: hash,
+      state: state.usr || null,
+      key: state.key || 'default'
+    })];
+  }
+
+  var blockedPopTx = null;
+
+  function handlePop() {
+    if (blockedPopTx) {
+      blockers.call(blockedPopTx);
+      blockedPopTx = null;
+    } else {
+      var nextAction = Action.Pop;
+
+      var _getIndexAndLocation4 = getIndexAndLocation(),
+          nextIndex = _getIndexAndLocation4[0],
+          nextLocation = _getIndexAndLocation4[1];
+
+      if (blockers.length) {
+        if (nextIndex != null) {
+          var delta = index - nextIndex;
+
+          if (delta) {
+            // Revert the POP
+            blockedPopTx = {
+              action: nextAction,
+              location: nextLocation,
+              retry: function retry() {
+                go(delta * -1);
+              }
+            };
+            go(delta);
+          }
+        } else {
+          // Trying to POP to a location with no index. We did not create
+          // this location, so we can't effectively block the navigation.
+           true ? warning(false, // TODO: Write up a doc that explains our blocking strategy in
+          // detail and link to it here so people can understand better
+          // what is going on and how to avoid it.
+          "You are trying to block a POP navigation to a location that was not " + "created by the history library. The block will fail silently in " + "production, but in general you should do all navigation with the " + "history library (instead of using window.history.pushState directly) " + "to avoid this situation.") : 0;
+        }
+      } else {
+        applyTx(nextAction);
+      }
+    }
+  }
+
+  window.addEventListener(PopStateEventType, handlePop); // popstate does not fire on hashchange in IE 11 and old (trident) Edge
+  // https://developer.mozilla.org/de/docs/Web/API/Window/popstate_event
+
+  window.addEventListener(HashChangeEventType, function () {
+    var _getIndexAndLocation5 = getIndexAndLocation(),
+        nextLocation = _getIndexAndLocation5[1]; // Ignore extraneous hashchange events.
+
+
+    if (createPath(nextLocation) !== createPath(location)) {
+      handlePop();
+    }
+  });
+  var action = Action.Pop;
+
+  var _getIndexAndLocation6 = getIndexAndLocation(),
+      index = _getIndexAndLocation6[0],
+      location = _getIndexAndLocation6[1];
+
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, globalHistory.state, {
+      idx: index
+    }), '');
+  }
+
+  function getBaseHref() {
+    var base = document.querySelector('base');
+    var href = '';
+
+    if (base && base.getAttribute('href')) {
+      var url = window.location.href;
+      var hashIndex = url.indexOf('#');
+      href = hashIndex === -1 ? url : url.slice(0, hashIndex);
+    }
+
+    return href;
+  }
+
+  function createHref(to) {
+    return getBaseHref() + '#' + (typeof to === 'string' ? to : createPath(to));
+  }
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      hash: '',
+      search: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function getHistoryStateAndUrl(nextLocation, index) {
+    return [{
+      usr: nextLocation.state,
+      key: nextLocation.key,
+      idx: index
+    }, createHref(nextLocation)];
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction) {
+    action = nextAction;
+
+    var _getIndexAndLocation7 = getIndexAndLocation();
+
+    index = _getIndexAndLocation7[0];
+    location = _getIndexAndLocation7[1];
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+     true ? warning(nextLocation.pathname.charAt(0) === '/', "Relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr3 = getHistoryStateAndUrl(nextLocation, index + 1),
+          historyState = _getHistoryStateAndUr3[0],
+          url = _getHistoryStateAndUr3[1]; // TODO: Support forced reloading
+      // try...catch because iOS limits us to 100 pushState calls :/
+
+
+      try {
+        globalHistory.pushState(historyState, '', url);
+      } catch (error) {
+        // They are going to lose state here, but there is no real
+        // way to warn them about it since the page will refresh...
+        window.location.assign(url);
+      }
+
+      applyTx(nextAction);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+     true ? warning(nextLocation.pathname.charAt(0) === '/', "Relative pathnames are not supported in hash history.replace(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr4 = getHistoryStateAndUrl(nextLocation, index),
+          historyState = _getHistoryStateAndUr4[0],
+          url = _getHistoryStateAndUr4[1]; // TODO: Support forced reloading
+
+
+      globalHistory.replaceState(historyState, '', url);
+      applyTx(nextAction);
+    }
+  }
+
+  function go(delta) {
+    globalHistory.go(delta);
+  }
+
+  var history = {
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      var unblock = blockers.push(blocker);
+
+      if (blockers.length === 1) {
+        window.addEventListener(BeforeUnloadEventType, promptBeforeUnload);
+      }
+
+      return function () {
+        unblock(); // Remove the beforeunload listener so the document may
+        // still be salvageable in the pagehide event.
+        // See https://html.spec.whatwg.org/#unloading-documents
+
+        if (!blockers.length) {
+          window.removeEventListener(BeforeUnloadEventType, promptBeforeUnload);
+        }
+      };
+    }
+  };
+  return history;
+}
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#creatememoryhistory
+ */
+
+function createMemoryHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options3 = options,
+      _options3$initialEntr = _options3.initialEntries,
+      initialEntries = _options3$initialEntr === void 0 ? ['/'] : _options3$initialEntr,
+      initialIndex = _options3.initialIndex;
+  var entries = initialEntries.map(function (entry) {
+    var location = readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: '/',
+      search: '',
+      hash: '',
+      state: null,
+      key: createKey()
+    }, typeof entry === 'string' ? parsePath(entry) : entry));
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in createMemoryHistory({ initialEntries }) (invalid entry: " + JSON.stringify(entry) + ")") : 0;
+    return location;
+  });
+  var index = clamp(initialIndex == null ? entries.length - 1 : initialIndex, 0, entries.length - 1);
+  var action = Action.Pop;
+  var location = entries[index];
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  function createHref(to) {
+    return typeof to === 'string' ? to : createPath(to);
+  }
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      search: '',
+      hash: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction, nextLocation) {
+    action = nextAction;
+    location = nextLocation;
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in memory history.push(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      index += 1;
+      entries.splice(index, entries.length, nextLocation);
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in memory history.replace(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      entries[index] = nextLocation;
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  function go(delta) {
+    var nextIndex = clamp(index + delta, 0, entries.length - 1);
+    var nextAction = Action.Pop;
+    var nextLocation = entries[nextIndex];
+
+    function retry() {
+      go(delta);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      index = nextIndex;
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  var history = {
+    get index() {
+      return index;
+    },
+
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      return blockers.push(blocker);
+    }
+  };
+  return history;
+} ////////////////////////////////////////////////////////////////////////////////
+// UTILS
+////////////////////////////////////////////////////////////////////////////////
+
+function clamp(n, lowerBound, upperBound) {
+  return Math.min(Math.max(n, lowerBound), upperBound);
+}
+
+function promptBeforeUnload(event) {
+  // Cancel the event.
+  event.preventDefault(); // Chrome (and legacy IE) requires returnValue to be set.
+
+  event.returnValue = '';
+}
+
+function createEvents() {
+  var handlers = [];
+  return {
+    get length() {
+      return handlers.length;
+    },
+
+    push: function push(fn) {
+      handlers.push(fn);
+      return function () {
+        handlers = handlers.filter(function (handler) {
+          return handler !== fn;
+        });
+      };
+    },
+    call: function call(arg) {
+      handlers.forEach(function (fn) {
+        return fn && fn(arg);
+      });
+    }
+  };
+}
+
+function createKey() {
+  return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createpath
+ */
+
+
+function createPath(_ref) {
+  var _ref$pathname = _ref.pathname,
+      pathname = _ref$pathname === void 0 ? '/' : _ref$pathname,
+      _ref$search = _ref.search,
+      search = _ref$search === void 0 ? '' : _ref$search,
+      _ref$hash = _ref.hash,
+      hash = _ref$hash === void 0 ? '' : _ref$hash;
+  if (search && search !== '?') pathname += search.charAt(0) === '?' ? search : '?' + search;
+  if (hash && hash !== '#') pathname += hash.charAt(0) === '#' ? hash : '#' + hash;
+  return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#parsepath
+ */
+
+function parsePath(path) {
+  var parsedPath = {};
+
+  if (path) {
+    var hashIndex = path.indexOf('#');
+
+    if (hashIndex >= 0) {
+      parsedPath.hash = path.substr(hashIndex);
+      path = path.substr(0, hashIndex);
+    }
+
+    var searchIndex = path.indexOf('?');
+
+    if (searchIndex >= 0) {
+      parsedPath.search = path.substr(searchIndex);
+      path = path.substr(0, searchIndex);
+    }
+
+    if (path) {
+      parsedPath.pathname = path;
+    }
+  }
+
+  return parsedPath;
+}
+
+
+//# sourceMappingURL=index.js.map
+
 
 /***/ }),
 
@@ -49303,6 +50751,1418 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-router-dom/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-router-dom/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BrowserRouter": () => (/* binding */ BrowserRouter),
+/* harmony export */   "HashRouter": () => (/* binding */ HashRouter),
+/* harmony export */   "Link": () => (/* binding */ Link),
+/* harmony export */   "MemoryRouter": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.MemoryRouter),
+/* harmony export */   "NavLink": () => (/* binding */ NavLink),
+/* harmony export */   "Navigate": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Navigate),
+/* harmony export */   "NavigationType": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.Action),
+/* harmony export */   "Outlet": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Outlet),
+/* harmony export */   "Route": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Route),
+/* harmony export */   "Router": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Router),
+/* harmony export */   "Routes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Routes),
+/* harmony export */   "UNSAFE_LocationContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_LocationContext),
+/* harmony export */   "UNSAFE_NavigationContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_NavigationContext),
+/* harmony export */   "UNSAFE_RouteContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_RouteContext),
+/* harmony export */   "createPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.createPath),
+/* harmony export */   "createRoutesFromChildren": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.createRoutesFromChildren),
+/* harmony export */   "createSearchParams": () => (/* binding */ createSearchParams),
+/* harmony export */   "generatePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.generatePath),
+/* harmony export */   "matchPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.matchPath),
+/* harmony export */   "matchRoutes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.matchRoutes),
+/* harmony export */   "parsePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.parsePath),
+/* harmony export */   "renderMatches": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.renderMatches),
+/* harmony export */   "resolvePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.resolvePath),
+/* harmony export */   "unstable_HistoryRouter": () => (/* binding */ HistoryRouter),
+/* harmony export */   "useHref": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useHref),
+/* harmony export */   "useInRouterContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useInRouterContext),
+/* harmony export */   "useLinkClickHandler": () => (/* binding */ useLinkClickHandler),
+/* harmony export */   "useLocation": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation),
+/* harmony export */   "useMatch": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useMatch),
+/* harmony export */   "useNavigate": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate),
+/* harmony export */   "useNavigationType": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigationType),
+/* harmony export */   "useOutlet": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useOutlet),
+/* harmony export */   "useOutletContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useOutletContext),
+/* harmony export */   "useParams": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useParams),
+/* harmony export */   "useResolvedPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath),
+/* harmony export */   "useRoutes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useRoutes),
+/* harmony export */   "useSearchParams": () => (/* binding */ useSearchParams)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/history/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
+/**
+ * React Router DOM v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+const _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"],
+      _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
+
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+} ////////////////////////////////////////////////////////////////////////////////
+// COMPONENTS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+function BrowserRouter(_ref) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createBrowserHistory)({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */
+function HashRouter(_ref2) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref2;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createHashHistory)({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */
+function HistoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    history
+  } = _ref3;
+  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+if (true) {
+  HistoryRouter.displayName = "unstable_HistoryRouter";
+}
+
+function isModifiedEvent(event) {
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+const Link = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function LinkWithRef(_ref4, ref) {
+  let {
+    onClick,
+    reloadDocument,
+    replace = false,
+    state,
+    target,
+    to
+  } = _ref4,
+      rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+
+  let href = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useHref)(to);
+  let internalOnClick = useLinkClickHandler(to, {
+    replace,
+    state,
+    target
+  });
+
+  function handleClick(event) {
+    if (onClick) onClick(event);
+
+    if (!event.defaultPrevented && !reloadDocument) {
+      internalOnClick(event);
+    }
+  }
+
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", _extends({}, rest, {
+      href: href,
+      onClick: handleClick,
+      ref: ref,
+      target: target
+    }))
+  );
+});
+
+if (true) {
+  Link.displayName = "Link";
+}
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+const NavLink = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function NavLinkWithRef(_ref5, ref) {
+  let {
+    "aria-current": ariaCurrentProp = "page",
+    caseSensitive = false,
+    className: classNameProp = "",
+    end = false,
+    style: styleProp,
+    to,
+    children
+  } = _ref5,
+      rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let path = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath)(to);
+  let locationPathname = location.pathname;
+  let toPathname = path.pathname;
+
+  if (!caseSensitive) {
+    locationPathname = locationPathname.toLowerCase();
+    toPathname = toPathname.toLowerCase();
+  }
+
+  let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+  let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+  let className;
+
+  if (typeof classNameProp === "function") {
+    className = classNameProp({
+      isActive
+    });
+  } else {
+    // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [classNameProp, isActive ? "active" : null].filter(Boolean).join(" ");
+  }
+
+  let style = typeof styleProp === "function" ? styleProp({
+    isActive
+  }) : styleProp;
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Link, _extends({}, rest, {
+    "aria-current": ariaCurrent,
+    className: className,
+    ref: ref,
+    style: style,
+    to: to
+  }), typeof children === "function" ? children({
+    isActive
+  }) : children);
+});
+
+if (true) {
+  NavLink.displayName = "NavLink";
+} ////////////////////////////////////////////////////////////////////////////////
+// HOOKS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */
+
+
+function useLinkClickHandler(to, _temp) {
+  let {
+    target,
+    replace: replaceProp,
+    state
+  } = _temp === void 0 ? {} : _temp;
+  let navigate = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let path = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath)(to);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(event => {
+    if (event.button === 0 && ( // Ignore everything but left clicks
+    !target || target === "_self") && // Let browser handle "target=_blank" etc.
+    !isModifiedEvent(event) // Ignore clicks with modifier keys
+    ) {
+      event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+      // a push, so do the same here.
+
+      let replace = !!replaceProp || (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createPath)(location) === (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createPath)(path);
+      navigate(to, {
+        replace,
+        state
+      });
+    }
+  }, [location, navigate, path, replaceProp, state, target, to]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */
+
+function useSearchParams(defaultInit) {
+   true ? warning(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not " + "support the URLSearchParams API. If you need to support Internet " + "Explorer 11, we recommend you load a polyfill such as " + "https://github.com/ungap/url-search-params\n\n" + "If you're unsure how to load polyfills, we recommend you check out " + "https://polyfill.io/v3/ which provides some recommendations about how " + "to load polyfills only for users that need them, instead of for every " + "user.") : 0;
+  let defaultSearchParamsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(createSearchParams(defaultInit));
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let searchParams = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    let searchParams = createSearchParams(location.search);
+
+    for (let key of defaultSearchParamsRef.current.keys()) {
+      if (!searchParams.has(key)) {
+        defaultSearchParamsRef.current.getAll(key).forEach(value => {
+          searchParams.append(key, value);
+        });
+      }
+    }
+
+    return searchParams;
+  }, [location.search]);
+  let navigate = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
+  let setSearchParams = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((nextInit, navigateOptions) => {
+    navigate("?" + createSearchParams(nextInit), navigateOptions);
+  }, [navigate]);
+  return [searchParams, setSearchParams];
+}
+
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */
+function createSearchParams(init) {
+  if (init === void 0) {
+    init = "";
+  }
+
+  return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+    let value = init[key];
+    return memo.concat(Array.isArray(value) ? value.map(v => [key, v]) : [[key, value]]);
+  }, []));
+}
+
+
+//# sourceMappingURL=index.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/react-router/index.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MemoryRouter": () => (/* binding */ MemoryRouter),
+/* harmony export */   "Navigate": () => (/* binding */ Navigate),
+/* harmony export */   "NavigationType": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.Action),
+/* harmony export */   "Outlet": () => (/* binding */ Outlet),
+/* harmony export */   "Route": () => (/* binding */ Route),
+/* harmony export */   "Router": () => (/* binding */ Router),
+/* harmony export */   "Routes": () => (/* binding */ Routes),
+/* harmony export */   "UNSAFE_LocationContext": () => (/* binding */ LocationContext),
+/* harmony export */   "UNSAFE_NavigationContext": () => (/* binding */ NavigationContext),
+/* harmony export */   "UNSAFE_RouteContext": () => (/* binding */ RouteContext),
+/* harmony export */   "createPath": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.createPath),
+/* harmony export */   "createRoutesFromChildren": () => (/* binding */ createRoutesFromChildren),
+/* harmony export */   "generatePath": () => (/* binding */ generatePath),
+/* harmony export */   "matchPath": () => (/* binding */ matchPath),
+/* harmony export */   "matchRoutes": () => (/* binding */ matchRoutes),
+/* harmony export */   "parsePath": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.parsePath),
+/* harmony export */   "renderMatches": () => (/* binding */ renderMatches),
+/* harmony export */   "resolvePath": () => (/* binding */ resolvePath),
+/* harmony export */   "useHref": () => (/* binding */ useHref),
+/* harmony export */   "useInRouterContext": () => (/* binding */ useInRouterContext),
+/* harmony export */   "useLocation": () => (/* binding */ useLocation),
+/* harmony export */   "useMatch": () => (/* binding */ useMatch),
+/* harmony export */   "useNavigate": () => (/* binding */ useNavigate),
+/* harmony export */   "useNavigationType": () => (/* binding */ useNavigationType),
+/* harmony export */   "useOutlet": () => (/* binding */ useOutlet),
+/* harmony export */   "useOutletContext": () => (/* binding */ useOutletContext),
+/* harmony export */   "useParams": () => (/* binding */ useParams),
+/* harmony export */   "useResolvedPath": () => (/* binding */ useResolvedPath),
+/* harmony export */   "useRoutes": () => (/* binding */ useRoutes)
+/* harmony export */ });
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * React Router v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+const NavigationContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+
+if (true) {
+  NavigationContext.displayName = "Navigation";
+}
+
+const LocationContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+
+if (true) {
+  LocationContext.displayName = "Location";
+}
+
+const RouteContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)({
+  outlet: null,
+  matches: []
+});
+
+if (true) {
+  RouteContext.displayName = "Route";
+}
+
+function invariant(cond, message) {
+  if (!cond) throw new Error(message);
+}
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+const alreadyWarned = {};
+function warningOnce(key, cond, message) {
+  if (!cond && !alreadyWarned[key]) {
+    alreadyWarned[key] = true;
+     true ? warning(false, message) : 0;
+  }
+}
+
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#generatepath
+ */
+function generatePath(path, params) {
+  if (params === void 0) {
+    params = {};
+  }
+
+  return path.replace(/:(\w+)/g, (_, key) => {
+    !(params[key] != null) ?  true ? invariant(false, "Missing \":" + key + "\" param") : 0 : void 0;
+    return params[key];
+  }).replace(/\/*\*$/, _ => params["*"] == null ? "" : params["*"].replace(/^\/*/, "/"));
+}
+/**
+ * A RouteMatch contains info about how a route matched a URL.
+ */
+
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchroutes
+ */
+function matchRoutes(routes, locationArg, basename) {
+  if (basename === void 0) {
+    basename = "/";
+  }
+
+  let location = typeof locationArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationArg) : locationArg;
+  let pathname = stripBasename(location.pathname || "/", basename);
+
+  if (pathname == null) {
+    return null;
+  }
+
+  let branches = flattenRoutes(routes);
+  rankRouteBranches(branches);
+  let matches = null;
+
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    matches = matchRouteBranch(branches[i], pathname);
+  }
+
+  return matches;
+}
+
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  if (branches === void 0) {
+    branches = [];
+  }
+
+  if (parentsMeta === void 0) {
+    parentsMeta = [];
+  }
+
+  if (parentPath === void 0) {
+    parentPath = "";
+  }
+
+  routes.forEach((route, index) => {
+    let meta = {
+      relativePath: route.path || "",
+      caseSensitive: route.caseSensitive === true,
+      childrenIndex: index,
+      route
+    };
+
+    if (meta.relativePath.startsWith("/")) {
+      !meta.relativePath.startsWith(parentPath) ?  true ? invariant(false, "Absolute route path \"" + meta.relativePath + "\" nested under path " + ("\"" + parentPath + "\" is not valid. An absolute child route path ") + "must start with the combined path of all its parent routes.") : 0 : void 0;
+      meta.relativePath = meta.relativePath.slice(parentPath.length);
+    }
+
+    let path = joinPaths([parentPath, meta.relativePath]);
+    let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+    // route tree depth-first and child routes appear before their parents in
+    // the "flattened" version.
+
+    if (route.children && route.children.length > 0) {
+      !(route.index !== true) ?  true ? invariant(false, "Index routes must not have child routes. Please remove " + ("all child routes from route path \"" + path + "\".")) : 0 : void 0;
+      flattenRoutes(route.children, branches, routesMeta, path);
+    } // Routes without a path shouldn't ever match by themselves unless they are
+    // index routes, so don't add them to the list of possible branches.
+
+
+    if (route.path == null && !route.index) {
+      return;
+    }
+
+    branches.push({
+      path,
+      score: computeScore(path, route.index),
+      routesMeta
+    });
+  });
+  return branches;
+}
+
+function rankRouteBranches(branches) {
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score // Higher score first
+  : compareIndexes(a.routesMeta.map(meta => meta.childrenIndex), b.routesMeta.map(meta => meta.childrenIndex)));
+}
+
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+
+const isSplat = s => s === "*";
+
+function computeScore(path, index) {
+  let segments = path.split("/");
+  let initialScore = segments.length;
+
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty;
+  }
+
+  if (index) {
+    initialScore += indexRouteValue;
+  }
+
+  return segments.filter(s => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+
+function compareIndexes(a, b) {
+  let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+  return siblings ? // If two routes are siblings, we should try to match the earlier sibling
+  // first. This allows people to have fine-grained control over the matching
+  // behavior by simply putting routes with identical paths in the order they
+  // want them tried.
+  a[a.length - 1] - b[b.length - 1] : // Otherwise, it doesn't really make sense to rank non-siblings by index,
+  // so they sort equally.
+  0;
+}
+
+function matchRouteBranch(branch, pathname) {
+  let {
+    routesMeta
+  } = branch;
+  let matchedParams = {};
+  let matchedPathname = "/";
+  let matches = [];
+
+  for (let i = 0; i < routesMeta.length; ++i) {
+    let meta = routesMeta[i];
+    let end = i === routesMeta.length - 1;
+    let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+    let match = matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
+      end
+    }, remainingPathname);
+    if (!match) return null;
+    Object.assign(matchedParams, match.params);
+    let route = meta.route;
+    matches.push({
+      params: matchedParams,
+      pathname: joinPaths([matchedPathname, match.pathname]),
+      pathnameBase: normalizePathname(joinPaths([matchedPathname, match.pathnameBase])),
+      route
+    });
+
+    if (match.pathnameBase !== "/") {
+      matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
+    }
+  }
+
+  return matches;
+}
+/**
+ * A PathPattern is used to match on some portion of a URL pathname.
+ */
+
+
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchpath
+ */
+function matchPath(pattern, pathname) {
+  if (typeof pattern === "string") {
+    pattern = {
+      path: pattern,
+      caseSensitive: false,
+      end: true
+    };
+  }
+
+  let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+  let match = pathname.match(matcher);
+  if (!match) return null;
+  let matchedPathname = match[0];
+  let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+  let captureGroups = match.slice(1);
+  let params = paramNames.reduce((memo, paramName, index) => {
+    // We need to compute the pathnameBase here using the raw splat value
+    // instead of using params["*"] later because it will be decoded then
+    if (paramName === "*") {
+      let splatValue = captureGroups[index] || "";
+      pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+    }
+
+    memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+    return memo;
+  }, {});
+  return {
+    params,
+    pathname: matchedPathname,
+    pathnameBase,
+    pattern
+  };
+}
+
+function compilePath(path, caseSensitive, end) {
+  if (caseSensitive === void 0) {
+    caseSensitive = false;
+  }
+
+  if (end === void 0) {
+    end = true;
+  }
+
+   true ? warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), "Route path \"" + path + "\" will be treated as if it were " + ("\"" + path.replace(/\*$/, "/*") + "\" because the `*` character must ") + "always follow a `/` in the pattern. To get rid of this warning, " + ("please change the route path to \"" + path.replace(/\*$/, "/*") + "\".")) : 0;
+  let paramNames = [];
+  let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+  .replace(/^\/*/, "/") // Make sure it has a leading /
+  .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+  .replace(/:(\w+)/g, (_, paramName) => {
+    paramNames.push(paramName);
+    return "([^\\/]+)";
+  });
+
+  if (path.endsWith("*")) {
+    paramNames.push("*");
+    regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+    : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+  } else {
+    regexpSource += end ? "\\/*$" // When matching to the end, ignore trailing slashes
+    : // Otherwise, match a word boundary or a proceeding /. The word boundary restricts
+    // parent routes to matching only their own words and nothing more, e.g. parent
+    // route "/home" should not match "/home2".
+    // Additionally, allow paths starting with `.`, `-`, `~`, and url-encoded entities,
+    // but do not consume the character in the matched path so they can match against
+    // nested paths.
+    "(?:(?=[.~-]|%[0-9A-F]{2})|\\b|\\/|$)";
+  }
+
+  let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+  return [matcher, paramNames];
+}
+
+function safelyDecodeURIComponent(value, paramName) {
+  try {
+    return decodeURIComponent(value);
+  } catch (error) {
+     true ? warning(false, "The value for the URL param \"" + paramName + "\" will not be decoded because" + (" the string \"" + value + "\" is a malformed URL segment. This is probably") + (" due to a bad percent encoding (" + error + ").")) : 0;
+    return value;
+  }
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#resolvepath
+ */
+
+
+function resolvePath(to, fromPathname) {
+  if (fromPathname === void 0) {
+    fromPathname = "/";
+  }
+
+  let {
+    pathname: toPathname,
+    search = "",
+    hash = ""
+  } = typeof to === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(to) : to;
+  let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+  return {
+    pathname,
+    search: normalizeSearch(search),
+    hash: normalizeHash(hash)
+  };
+}
+
+function resolvePathname(relativePath, fromPathname) {
+  let segments = fromPathname.replace(/\/+$/, "").split("/");
+  let relativeSegments = relativePath.split("/");
+  relativeSegments.forEach(segment => {
+    if (segment === "..") {
+      // Keep the root "" segment so the pathname starts at /
+      if (segments.length > 1) segments.pop();
+    } else if (segment !== ".") {
+      segments.push(segment);
+    }
+  });
+  return segments.length > 1 ? segments.join("/") : "/";
+}
+
+function resolveTo(toArg, routePathnames, locationPathname) {
+  let to = typeof toArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(toArg) : toArg;
+  let toPathname = toArg === "" || to.pathname === "" ? "/" : to.pathname; // If a pathname is explicitly provided in `to`, it should be relative to the
+  // route context. This is explained in `Note on `<Link to>` values` in our
+  // migration guide from v5 as a means of disambiguation between `to` values
+  // that begin with `/` and those that do not. However, this is problematic for
+  // `to` values that do not provide a pathname. `to` can simply be a search or
+  // hash string, in which case we should assume that the navigation is relative
+  // to the current location's pathname and *not* the route pathname.
+
+  let from;
+
+  if (toPathname == null) {
+    from = locationPathname;
+  } else {
+    let routePathnameIndex = routePathnames.length - 1;
+
+    if (toPathname.startsWith("..")) {
+      let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+      // URL segment".  This is a key difference from how <a href> works and a
+      // major reason we call this a "to" value instead of a "href".
+
+      while (toSegments[0] === "..") {
+        toSegments.shift();
+        routePathnameIndex -= 1;
+      }
+
+      to.pathname = toSegments.join("/");
+    } // If there are more ".." segments than parent routes, resolve relative to
+    // the root / URL.
+
+
+    from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+  }
+
+  let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original to value had one.
+
+  if (toPathname && toPathname !== "/" && toPathname.endsWith("/") && !path.pathname.endsWith("/")) {
+    path.pathname += "/";
+  }
+
+  return path;
+}
+function getToPathname(to) {
+  // Empty strings should be treated the same as / paths
+  return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(to).pathname : to.pathname;
+}
+function stripBasename(pathname, basename) {
+  if (basename === "/") return pathname;
+
+  if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) {
+    return null;
+  }
+
+  let nextChar = pathname.charAt(basename.length);
+
+  if (nextChar && nextChar !== "/") {
+    // pathname does not start with basename/
+    return null;
+  }
+
+  return pathname.slice(basename.length) || "/";
+}
+const joinPaths = paths => paths.join("/").replace(/\/\/+/g, "/");
+const normalizePathname = pathname => pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+
+const normalizeSearch = search => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+
+const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usehref
+ */
+
+function useHref(to) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useHref() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext);
+  let {
+    hash,
+    pathname,
+    search
+  } = useResolvedPath(to);
+  let joinedPathname = pathname;
+
+  if (basename !== "/") {
+    let toPathname = getToPathname(to);
+    let endsWithSlash = toPathname != null && toPathname.endsWith("/");
+    joinedPathname = pathname === "/" ? basename + (endsWithSlash ? "/" : "") : joinPaths([basename, pathname]);
+  }
+
+  return navigator.createHref({
+    pathname: joinedPathname,
+    search,
+    hash
+  });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useinroutercontext
+ */
+
+function useInRouterContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#uselocation
+ */
+
+function useLocation() {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useLocation() may be used only in the context of a <Router> component.") : 0 : void 0;
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext).location;
+}
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigationtype
+ */
+
+function useNavigationType() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext).navigationType;
+}
+/**
+ * Returns true if the URL for the given "to" value matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usematch
+ */
+
+function useMatch(pattern) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useMatch() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    pathname
+  } = useLocation();
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => matchPath(pattern, pathname), [pathname, pattern]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */
+
+/**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigate
+ */
+function useNavigate() {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useNavigate() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext);
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  let activeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    activeRef.current = true;
+  });
+  let navigate = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+     true ? warning(activeRef.current, "You should call navigate() in a React.useEffect(), not when " + "your component is first rendered.") : 0;
+    if (!activeRef.current) return;
+
+    if (typeof to === "number") {
+      navigator.go(to);
+      return;
+    }
+
+    let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname);
+
+    if (basename !== "/") {
+      path.pathname = joinPaths([basename, path.pathname]);
+    }
+
+    (!!options.replace ? navigator.replace : navigator.push)(path, options.state);
+  }, [basename, navigator, routePathnamesJson, locationPathname]);
+  return navigate;
+}
+const OutletContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/docs/en/v6/api#useoutletcontext
+ */
+
+function useOutletContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useoutlet
+ */
+
+function useOutlet(context) {
+  let outlet = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext).outlet;
+
+  if (outlet) {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+
+  return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useparams
+ */
+
+function useParams() {
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useresolvedpath
+ */
+
+function useResolvedPath(to) {
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useroutes
+ */
+
+function useRoutes(routes, locationArg) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useRoutes() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    matches: parentMatches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let routeMatch = parentMatches[parentMatches.length - 1];
+  let parentParams = routeMatch ? routeMatch.params : {};
+  let parentPathname = routeMatch ? routeMatch.pathname : "/";
+  let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+  let parentRoute = routeMatch && routeMatch.route;
+
+  if (true) {
+    // You won't get a warning about 2 different <Routes> under a <Route>
+    // without a trailing *, but this is a best-effort warning anyway since we
+    // cannot even give the warning unless they land at the parent route.
+    //
+    // Example:
+    //
+    // <Routes>
+    //   {/* This route path MUST end with /* because otherwise
+    //       it will never match /blog/post/123 */}
+    //   <Route path="blog" element={<Blog />} />
+    //   <Route path="blog/feed" element={<BlogFeed />} />
+    // </Routes>
+    //
+    // function Blog() {
+    //   return (
+    //     <Routes>
+    //       <Route path="post/:id" element={<Post />} />
+    //     </Routes>
+    //   );
+    // }
+    let parentPath = parentRoute && parentRoute.path || "";
+    warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ("\"" + parentPathname + "\" (under <Route path=\"" + parentPath + "\">) but the ") + "parent route path has no trailing \"*\". This means if you navigate " + "deeper, the parent won't match anymore and therefore the child " + "routes will never render.\n\n" + ("Please change the parent <Route path=\"" + parentPath + "\"> to <Route ") + ("path=\"" + (parentPath === "/" ? "*" : parentPath + "/*") + "\">."));
+  }
+
+  let locationFromContext = useLocation();
+  let location;
+
+  if (locationArg) {
+    var _parsedLocationArg$pa;
+
+    let parsedLocationArg = typeof locationArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationArg) : locationArg;
+    !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ?  true ? invariant(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, " + "the location pathname must begin with the portion of the URL pathname that was " + ("matched by all parent routes. The current pathname base is \"" + parentPathnameBase + "\" ") + ("but pathname \"" + parsedLocationArg.pathname + "\" was given in the `location` prop.")) : 0 : void 0;
+    location = parsedLocationArg;
+  } else {
+    location = locationFromContext;
+  }
+
+  let pathname = location.pathname || "/";
+  let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+  let matches = matchRoutes(routes, {
+    pathname: remainingPathname
+  });
+
+  if (true) {
+     true ? warning(parentRoute || matches != null, "No routes matched location \"" + location.pathname + location.search + location.hash + "\" ") : 0;
+     true ? warning(matches == null || matches[matches.length - 1].route.element !== undefined, "Matched leaf route at location \"" + location.pathname + location.search + location.hash + "\" does not have an element. " + "This means it will render an <Outlet /> with a null value by default resulting in an \"empty\" page.") : 0;
+  }
+
+  return _renderMatches(matches && matches.map(match => Object.assign({}, match, {
+    params: Object.assign({}, parentParams, match.params),
+    pathname: joinPaths([parentPathnameBase, match.pathname]),
+    pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, match.pathnameBase])
+  })), parentMatches);
+}
+function _renderMatches(matches, parentMatches) {
+  if (parentMatches === void 0) {
+    parentMatches = [];
+  }
+
+  if (matches == null) return null;
+  return matches.reduceRight((outlet, match, index) => {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(RouteContext.Provider, {
+      children: match.route.element !== undefined ? match.route.element : outlet,
+      value: {
+        outlet,
+        matches: parentMatches.concat(matches.slice(0, index + 1))
+      }
+    });
+  }, null);
+}
+
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#memoryrouter
+ */
+function MemoryRouter(_ref) {
+  let {
+    basename,
+    children,
+    initialEntries,
+    initialIndex
+  } = _ref;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,history__WEBPACK_IMPORTED_MODULE_0__.createMemoryHistory)({
+      initialEntries,
+      initialIndex
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#navigate
+ */
+function Navigate(_ref2) {
+  let {
+    to,
+    replace,
+    state
+  } = _ref2;
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of
+  // the router loaded. We can help them understand how to avoid that.
+  "<Navigate> may be used only in the context of a <Router> component.") : 0 : void 0;
+   true ? warning(!(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. " + "This is a no-op, but you should modify your code so the <Navigate> is " + "only ever rendered in response to some user interaction or state change.") : 0;
+  let navigate = useNavigate();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    navigate(to, {
+      replace,
+      state
+    });
+  });
+  return null;
+}
+
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#outlet
+ */
+function Outlet(props) {
+  return useOutlet(props.context);
+}
+
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#route
+ */
+function Route(_props) {
+    true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, " + "never rendered directly. Please wrap your <Route> in a <Routes>.") : 0 ;
+}
+
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#router
+ */
+function Router(_ref3) {
+  let {
+    basename: basenameProp = "/",
+    children = null,
+    location: locationProp,
+    navigationType = history__WEBPACK_IMPORTED_MODULE_0__.Action.Pop,
+    navigator,
+    static: staticProp = false
+  } = _ref3;
+  !!useInRouterContext() ?  true ? invariant(false, "You cannot render a <Router> inside another <Router>." + " You should never have more than one in your app.") : 0 : void 0;
+  let basename = normalizePathname(basenameProp);
+  let navigationContext = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => ({
+    basename,
+    navigator,
+    static: staticProp
+  }), [basename, navigator, staticProp]);
+
+  if (typeof locationProp === "string") {
+    locationProp = (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationProp);
+  }
+
+  let {
+    pathname = "/",
+    search = "",
+    hash = "",
+    state = null,
+    key = "default"
+  } = locationProp;
+  let location = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => {
+    let trailingPathname = stripBasename(pathname, basename);
+
+    if (trailingPathname == null) {
+      return null;
+    }
+
+    return {
+      pathname: trailingPathname,
+      search,
+      hash,
+      state,
+      key
+    };
+  }, [basename, pathname, search, hash, state, key]);
+   true ? warning(location != null, "<Router basename=\"" + basename + "\"> is not able to match the URL " + ("\"" + pathname + search + hash + "\" because it does not start with the ") + "basename, so the <Router> won't render anything.") : 0;
+
+  if (location == null) {
+    return null;
+  }
+
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(NavigationContext.Provider, {
+    value: navigationContext
+  }, /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(LocationContext.Provider, {
+    children: children,
+    value: {
+      location,
+      navigationType
+    }
+  }));
+}
+
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#routes
+ */
+function Routes(_ref4) {
+  let {
+    children,
+    location
+  } = _ref4;
+  return useRoutes(createRoutesFromChildren(children), location);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#createroutesfromchildren
+ */
+
+function createRoutesFromChildren(children) {
+  let routes = [];
+  react__WEBPACK_IMPORTED_MODULE_1__.Children.forEach(children, element => {
+    if (! /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(element)) {
+      // Ignore non-elements. This allows people to more easily inline
+      // conditionals in their route config.
+      return;
+    }
+
+    if (element.type === react__WEBPACK_IMPORTED_MODULE_1__.Fragment) {
+      // Transparently support React.Fragment and its children.
+      routes.push.apply(routes, createRoutesFromChildren(element.props.children));
+      return;
+    }
+
+    !(element.type === Route) ?  true ? invariant(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>") : 0 : void 0;
+    let route = {
+      caseSensitive: element.props.caseSensitive,
+      element: element.props.element,
+      index: element.props.index,
+      path: element.props.path
+    };
+
+    if (element.props.children) {
+      route.children = createRoutesFromChildren(element.props.children);
+    }
+
+    routes.push(route);
+  });
+  return routes;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */
+
+function renderMatches(matches) {
+  return _renderMatches(matches);
+}
+
+
+//# sourceMappingURL=index.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -54059,6 +56919,526 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./resources/css/App.css":
+/*!*******************************!*\
+  !*** ./resources/css/App.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./App.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/App.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/About.css":
+/*!******************************************!*\
+  !*** ./resources/js/component/About.css ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_About_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./About.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/About.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_About_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_About_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/AnimalItem.css":
+/*!***********************************************!*\
+  !*** ./resources/js/component/AnimalItem.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AnimalItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./AnimalItem.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/AnimalItem.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AnimalItem_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AnimalItem_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/Footer.css":
+/*!*******************************************!*\
+  !*** ./resources/js/component/Footer.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Footer.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Footer.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Footer_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Footer_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/Header.css":
+/*!*******************************************!*\
+  !*** ./resources/js/component/Header.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Header.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Header.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Header_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Header_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/Home.css":
+/*!*****************************************!*\
+  !*** ./resources/js/component/Home.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Home.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Home.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/component/Info.css":
+/*!*****************************************!*\
+  !*** ./resources/js/component/Info.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Info_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Info.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/component/Info.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Info_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Info_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : 0;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && typeof btoa !== 'undefined') {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _extends)
+/* harmony export */ });
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
 
 /***/ })
 

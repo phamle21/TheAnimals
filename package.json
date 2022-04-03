@@ -16,6 +16,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "react": "^18.0.0",
-        "react-dom": "^18.0.0"
+        "react-dom": "^18.0.0",
+        "react-router": "^6.3.0",
+        "react-router-dom": "^6.3.0"
     }
 }
