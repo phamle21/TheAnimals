@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet'
 import './About.css';
 import Img from "../../../public/assets/img/home_img.png";
+
+const TITLE = 'Cách hoạt động | The Animals'
 
 const About = () => {
     return (
         <div className="container about">
+            <Helmet>
+                <title>{TITLE}</title>
+            </Helmet>
+
             <div className="row">
                 <div className="col-md about-image">
                     <img className='about-img' src={Img} alt="about-img"></img>

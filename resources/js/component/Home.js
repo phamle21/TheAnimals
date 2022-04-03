@@ -1,10 +1,17 @@
 import React from 'react';
 import './Home.css';
 import Img from "../../../public/assets/img/home_img.png";
+import { Helmet } from 'react-helmet'
+
+const TITLE = 'Trang chủ | The Animals'
 
 const Home = () => {
     return (
         <div className='container home vh-100'>
+            <Helmet>
+                <title>{TITLE}</title>
+            </Helmet>
+
             <div className='row'>
                 <div className='col-md home-content'>
                     <p className='title home-title'>Giúp Bạn</p>

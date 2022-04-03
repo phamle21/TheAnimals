@@ -1,10 +1,17 @@
 import React from 'react';
 import './Info.css';
 import Animal from './AnimalItem';
+import { Helmet } from 'react-helmet'
+
+const TITLE = 'Thông tin các loài động vật | The Animals'
 
 const Info = () => {
     return (
         <div className="container info">
+            <Helmet>
+                <title>{TITLE}</title>
+            </Helmet>
+
             <div className="row info-heading">
                 <p className="title info-title">Thông Tin Các Loài Động Vật</p>
                 <p className="info-des">Cập nhật thông tin các loài động vật từ khắp nơi trên thế giới.</p>
