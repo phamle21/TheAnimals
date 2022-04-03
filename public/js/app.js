@@ -2169,9 +2169,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _css_App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/App.css */ "./resources/css/App.css");
 /* harmony import */ var _component_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./component/Header */ "./resources/js/component/Header.js");
 /* harmony import */ var _component_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component/Home */ "./resources/js/component/Home.js");
@@ -2184,7 +2184,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
- // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -2213,11 +2212,12 @@ function App() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
+var root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById("root"));
+root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(App, {})
   })
-}), document.getElementById('root'));
+}));
 
 /***/ }),
 
@@ -2431,7 +2431,7 @@ var Footer = function Footer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -2443,43 +2443,59 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Header() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "container header",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: "/",
-      className: "logo",
-      children: ".theAnimals"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "nav",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-        className: "nav-list",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          className: "nav-list-item",
+
+var Header = function Header() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "container-fluid header bg-transparent",
+    id: "navbar",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "row",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "col",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
             to: "/",
-            className: "nav-list-item__link",
-            children: "Trang ch\u1EE7"
+            className: "logo",
+            children: ".theAnimals"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          className: "nav-list-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-            to: "/how_it_work",
-            className: "nav-list-item__link",
-            children: "C\xE1ch ho\u1EA1t \u0111\u1ED9ng"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          className: "nav-list-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-            to: "/info",
-            className: "nav-list-item__link",
-            children: "Th\xF4ng tin"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "col d-flex justify-content-end align-items-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "nav",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+              className: "nav-list",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-list-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                  to: "/",
+                  className: "nav-list-item__link",
+                  children: "Trang ch\u1EE7"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-list-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                  to: "/how_it_work",
+                  className: "nav-list-item__link",
+                  children: "C\xE1ch ho\u1EA1t \u0111\u1ED9ng"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-list-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                  to: "/info",
+                  className: "nav-list-item__link",
+                  children: "Th\xF4ng tin"
+                })
+              })]
+            })
           })
         })]
       })
-    })]
+    })
   });
-}
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
 
 /***/ }),
 
@@ -2507,7 +2523,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "container home",
+    className: "container home vh-100",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -2525,7 +2541,7 @@ var Home = function Home() {
             type: "search",
             placeholder: "Nh\u1EADp v\xE0o \u0111\xE2y \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u t\xECm ki\u1EBFm..."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
-            "class": "fas fa-search search-icon"
+            className: "fas fa-search search-icon"
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -2718,7 +2734,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: var(--white-color);\r\n  box-shadow: var(--box-shadow-color);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 2rem 0;\r\n  z-index: 10000;\r\n}\r\n\r\n.logo {\r\n  font-size: 2.5rem;\r\n  font-weight: 900;\r\n  color: var(--black-color);\r\n  cursor: pointer;\r\n  text-decoration: none;\r\n}\r\n\r\n.logo:hover {\r\n  opacity: 0.8;\r\n  color: var(--black-color);\r\n}\r\n\r\n.nav-list {\r\n  display: flex;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n.nav-list-item__link {\r\n  text-decoration: none;\r\n  color: var(--black-color);\r\n  font-size: 1.7rem;\r\n  font-weight: 500;\r\n  margin: 0 1.5rem;\r\n  padding: 0.75rem;\r\n  cursor: pointer;\r\n  transition: all ease-in 0.1s;\r\n}\r\n\r\n.nav-list-item__link:hover {\r\n  background-color: var(--primary-color);\r\n  color: var(--white-color);\r\n  border-radius: 1rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  left: 0;\n  right: 0;\n  background: var(--white-color);\n  box-shadow: var(--box-shadow-color);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 2rem 0;\n  z-index: 10000;\n}\n\n.logo {\n  font-size: 2.5rem;\n  font-weight: 900;\n  color: var(--black-color);\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.5s;\n}\n\n.logo:hover {\n  opacity: 0.8;\n  color: var(--black-color);\n  text-shadow: 0 0 10px 0 gray;\n}\n#navbar{\n    -webkit-backdrop-filter: blur(5px);\n            backdrop-filter: blur(5px);\n    transition: all 0.5s;\n}\n.nav-list {\n  display: flex;\n  padding: 0;\n  margin: 0;\n}\n\n.nav-list-item__link {\n  text-decoration: none;\n  color: var(--black-color);\n  font-size: 1.7rem;\n  font-weight: 500;\n  margin: 0 1.5rem;\n  padding: 0.75rem;\n  cursor: pointer;\n  transition: all ease-in 0.3s;\n}\n\n.nav-list-item__link:hover {\n  background-color: var(--primary-color);\n  color: var(--white-color);\n  border-radius: 1rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -50702,6 +50718,39 @@ if (
 }
         
   })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
 }
 
 

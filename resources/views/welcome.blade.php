@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="shortcut icon" href="{{ asset('images/home_img.png') }}" type="image/x-icon">
+
     <title id="title">.the Animals</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,11 +20,20 @@
     </script>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
+
     <div id="root"></div>
+
+    <!-- Jquery 3.6 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    {{-- ReactJs --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    {{-- Custom --}}
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 
 </html>

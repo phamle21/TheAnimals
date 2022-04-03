@@ -1,10 +1,9 @@
 require('./bootstrap');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import * as ReactDOMClient from 'react-dom/client';
 import '../css/App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header';
 import Home from './component/Home';
 import About from './component/About';
@@ -13,26 +12,26 @@ import Footer from './component/Footer';
 
 function App() {
     return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/how_it_work" element={<About />} />
-        <Route path="/info" element={<Info />} />
-      </Routes>
-      <Footer />
-    </div>
+        <div className="App">
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/how_it_work" element={<About />} />
+                <Route path="/info" element={<Info />} />
+            </Routes>
+            <Footer />
+        </div>
     );
 }
 
 export default App;
 
-ReactDOM.render(
+const root = ReactDOMClient.createRoot(document.getElementById("root"));
+root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
+);
 
