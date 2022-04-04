@@ -2362,36 +2362,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _AnimalItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AnimalItem.css */ "./resources/js/component/AnimalItem.css");
-/* harmony import */ var _public_images_Kaloula_pulchra2_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../public/images/Kaloula_pulchra2.jpg */ "./public/images/Kaloula_pulchra2.jpg");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
-
-var AnimalItem = function AnimalItem() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+var AnimalItem = function AnimalItem(_ref) {
+  var animal = _ref.animal;
+  // console.log(animal);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "col-md-2 animal",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-      to: "/detail",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+      to: "/detail/" + animal.id,
       className: "animal-item",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "animal-item__img",
         style: {
-          backgroundImage: "url(".concat(_public_images_Kaloula_pulchra2_jpg__WEBPACK_IMPORTED_MODULE_2__["default"], ")")
+          backgroundImage: "url(".concat('images/' + animal.img, ")")
         },
         alt: "animal-img"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "animal-item__name",
-        children: "\u1EC4n \u01B0\u01A1ng"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: animal.name
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "animal-item__des",
-        children: "K\xEDch th\u01B0\u1EDBc trung b\xECnh (SVL: 80.3). C\u01A1 th\u1EC3 c\xF3 h\xECnh tam gi\xE1c khi nh\xECn t\u1EEB b\xEAn tr\xEAn, \u0111\u1EA7u ng\u1EAFn so v\u1EDBi chi\u1EC1u d\xE0i th\xE2n (HL/SVL: 0,24); chi\u1EC1u d\xE0i \u0111\u1EA7u nh\u1ECF h\u01A1n chi\u1EC1u r\u1ED9ng \u0111\u1EA7u (HL/HW: 0,74); kh\xF3e m\u1EAFt nh\u1ECF; v\xF9ng m\xE1 xi\xEAn v\xE0 h\u01B0\u1EDBng l\xEAn; m\u0169i t\xF9 v\xE0 ng\u1EAFn, l\u1ED7 m\u0169i n\u1EB1m g\u1EA7n ch\xF3p m\u1ECF v\xE0 h\u01B0\u1EDBng sang 2 b\xEAn; kho\u1EA3ng c\xE1ch gi\u1EEFa hai l\u1ED7 m\u0169i t\u01B0\u01A1ng \u0111\u01B0\u01A1ng m\xED m\u1EAFt tr\xEAn; m\xE0ng nh\u0129 kh\xF4ng r\xF5 r\xE0ng; n\u1EBFp g\u1EA5p m\u1EDD v\xF2ng qua ch\u1EA9m \u0111\u1EBFn sau m\u1EAFt v\xE0 k\u1EBFt th\xFAc \u1EDF ngay tr\u01B0\u1EDBc c\xE1nh tay."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: animal.des
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "animal-item__more",
         children: "T\xECm hi\u1EC3u th\xEAm"
       })]
@@ -2538,7 +2538,7 @@ var Detail = function Detail() {
             children: "\u0110\u1EB7c \u0111i\u1EC3m ch\u1EA9n lo\u1EA1i: Ng\xF3n chi d\u1EB9p v\xE0 \u0111\u1EA7u ng\xF3n tay m\u1EDF r\u1ED9ng; to\xE0n b\u1ED9 m\u1EB7t l\u01B0ng m\xE0u n\xE2u v\u1EDBi 2 d\xE3y m\xE0u v\xE0ng s\xE1ng ho\u1EB7c v\xE0ng n\xE2u ch\u1EA1y d\u1ECDc t\u1EEB gi\u1EEFa 2 m\u1EAFt qua ph\xEDa tr\xEAn m\u1EAFt v\xE0 k\xE9o dai \u0111\u1EBFn h\xE1ng; tr\xEAn ng\xF3n c\xF3 v\u1EBFt t\xEDch c\u1EE7a m\xE0ng b\u01A1i."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
             className: "morphological-des",
-            children: "\u0110\u1EB7c \u0111i\u1EC3m h\xECnh th\xE1i: K\xEDch th\u01B0\u1EDBc trung b\xECnh (SVL: 80.3). C\u01A1 th\u1EC3 c\xF3 h\xECnh tam gi\xE1c khi nh\xECn t\u1EEB b\xEAn tr\xEAn, \u0111\u1EA7u ng\u1EAFn so v\u1EDBi chi\u1EC1u d\xE0i th\xE2n (HL/SVL: 0,24); chi\u1EC1u d\xE0i \u0111\u1EA7u nh\u1ECF h\u01A1n chi\u1EC1u r\u1ED9ng \u0111\u1EA7u (HL/HW: 0,74); kh\xF3e m\u1EAFt nh\u1ECF; v\xF9ng m\xE1 xi\xEAn v\xE0 h\u01B0\u1EDBng l\xEAn; m\u0169i t\xF9 v\xE0 ng\u1EAFn, l\u1ED7 m\u0169i n\u1EB1m g\u1EA7n ch\xF3p m\u1ECF v\xE0 h\u01B0\u1EDBng sang 2 b\xEAn; kho\u1EA3ng c\xE1ch gi\u1EEFa hai l\u1ED7 m\u0169i t\u01B0\u01A1ng \u0111\u01B0\u01A1ng m\xED m\u1EAFt tr\xEAn; m\xE0ng nh\u0129 kh\xF4ng r\xF5 r\xE0ng; n\u1EBFp g\u1EA5p m\u1EDD v\xF2ng qua ch\u1EA9m \u0111\u1EBFn sau m\u1EAFt v\xE0 k\u1EBFt th\xFAc \u1EDF ngay tr\u01B0\u1EDBc c\xE1nh tay.Da tr\u01A1n l\xE1ng v\u1EDBi c\xE1c n\u1ED1t s\u1EA7n r\u1EA3i r\xE1c tr\xEAn l\u01B0ng, nhi\u1EC1u nh\u1EA5t \u1EDF ph\u1EA7n d\u01B0\u1EDBi c\u1EE7a m\u1EB7t l\u01B0ng, ph\xEDa sau \u0111\xF9i v\xE0 m\u1ED9t s\u1ED1 tr\xEAn c\xE1nh tay. M\u1EB7t l\u01B0ng m\xE0u n\xE2u s\u1EABm. Hai d\u1EA3y m\xE0u v\xE0ng s\xE1ng \u0111\u01B0\u1EE3c bao b\u1ECDc b\u1EDFi vi\u1EC1n m\xE0u n\xE2u \u0111\u1EADm ho\u1EB7c \u0111en b\u1EAFt \u0111\u1EA7u t\u1EEB gi\u1EEFa hai m\u1EAFt v\xE0 k\xE9o d\xE0i \u0111\u1EBFn h\xE1ng; hai d\u1EA3y m\xE0u li\u1EC1n nhau \u1EDF gi\u1EEFa 2 m\u1EAFt, h\u1EB9p \u1EDF sau m\u1EAFt v\xE0 n\u1EDF r\u1ED9ng tr\xEAn m\u1EB7t l\u01B0ng. M\u1ED9t s\u1ED1 c\xE1 th\u1EC3 gi\u1EEFa l\u01B0ng c\xF3 v\u1EC7t \u0111en ho\u1EB7c n\xE2u s\u1EADm k\xE9o d\xE0i t\u1EEB gi\u1EEFa 2 m\u1EAFt \u0111\u1EBFn t\u1EADn x\u01B0\u01A1ng c\u1EE5t. C\xE1c n\u1ED1t s\u1EA7n tr\xEAn l\u01B0ng c\xF3 m\xE0u t\u01B0\u01A1ng t\u1EF1 m\xE0u c\u1EE7a hai d\u1EA3y m\xE0u tr\xEAn l\u01B0ng. Tr\xEAn c\xE1c chi c\xF3 m\xE0u kh\xF4ng \u0111\u1EC1u, c\xE1c m\u1EA3ng nh\u1ECF m\xE0u v\xE0ng s\xE1ng kh\xF4ng \u0111\u1EC1u xen l\u1EABn tr\xEAn n\u1EC1n m\xE0u n\xE2u s\u1EABm; m\u1ED9t v\u1EC7t m\xE0u s\xE1ng kh\xF4ng li\xEAn t\u1EE5c ph\xEDa tr\xEAn m\u1EB7t l\u01B0ng c\u1EE7a \u1ED1ng ch\xE2n sau. M\u1EB7t b\u1EE5ng m\xE0u tr\u1EAFng s\xE1ng v\u1EDBi c\xE1c hoa v\u0103n x\xE1m d\u1EA1ng kh\xF3i, ph\u1EA7n da tr\xEAn c\u1ED5 h\u1ECDng m\xE0u \u0111\u1EADm h\u01A1n tr\xEAn b\u1EE5ng.C\xE1nh tay h\u01A1i d\xE0i; ng\xF3n tay d\xE0i v\xE0 c\xF3 v\u1EBFt t\xEDch c\u1EE7a m\xE0ng b\u01A1i; to d\u1EA7n t\u1EEB g\u1ED1c ng\xF3n \u0111\u1EBFn \u0111\u1EA7u ng\xF3n, \u0111\u0129a ng\xF3n r\u1ED9ng theo chi\u1EC1u ngang. Ng\xF3n th\u1EE9 nh\u1EA5t ng\u1EAFn h\u01A1n ng\xF3n th\u1EE9 2; c\u1EE7 b\xE0n v\u1EEBa ph\u1EA3i; c\xF3 3 c\u1EE7 b\xE0n, c\u1EE7 b\xE0n ngo\xE0i d\xE0i, c\u1EE7 b\xE0n gi\u1EEFa nh\u1ECF nh\u1EA5t, b\xE0n tay tr\u01A1n v\xE0 kh\xF4ng c\xF3 n\u1ED1t s\u1EA7n ph\u1EE5. Th\u1EE9 t\u1EF1 chi\u1EC1u d\xE0i t\u01B0\u01A1ng \u0111\u1ED1i c\u1EE7a c\xE1c ng\xF3n tay: III>IV>II>I. Ch\xE2n ng\u1EAFn, ch\u1EC9 1/3 x\u01B0\u01A1ng \u0111\xF9i t\u1EF1 do; c\u1ED5 ch\xE2n ch\u1EA1m \u0111\u1EBFn n\xE1ch khi x\u1EBFp song song v\u1EDBi tr\u1EE5c c\u01A1 th\u1EC3. Hai g\xF3t ch\xE2n kh\xF4ng ch\u1EA1m nhau khi g\u1EADp g\u1ED1i v\xE0 x\u1EBFp vu\xF4ng g\xF3c tr\u1EE5c c\u01A1 th\u1EC3. B\xE0n ch\xE2n d\xE0i h\u01A1n b\xE0n tay nh\u01B0ng c\xE1c ng\xF3n ch\xE2n m\u1EA3nh kh\u1EA3nh h\u01A1n; \u0111\u0129a ng\xF3n ch\xE2n nh\u1ECF tr\xF2n, kh\xF4ng r\u1ED9ng theo chi\u1EC1u ngang nh\u01B0 \u0111\u0129a ng\xF3n tay; ng\xF3n ch\xE2n c\xF3 v\u1EBFt t\xEDch c\u1EE7a m\xE0ng b\u01A1i. C\xF3 2 c\u1EE7 b\xE0n ch\xE2n; c\u1EE7 b\xE0n ch\xE2n trong d\xE0i, nh\xF4 cao, c\u1EA1nh kh\xF4ng r\xF5 r\xE0ng; c\u1EE7 b\xE0n ch\xE2n ngo\xE0i nh\u1ECF tr\xF2n. Th\u1EE9 t\u1EF1 chi\u1EC1u d\xE0i t\u01B0\u01A1ng \u0111\u1ED1i c\xE1c ng\xF3n ch\xE2n: IV>III>V>II>I."
+            children: "\u0110\u1EB7c \u0111i\u1EC3m h\xECnh th\xE1i: K\xEDch th\u01B0\u1EDBc trung b\xECnh (SVL: 80.3). C\u01A1 th\u1EC3 c\xF3 h\xECnh tam gi\xE1c khi nh\xECn t\u1EEB b\xEAn tr\xEAn, \u0111\u1EA7u ng\u1EAFn so v\u1EDBi chi\u1EC1u d\xE0i th\xE2n (HL/SVL: 0,24); chi\u1EC1u d\xE0i \u0111\u1EA7u nh\u1ECF h\u01A1n chi\u1EC1u r\u1ED9ng \u0111\u1EA7u (HL/HW: 0,74); kh\xF3e m\u1EAFt nh\u1ECF; v\xF9ng m\xE1 xi\xEAn v\xE0 h\u01B0\u1EDBng l\xEAn; m\u0169i t\xF9 v\xE0 ng\u1EAFn, l\u1ED7 m\u0169i n\u1EB1m g\u1EA7n ch\xF3p m\u1ECF v\xE0 h\u01B0\u1EDBng sang 2 b\xEAn; kho\u1EA3ng c\xE1ch gi\u1EEFa hai l\u1ED7 m\u0169i t\u01B0\u01A1ng \u0111\u01B0\u01A1ng m\xED m\u1EAFt tr\xEAn; m\xE0ng nh\u0129 kh\xF4ng r\xF5 r\xE0ng; n\u1EBFp g\u1EA5p m\u1EDD v\xF2ng qua ch\u1EA9m \u0111\u1EBFn sau m\u1EAFt v\xE0 k\u1EBFt th\xFAc \u1EDF ngay tr\u01B0\u1EDBc c\xE1nh tay.Da tr\u01A1n l\xE1ng v\u1EDBi c\xE1c n\u1ED1t s\u1EA7n r\u1EA3i r\xE1c tr\xEAn l\u01B0ng, nhi\u1EC1u nh\u1EA5t \u1EDF ph\u1EA7n d\u01B0\u1EDBi c\u1EE7a m\u1EB7t l\u01B0ng, ph\xEDa sau \u0111\xF9i v\xE0 m\u1ED9t s\u1ED1 tr\xEAn c\xE1nh tay. M\u1EB7t l\u01B0ng m\xE0u n\xE2u s\u1EABm. Hai d\u1EA3y m\xE0u v\xE0ng s\xE1ng \u0111\u01B0\u1EE3c bao b\u1ECDc b\u1EDFi vi\u1EC1n m\xE0u n\xE2u \u0111\u1EADm ho\u1EB7c \u0111en b\u1EAFt \u0111\u1EA7u t\u1EEB gi\u1EEFa hai m\u1EAFt v\xE0 k\xE9o d\xE0i \u0111\u1EBFn h\xE1ng; hai d\u1EA3y m\xE0u li\u1EC1n nhau \u1EDF gi\u1EEFa 2 m\u1EAFt, h\u1EB9p \u1EDF sau m\u1EAFt v\xE0 n\u1EDF r\u1ED9ng tr\xEAn m\u1EB7t l\u01B0ng. M\u1ED9t s\u1ED1 c\xE1 th\u1EC3 gi\u1EEFa l\u01B0ng c\xF3 v\u1EC7t \u0111en ho\u1EB7c n\xE2u s\u1EADm k\xE9o d\xE0i t\u1EEB gi\u1EEFa 2 m\u1EAFt \u0111\u1EBFn t\u1EADn x\u01B0\u01A1ng c\u1EE5t. C\xE1c n\u1ED1t s\u1EA7n tr\xEAn l\u01B0ng c\xF3 m\xE0u t\u01B0\u01A1ng t\u1EF1 m\xE0u c\u1EE7a hai d\u1EA3y m\xE0u tr\xEAn l\u01B0ng. Tr\xEAn c\xE1c chi c\xF3 m\xE0u kh\xF4ng \u0111\u1EC1u, c\xE1c m\u1EA3ng nh\u1ECF m\xE0u v\xE0ng s\xE1ng kh\xF4ng \u0111\u1EC1u xen l\u1EABn tr\xEAn n\u1EC1n m\xE0u n\xE2u s\u1EABm; m\u1ED9t v\u1EC7t m\xE0u s\xE1ng kh\xF4ng li\xEAn t\u1EE5c ph\xEDa tr\xEAn m\u1EB7t l\u01B0ng c\u1EE7a \u1ED1ng ch\xE2n sau. M\u1EB7t b\u1EE5ng m\xE0u tr\u1EAFng s\xE1ng v\u1EDBi c\xE1c hoa v\u0103n x\xE1m d\u1EA1ng kh\xF3i, ph\u1EA7n da tr\xEAn c\u1ED5 h\u1ECDng m\xE0u \u0111\u1EADm h\u01A1n tr\xEAn b\u1EE5ng.C\xE1nh tay h\u01A1i d\xE0i; ng\xF3n tay d\xE0i v\xE0 c\xF3 v\u1EBFt t\xEDch c\u1EE7a m\xE0ng b\u01A1i; to d\u1EA7n t\u1EEB g\u1ED1c ng\xF3n \u0111\u1EBFn \u0111\u1EA7u ng\xF3n, \u0111\u0129a ng\xF3n r\u1ED9ng theo chi\u1EC1u ngang. Ng\xF3n th\u1EE9 nh\u1EA5t ng\u1EAFn h\u01A1n ng\xF3n th\u1EE9 2; c\u1EE7 b\xE0n v\u1EEBa ph\u1EA3i; c\xF3 3 c\u1EE7 b\xE0n, c\u1EE7 b\xE0n ngo\xE0i d\xE0i, c\u1EE7 b\xE0n gi\u1EEFa nh\u1ECF nh\u1EA5t, b\xE0n tay tr\u01A1n v\xE0 kh\xF4ng c\xF3 n\u1ED1t s\u1EA7n ph\u1EE5. Th\u1EE9 t\u1EF1 chi\u1EC1u d\xE0i t\u01B0\u01A1ng \u0111\u1ED1i c\u1EE7a c\xE1c ng\xF3n tay: III`>`IV`>`II`>`I. Ch\xE2n ng\u1EAFn, ch\u1EC9 1/3 x\u01B0\u01A1ng \u0111\xF9i t\u1EF1 do; c\u1ED5 ch\xE2n ch\u1EA1m \u0111\u1EBFn n\xE1ch khi x\u1EBFp song song v\u1EDBi tr\u1EE5c c\u01A1 th\u1EC3. Hai g\xF3t ch\xE2n kh\xF4ng ch\u1EA1m nhau khi g\u1EADp g\u1ED1i v\xE0 x\u1EBFp vu\xF4ng g\xF3c tr\u1EE5c c\u01A1 th\u1EC3. B\xE0n ch\xE2n d\xE0i h\u01A1n b\xE0n tay nh\u01B0ng c\xE1c ng\xF3n ch\xE2n m\u1EA3nh kh\u1EA3nh h\u01A1n; \u0111\u0129a ng\xF3n ch\xE2n nh\u1ECF tr\xF2n, kh\xF4ng r\u1ED9ng theo chi\u1EC1u ngang nh\u01B0 \u0111\u0129a ng\xF3n tay; ng\xF3n ch\xE2n c\xF3 v\u1EBFt t\xEDch c\u1EE7a m\xE0ng b\u01A1i. C\xF3 2 c\u1EE7 b\xE0n ch\xE2n; c\u1EE7 b\xE0n ch\xE2n trong d\xE0i, nh\xF4 cao, c\u1EA1nh kh\xF4ng r\xF5 r\xE0ng; c\u1EE7 b\xE0n ch\xE2n ngo\xE0i nh\u1ECF tr\xF2n. Th\u1EE9 t\u1EF1 chi\u1EC1u d\xE0i t\u01B0\u01A1ng \u0111\u1ED1i c\xE1c ng\xF3n ch\xE2n: IV`>`III`>`V`>`II`>`I."
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "animal-ecological",
@@ -2770,47 +2770,116 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Info_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Info.css */ "./resources/js/component/Info.css");
 /* harmony import */ var _AnimalItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AnimalItem */ "./resources/js/component/AnimalItem.js");
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
 
-var TITLE = 'Thông tin các loài động vật | The Animals';
+ // const TITLE = 'Thông tin các loài động vật | The Animals';
+
+
+
 
 var Info = function Info() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  document.title = "abc";
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      animal = _React$useState2[0],
+      setAnimal = _React$useState2[1];
+
+  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    axios__WEBPACK_IMPORTED_MODULE_4___default()({
+      method: "get",
+      withCredentials: true,
+      url: "api/info"
+    }).then(function (result) {
+      setAnimal(result.data);
+    });
+  }, []);
+  console.log(animal);
+
+  var sortAZ = function sortAZ() {
+    console.log("A-Z");
+    animal.sort(function (a, b) {
+      var x = a.name.toUpperCase();
+      var y = b.name.toUpperCase();
+
+      if (x > y) {
+        return 1;
+      } else if (x < y) {
+        return -1;
+      }
+    });
+    setAnimal(animal);
+  };
+
+  var sortZA = function sortZA() {
+    console.log("Z-A");
+    animal.sort(function (a, b) {
+      var x = a.name.toUpperCase();
+      var y = b.name.toUpperCase();
+
+      if (x > y) {
+        return -1;
+      } else if (x < y) {
+        return 1;
+      }
+    });
+    setAnimal(animal);
+  }; // console.log(animal)
+
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container info",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_3__.Helmet, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("title", {
-        children: TITLE
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "row info-heading",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
         className: "title info-title",
         children: "Th\xF4ng Tin C\xE1c Lo\xE0i \u0110\u1ED9ng V\u1EADt"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
         className: "info-des",
         children: "C\u1EADp nh\u1EADt th\xF4ng tin c\xE1c lo\xE0i \u0111\u1ED9ng v\u1EADt t\u1EEB kh\u1EAFp n\u01A1i tr\xEAn th\u1EBF gi\u1EDBi."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "info-filter",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "info-filter w-fitcontent",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
           className: "title-filter",
           children: "S\u1EAFp x\u1EBFp"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "filter-btn filter-btn__a-z",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "filter-btn filter-btn__a-z m-2 btn btn-light",
+          onClick: sortAZ,
           children: "T\u1EEB A - Z"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "filter-btn filter-btn__z-a",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "filter-btn filter-btn__z-a m-2 btn btn-light",
+          onClick: sortZA,
           children: "T\u1EEB Z - A"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "row info-list",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "list_card",
+      children: animal.map(function (animal) {
+        // console.log("a");
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          animal: animal
+        }, animal.id);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "info-load-more",
       children: "T\u1EA3i th\xEAm..."
     })]
@@ -3031,7 +3100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".info {\r\n    padding: 70px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.info-heading {\r\n    margin-left: 10px;\r\n}\r\n\r\n.info-des {\r\n    font-size: 2.4rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.info-filter {\r\n    display: flex;\r\n    width: 30%;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin: 20px 0 20px 20px;\r\n}\r\n\r\n.title-filter {\r\n    font-size: 2rem;\r\n    font-weight: 500;\r\n    color: var(--black-color);\r\n    padding-top: 10px;\r\n}\r\n\r\n.filter-btn {\r\n    font-size: 2rem;\r\n    padding: .75rem 2.4rem;\r\n    background-color: var(--white-color);\r\n    border: 1px solid var(--primary-color);\r\n    border-radius: 10px;\r\n}\r\n\r\n.filter-btn:hover {\r\n    background-color: var(--primary-color);\r\n    color: var(--white-color);\r\n}\r\n\r\n.filter-btn:active {\r\n    color: var(--primary-color);\r\n    background-color: var(--white-color);\r\n}\r\n\r\n.info-list {\r\n    margin: 5px;\r\n}\r\n\r\n.info-load-more {\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n    padding: 20px 0;\r\n    color: var(--black-color);\r\n    cursor: pointer;\r\n    width: 10%;\r\n    margin: auto;\r\n}\r\n\r\n.info-load-more:hover {\r\n    color: var(--primary-color);\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".info {\n    padding: 70px 0;\n    background-color: var(--bg-color);\n}\n\n.info-heading {\n    margin-left: 10px;\n}\n\n.info-des {\n    font-size: 2.4rem;\n    font-weight: 700;\n}\n\n.info-filter {\n    display: flex;\n    width: 30%;\n    justify-content: space-between;\n    align-items: center;\n    margin: 20px 0 20px 20px;\n}\n\n.title-filter {\n    font-size: 2rem;\n    font-weight: 500;\n    color: var(--black-color);\n    padding-top: 10px;\n}\n\n.filter-btn {\n    font-size: 2rem;\n    padding: .75rem 2.4rem;\n    background-color: var(--white-color);\n    border: 1px solid var(--primary-color);\n    border-radius: 10px;\n}\n\n.filter-btn:hover {\n    background-color: var(--primary-color);\n    color: var(--white-color);\n}\n\n.filter-btn:active {\n    color: var(--primary-color);\n    background-color: var(--white-color);\n}\n\n.info-list {\n    margin: 5px;\n}\n\n.info-load-more {\n    font-size: 1.8rem;\n    text-align: center;\n    padding: 20px 0;\n    color: var(--black-color);\n    cursor: pointer;\n    width: 10%;\n    margin: auto;\n}\n\n.info-load-more:hover {\n    color: var(--primary-color);\n}\n.w-fitcontent{\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

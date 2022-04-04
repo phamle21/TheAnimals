@@ -85,13 +85,13 @@ const Detail = () => {
                             ngón tay dài và có vết tích của màng bơi; to dần từ gốc ngón đến đầu ngón, đĩa
                             ngón rộng theo chiều ngang. Ngón thứ nhất ngắn hơn ngón thứ 2; củ bàn vừa phải;
                             có 3 củ bàn, củ bàn ngoài dài, củ bàn giữa nhỏ nhất, bàn tay trơn và không có
-                        nốt sần phụ. Thứ tự chiều dài tương đối của các ngón tay: III>IV>II>I. Chân ngắn,
+                        nốt sần phụ. Thứ tự chiều dài tương đối của các ngón tay: III`&gt;`IV`&gt;`II`&gt;`I. Chân ngắn,
                             chỉ 1/3 xương đùi tự do; cổ chân chạm đến nách khi xếp song song với trục cơ thể.
                             Hai gót chân không chạm nhau khi gập gối và xếp vuông góc trục cơ thể. Bàn chân dài
                             hơn bàn tay nhưng các ngón chân mảnh khảnh hơn; đĩa ngón chân nhỏ tròn, không rộng
                             theo chiều ngang như đĩa ngón tay; ngón chân có vết tích của màng bơi. Có 2 củ bàn
                             chân; củ bàn chân trong dài, nhô cao, cạnh không rõ ràng; củ bàn chân ngoài nhỏ tròn.
-                        Thứ tự chiều dài tương đối các ngón chân: IV>III>V>II>I.</p>
+                        Thứ tự chiều dài tương đối các ngón chân: IV`&gt;`III`&gt;`V`&gt;`II`&gt;`I.</p>
                     </div>
 
                     <div className="animal-ecological">

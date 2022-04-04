@@ -62,4 +62,6 @@
 .info-load-more:hover {
     color: var(--primary-color);
 }
-
+.w-fitcontent{
+    width: fit-content;
+}
