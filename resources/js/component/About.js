@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet'
 import './About.css';
-import Img from "../../../public/assets/img/home_img.png";
+import Img from "../../../public/images/home_img.png";
 
 const TITLE = 'Cách hoạt động | The Animals'
 
@@ -24,7 +24,7 @@ const About = () => {
 
                     <div className="step">
                         <div className="about-step">
-                            <i class="fa-brands fa-sistrix step-icon"></i>
+                            <i className="fa-brands fa-sistrix step-icon"></i>
                             <p className="title-step">Bước 1</p>
                             <p className="des-step">Gõ từ khóa cần tìm vào ô tìm kiếm.</p>
                         </div>

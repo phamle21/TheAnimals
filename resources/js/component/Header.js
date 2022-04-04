@@ -1,44 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <div className='container-fluid header bg-transparent' id="navbar">
-            <div className='container'>
-                <div className='row'>
-                    <div className='col'>
-                        <Link to="/" className='logo'>
-                            .theAnimals
-                        </Link>
-                    </div>
-                    <div className='col d-flex justify-content-end align-items-center'>
-                        <div className='nav'>
-                            <ul className='nav-list'>
-                                <li className='nav-list-item'>
-                                    <Link to="/" className='nav-list-item__link'>
-                                        Trang chủ
-                                    </Link>
-                                </li>
-                                <li className='nav-list-item'>
-                                    <Link to="/how_it_work" className='nav-list-item__link'>
-                                        Cách hoạt động
-                                    </Link>
-                                </li>
-                                <li className='nav-list-item'>
-                                    <Link to="/info" className='nav-list-item__link'>
-                                        Thông tin
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-transparent header" id="navbar">
+            <div className="container">
+                <Link to="/" className="navbar-brand logo">.theAnimals</Link>
+
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul className="navbar-nav me-0 mb-2 mb-lg-0 w-100 d-flex justify-content-end">
+                        <li className="nav-item ">
+                            <Link to="/" className="nav-link nav-list-item__link active" aria-current="page">Trang chủ</Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link to="/how_it_work" className="nav-link nav-list-item__link">Cách hoạt động</Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link to="/info" className="nav-link nav-list-item__link">Thông tin</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-
-
-        </div>
+        </nav>
     )
 }
 

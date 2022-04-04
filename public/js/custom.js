@@ -1,3 +1,10 @@
+$(document).ready(() => {
+    $('#hero').css("padding-top", $('#navbar').height())
+
+    // $('.nav-link').each((i) => {
+    //     console.log($(this))
+    // })
+})
 
 //Scroll navbar
 $(window).on('scroll', () => {
@@ -8,4 +15,5 @@ $(window).on('scroll', () => {
         $('#navbar').removeClass("py-3")
     }
 })
+
 
