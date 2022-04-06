@@ -13,4 +13,10 @@ class ReactController extends Controller
         // return $list;
         return response()->json($list);
     }
+
+    public function detailAnimals($id){
+        $detail = Animal::find($id);
+        echo $detail;
+        // return response()->json($detail);
+    }
 }

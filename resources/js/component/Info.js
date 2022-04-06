@@ -1,32 +1,31 @@
 import React from 'react';
-import { useState } from 'react';
 import './Info.css';
 import Animal from './AnimalItem';
-import { Helmet } from 'react-helmet'
 import axios from "axios"
 
-// const TITLE = 'Thông tin các loài động vật | The Animals';
 
 const Info = () => {
-    document.title = "abc"
+    document.title = "Thông tin các loài động vật | The Animals"
+
     const [animal, setAnimal] = React.useState([]);
 
     React.useEffect(() => {
         axios({
             method: "get",
             withCredentials: true,
-            url: `api/info`
+            url: 'api/info'
         })
-        .then(result => {
-            setAnimal(result.data)
-        })
+            .then(result => {
+                setAnimal(result.data)
+            })
     }, [])
 
     console.log(animal);
 
     const sortAZ = () => {
-        console.log("A-Z");
-        animal.sort(function (a, b) {
+        const arr = [...animal]
+
+        arr.sort(function (a, b) {
             var x = a.name.toUpperCase();
             var y = b.name.toUpperCase();
             if (x > y) {
@@ -36,32 +35,29 @@ const Info = () => {
             }
         })
 
-        setAnimal(animal)
+        setAnimal(arr)
     }
 
     const sortZA = () => {
-        console.log("Z-A");
-        animal.sort(function (a, b) {
+        const arr = [...animal]
+
+        arr.sort(function (a, b) {
             var x = a.name.toUpperCase();
             var y = b.name.toUpperCase();
-
             if (x > y) {
-                return -1;
-            } else if (x < y) {
                 return 1;
+            } else if (x < y) {
+                return -1;
             }
         })
 
-        setAnimal(animal)
+        setAnimal(arr.reverse())
     }
 
     // console.log(animal)
 
     return (
         <div className="container info">
-            {/* <Helmet>
-                <title>{TITLE}</title>
-            </Helmet> */}
 
             <div className="row info-heading">
                 <p className="title info-title">Thông Tin Các Loài Động Vật</p>

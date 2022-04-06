@@ -3,8 +3,28 @@ import './Detail.css';
 import Img from '../../../../public/images/Kaloula_pulchra2.jpg';
 import Img2 from '../../../../public/images/Kaloula_pulchra2.jpg';
 import Animal from '../AnimalItem';
+import {useParams} from 'react-router-dom';
 
 const Detail = () => {
+    let  {Id}  = useParams();
+    console.log(Id);
+    const [animal, setAnimal] = React.useState(null);
+
+    React.useEffect(() => {
+        axios({
+            method: "get",
+            withCredentials: true,
+            url: 'api/detail/15'+Id
+        })
+            .then(result => {
+                setAnimal(result.json())
+            })
+    }, [])
+
+    document.title = "Thông tin chi tiết | The Animals"
+
+    console.log(animal)
+
     return (
         <div className="container detail">
             <div className="animal-name">Ễn ương</div>
@@ -111,12 +131,6 @@ const Detail = () => {
                 <div className="animal-related">
                     <div className="animal-related-title">Các động vật liên quan</div>
                     <div className="row animal-related__list">
-                        <Animal />
-                        <Animal />
-                        <Animal />
-                        <Animal />
-                        <Animal />
-                        <Animal />
                     </div>
                 </div>
             </div>
