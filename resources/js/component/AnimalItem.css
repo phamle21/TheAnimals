@@ -1,11 +1,12 @@
 .animal {
-    transition: transform ease-in 0.1s;
-  will-change: transform;
+    transition: all 0.5s;
+    will-change: transform;
 }
 
-.animal:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 5%);
+.animal:hover>.animal-item {
+    box-shadow: 0px 5px 15px -5px rgb(185, 155, 174);
+    transform: scale(1.05);
+    z-index: 10;
 }
 
 .animal-item {

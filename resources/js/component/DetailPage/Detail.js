@@ -23,7 +23,7 @@ const Detail = () => {
 
     document.title = "Thông tin chi tiết | The Animals"
 
-    console.log(animal)
+    // console.log(animal)
 
     return (
         <div className="container detail">

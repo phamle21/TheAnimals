@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/info', [ReactController::class, 'listAnimals']);
+Route::post('/info/{limit}', [ReactController::class, 'loadMoreInfo']);
 Route::get('/detail/{id}', [ReactController::class, 'detailAnimals']);
