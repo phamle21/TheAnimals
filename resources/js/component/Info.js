@@ -13,15 +13,15 @@ const Info = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: 'api/info'
+            url: '../api/info/list'
         })
             .then(result => {
                 setAnimal(result.data)
             })
     }, [])
 
-
     const sortAZ = () => {
+
         const arr = [...animal]
 
         arr.sort(function (a, b) {
@@ -74,11 +74,9 @@ const Info = () => {
                 </div>
 
                 <div className="row info-list" id="list_card">
-                    {animal.map((animal) => {
-                        return (
-                            <Animal key={animal.id} animal={animal} />
-                        )
-                    })}
+                    {animal.map((animal) =>
+                        <Animal key={animal.id} animal={animal}  />
+                    )}
                 </div>
 
                 <p className="info-load-more w-100" onClick={loadMore}>Tải thêm...</p>

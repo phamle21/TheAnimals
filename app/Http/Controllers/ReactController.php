@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Imports\SinhVatImport;
+use App\Models\Bo;
+use App\Models\Ho;
+use App\Models\Lop;
+use App\Models\Nganh;
 use App\Models\SinhVat;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -12,7 +16,9 @@ class ReactController extends Controller
     public function listAnimals()
     {
         $limit = 12;
-        $list = SinhVat::all()->take($limit);
+
+        // $list = SinhVat::whereBelongsTo(Ho::find(1))->take($limit)->get();
+        $list = SinhVat::take($limit)->get();
 
         return response()->json($list);
     }
@@ -33,7 +39,21 @@ class ReactController extends Controller
     public function detailAnimals($id)
     {
         $detail = SinhVat::find($id);
+
+        $detail->nganh = SinhVat::find($id)->ho->bo->lop->nganh->ten_nganh;
+        $detail->lop = SinhVat::find($id)->ho->bo->lop->ten_lop;
+        $detail->bo = SinhVat::find($id)->ho->bo->ten_bo;
+        $detail->ho = SinhVat::find($id)->ho->ten_ho;
+
         // echo $detail;
         return response()->json($detail);
+    }
+
+    public function listAnimalsOther($id)
+    {
+        $sinhvat = SinhVat::find($id);
+        $list = SinhVat::where('ho_id', $sinhvat->ho_id)->where('id', '<>', $id)->get();
+
+        return response()->json($list);
     }
 }

@@ -16,7 +16,10 @@ class Bo extends Model
     }
 
     public function lop(){
-        return $this->hasMany(Lop::class, 'lop_id');
+        return $this->belongsTo(Lop::class, 'lop_id');
     }
 
+    public function sinhVat(){
+        return $this->hasManyThrough(SinhVat::class, Ho::class, 'bo_id','ho_id', 'id');
+    }
 }

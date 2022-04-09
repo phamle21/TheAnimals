@@ -11,8 +11,14 @@ class Nganh extends Model
 
     protected $table = 'nganh';
 
-    public function lop(){
+    public function lop()
+    {
         return $this->hasMany(Lop::class, 'nganh_id', 'id');
+    }
+
+    public function bo()
+    {
+        return $this->hasManyThrough(Bo::class, Lop::class, 'nganh_id', 'lop_id', 'id');
     }
 
 }

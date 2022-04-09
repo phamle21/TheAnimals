@@ -35,3 +35,8 @@ html {
   scroll-behavior: smooth;
 }
 
+.list-group-item{
+  background-color: transparent !important;
+  border: 0 !important;
+}
+

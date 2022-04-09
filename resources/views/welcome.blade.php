@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="shortcut icon" href="{{ asset('images/home_img.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
 
     <title id="title">.the Animals</title>
 
@@ -30,9 +30,6 @@
 <body>
 
     <div id="root"></div>
-
-    <!-- Bootstrap 5 -->
-
 
     <!-- Jquery 3.6 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 class Lop extends Model
 {
@@ -11,12 +12,20 @@ class Lop extends Model
 
     protected $table = 'lop';
 
-    public function bo(){
+    public function bo()
+    {
         return $this->hasMany(Bo::class, 'lop_id', 'id');
     }
 
-    public function nganh(){
-        return $this->hasMany(Nganh::class, 'nganh_id');
+    public function nganh()
+    {
+        return $this->belongsTo(Nganh::class, 'nganh_id');
     }
 
+    public function ho()
+    {
+        return $this->hasManyThrough(Ho::class, Bo::class, 'lop_id', 'bo_id', 'id');
+    }
+
+    
 }

@@ -11,7 +11,7 @@ import Home from './component/Home';
 import About from './component/About';
 import Info from './component/Info';
 import Footer from './component/Footer';
-import Detail from './component/DetailPage/Detail';
+import Detail from './component/Detail';
 
 function App() {
     return (
@@ -20,7 +20,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/how_it_work" element={<About />} />
-                <Route path="/info" element={<Info />} />
+                <Route path="/info/list" element={<Info />} />
                 <Route path="/detail/:Id" element={<Detail />} />
             </Routes>
             <Footer />
