@@ -8,6 +8,6 @@
 php artisan serve
 
 ## Lệnh chạy React: 
-npm run watch <br>
-hoặc <br>
-npm run watch-poll
+*npm run watch 
+*hoặc 
+*npm run watch-poll
