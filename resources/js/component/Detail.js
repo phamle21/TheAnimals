@@ -10,7 +10,7 @@ const Detail = () => {
 
     let { Id } = useParams();
 
-    const [animal, setAnimal] = React.useState({});
+    const [animal, setAnimal] = React.useState({ ten_tieng_viet: 'Chi tiết động vật', id: Id });
     const [media, setMedia] = React.useState([]);
     const [other, setOther] = React.useState([]);
 
@@ -18,7 +18,7 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/' + Id
+            url: '../api/detail/' + animal.id
         })
             .then(result => {
                 setAnimal(result.data)
@@ -26,16 +26,12 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/other/' + Id
+            url: '../api/detail/other/' + animal.id
         })
             .then(result => {
                 setOther(result.data)
             })
-    }, {})
-
-    const goAnimalOther = () => {
-        alert(123)
-    }
+    }, [animal.id])
 
     document.title = animal.ten_tieng_viet + " | The Animals"
 
@@ -127,7 +123,7 @@ const Detail = () => {
                 <div className="animal-related-title">Các động vật liên quan</div>
                 <div className="row animal-related__list">
                     {other.map((other) =>
-                        <Animal key={other.id} animal={other}/>
+                        <Animal key={other.id} animal={other} />
                     )}
                 </div>
             </div>

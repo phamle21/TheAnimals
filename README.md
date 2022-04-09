@@ -4,10 +4,21 @@
     </a>
 </p>
 
-## Lệnh chạy laravel: 
+
+## 1.Cấu hình:
+<p>Mở xampp, tạo CSDL tên: the_animal</p>
+<p>Sửa file env tại dòng như sau:</p>
+<p>DB_DATABASE=the_animal</p>
+<p>Chạy lệnh cmd: </p>
+<p>php artisan migrate --seed</p>
+
+## 2.Lệnh chạy laravel: 
 php artisan serve
 
-## Lệnh chạy React: 
+## 3.Lệnh chạy React: 
 <p>npm run watch </p>
 <p>hoặc </p>
 <p>npm run watch-poll</p>
+
+## 4.Chạy Project: 
+<p>Vào link http://localhost:8000/</p>

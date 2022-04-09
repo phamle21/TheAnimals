@@ -2451,7 +2451,10 @@ var Detail = function Detail() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
       Id = _useParams.Id;
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState({}),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState({
+    ten_tieng_viet: 'Chi tiết động vật',
+    id: Id
+  }),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       animal = _React$useState2[0],
       setAnimal = _React$useState2[1];
@@ -2470,23 +2473,18 @@ var Detail = function Detail() {
     axios__WEBPACK_IMPORTED_MODULE_4___default()({
       method: "get",
       withCredentials: true,
-      url: '../api/detail/' + Id
+      url: '../api/detail/' + animal.id
     }).then(function (result) {
       setAnimal(result.data);
     });
     axios__WEBPACK_IMPORTED_MODULE_4___default()({
       method: "get",
       withCredentials: true,
-      url: '../api/detail/other/' + Id
+      url: '../api/detail/other/' + animal.id
     }).then(function (result) {
       setOther(result.data);
     });
-  }, {});
-
-  var goAnimalOther = function goAnimalOther() {
-    alert(123);
-  };
-
+  }, [animal.id]);
   document.title = animal.ten_tieng_viet + " | The Animals";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container detail",
