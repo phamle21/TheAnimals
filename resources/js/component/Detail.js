@@ -1,18 +1,18 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './Detail.css';
-import Img from '../../../public/images/Kaloula_pulchra2.jpg';
-import Img2 from '../../../public/images/Kaloula_pulchra2.jpg';
 import Animal from './AnimalItem';
 import axios from "axios"
+import { LazyResult } from 'postcss';
 
 const Detail = () => {
 
     let { Id } = useParams();
 
     const [animal, setAnimal] = React.useState({ ten_tieng_viet: 'Chi tiết động vật', id: Id });
-    const [media, setMedia] = React.useState([]);
-    const [other, setOther] = React.useState([]);
+    const [media, setMedia] = React.useState([{}]);
+    const [baoton, setBaoTon] = React.useState([{}]);
+    const [other, setOther] = React.useState([{}]);
 
     React.useEffect(() => {
         axios({
@@ -31,7 +31,50 @@ const Detail = () => {
             .then(result => {
                 setOther(result.data)
             })
-    }, [animal.id])
+        axios({
+            method: "get",
+            withCredentials: true,
+            url: '../api/detail/baoton/' + animal.id
+        })
+            .then(result => {
+                setBaoTon(result.data)
+            })
+        axios({
+            method: "get",
+            withCredentials: true,
+            url: '../api/detail/media/' + animal.id
+        })
+            .then(result => {
+                setMedia(result.data)
+            })
+    }, [])
+
+    const selectImg = (name) => {
+        $('.show_video').addClass('d-none')
+        $('.show_video').get(0).pause();
+        $('.show_img').removeClass('d-none')
+        $('.show_img').attr("src", "../images/animal/" + name)
+    }
+
+    const selectVideo = (name) => {
+        $('.show_img').addClass('d-none')
+        $('.show_video').removeClass('d-none')
+        $('.show_video').attr("src", "../video/animal/" + name)
+    }
+
+
+    if (media[0].media_type == "image") {
+        $('.show_video').addClass('d-none')
+        $('.show_img').removeClass('d-none')
+    } else {
+        $('.show_img').addClass('d-none')
+        $('.show_video').removeClass('d-none')
+    }
+
+
+    const goAnimal = () => {
+        alert(123)
+    }
 
     document.title = animal.ten_tieng_viet + " | The Animals"
 
@@ -40,14 +83,22 @@ const Detail = () => {
             <div className="animal-name">{animal.ten_tieng_viet}</div>
 
             <div className="row">
-                <div className="col-md animal-images">
-                    <div className="animal-img-current">
-                        <img src={Img} alt="img-current" className='animal-img__current' />
+                <div className="col-md animal-images" >
+                    <div className="animal-img-current border border-success rounded d-flex align-items-center">
+                        <img src={'../images/animal/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
+                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>
 
-                    <div className="animal-images__list">
-                        <img src={Img} alt="img-more" className='animal-img__more' />
-                        <img src={Img2} alt="img-more" className='animal-img__more' />
+                    <div className="animal-images__list d-flex">
+                        {
+                            media.map((media, index) => {
+                                if (media.media_type == "image") {
+                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../images/animal/' + media.ten_media} alt="img-more" className='animal-img__more' />
+                                } else {
+                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../video/animal/' + media.ten_media} className='animal-video'></video>
+                                }
+                            })
+                        }
                     </div>
                 </div>
                 <div className="col-md">
@@ -102,29 +153,39 @@ const Detail = () => {
                             <p className="taxonomy-label">Giá trị sử dụng: </p>
                             <p className="animal-family taxonomy-values">{animal.gia_tri_su_dung}</p>
                         </div>
+
+
+                        {baoton.map((baoton) =>
+                            <div className="taxonomy-wrap" key={'baoton-' + baoton.id}>
+                                <p className="taxonomy-label">{baoton.loai_tt}:</p>
+                                <p className="animal-family taxonomy-values">{baoton.tinh_trang}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md animal-characteristics">
-                    <div className="animal-morphological">
-                        <p className="morphological-title">Đặc điểm hình thái</p>
-                        <p className="morphological-des">{animal.mo_ta_hinh_thai}</p>
+                    <div className="row">
+                        <div className="col-md animal-morphological mx-3">
+                            <p className="morphological-title">Đặc điểm hình thái</p>
+                            <p className="morphological-des">{animal.mo_ta_hinh_thai}</p>
+                        </div>
+
+                        <div className="col-md animal-ecological mx-3">
+                            <p className="ecological-title">Đặc điểm sinh thái</p>
+                            <p className="ecological-des">{animal.mo_ta_sinh_thai}</p>
+                        </div>
                     </div>
 
-                    <div className="animal-ecological">
-                        <p className="ecological-title">Đặc điểm sinh thái</p>
-                        <p className="ecological-des">{animal.mo_ta_sinh_thai}</p>
+                    <div className="animal-ecological py-4">
+                        <p className="ecological-title">Động vật liên quan</p>
+                        <div className="row">
+                            {other.map((other, index) =>
+                                <Animal key={index} animal={other}  />
+                            )}
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div className="animal-related">
-                <div className="animal-related-title">Các động vật liên quan</div>
-                <div className="row animal-related__list">
-                    {other.map((other) =>
-                        <Animal key={other.id} animal={other} />
-                    )}
                 </div>
             </div>
         </div>

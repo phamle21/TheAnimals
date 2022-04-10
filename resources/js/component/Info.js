@@ -42,20 +42,18 @@ const Info = () => {
     }
 
     const loadMore = () => {
-        console.log("hello");
         const limit = animal.length
-        console.log(limit);
+
         axios({
             method: "post",
             withCredentials: true,
-            url: 'api/info/' + limit
+            url: '../api/info/' + limit
         })
             .then(result => {
                 setAnimal(result.data)
             })
     }
 
-    // console.log(animal)
 
     return (
         <div className="container-fluid info">

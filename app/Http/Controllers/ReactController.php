@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\SinhVatImport;
+use App\Models\BaoTon;
 use App\Models\Bo;
 use App\Models\Ho;
 use App\Models\Lop;
@@ -53,6 +54,20 @@ class ReactController extends Controller
     {
         $sinhvat = SinhVat::find($id);
         $list = SinhVat::where('ho_id', $sinhvat->ho_id)->where('id', '<>', $id)->get();
+
+        return response()->json($list);
+    }
+
+    public function listAnimalsBaoTon($id)
+    {
+        $list = SinhVat::find($id)->baoton;
+
+        return response()->json($list);
+    }
+
+    public function listAnimalsMedia($id)
+    {
+        $list = SinhVat::find($id)->media;
 
         return response()->json($list);
     }
