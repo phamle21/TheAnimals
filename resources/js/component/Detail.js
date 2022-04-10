@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './Detail.css';
 import Animal from './AnimalItem';
 import axios from "axios"
-import { LazyResult } from 'postcss';
 
 const Detail = () => {
 
@@ -18,7 +18,7 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/' + animal.id
+            url: '../api/detail/' + Id
         })
             .then(result => {
                 setAnimal(result.data)
@@ -26,7 +26,7 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/other/' + animal.id
+            url: '../api/detail/other/' + Id
         })
             .then(result => {
                 setOther(result.data)
@@ -34,7 +34,7 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/baoton/' + animal.id
+            url: '../api/detail/baoton/' + Id
         })
             .then(result => {
                 setBaoTon(result.data)
@@ -42,12 +42,14 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/media/' + animal.id
+            url: '../api/detail/media/' + Id
         })
             .then(result => {
                 setMedia(result.data)
             })
-    }, [])
+    }, [Id])
+
+    document.title = animal.ten_tieng_viet + " | The Animals"
 
     const selectImg = (name) => {
         $('.show_video').addClass('d-none')
@@ -70,13 +72,6 @@ const Detail = () => {
         $('.show_img').addClass('d-none')
         $('.show_video').removeClass('d-none')
     }
-
-
-    const goAnimal = () => {
-        alert(123)
-    }
-
-    document.title = animal.ten_tieng_viet + " | The Animals"
 
     return (
         <div className="container detail">
@@ -181,9 +176,9 @@ const Detail = () => {
                     <div className="animal-ecological py-4">
                         <p className="ecological-title">Động vật liên quan</p>
                         <div className="row">
-                            {other.map((other, index) =>
-                                <Animal key={index} animal={other}  />
-                            )}
+                            {other.map((other, index) => (
+                                <Animal key={index} animal={other} />
+                            ))}
                         </div>
                     </div>
                 </div>

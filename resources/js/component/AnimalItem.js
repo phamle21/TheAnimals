@@ -16,12 +16,6 @@ const AnimalItem = ({ animal }) => {
 
                     </div>
                 </div>
-                {/* <div className="animal-item__img" style={{ backgroundImage: `url(${'images/Kaloula_pulchra2.jpg'})` }} alt="animal-img" />
-
-                <p className="animal-item__name">{animal.ten_tieng_viet}</p>
-                <p className="animal-item__des">{animal.mo_ta_hinh_thai}</p>
-
-                <p className="animal-item__more">Tìm hiểu thêm</p> */}
             </Link>
         </div>
     )
