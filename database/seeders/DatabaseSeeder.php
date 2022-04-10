@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Imports\BaoTonImport;
+use App\Imports\MediaImport;
 use App\Models\Bo;
 use App\Models\Ho;
 use App\Models\Lop;
@@ -11,6 +13,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SinhVatImport;
+use App\Imports\ToaDoImport;
 
 class DatabaseSeeder extends Seeder
 {
@@ -101,6 +104,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Excel::import(new SinhVatImport, 'C:\xampp\htdocs\TheAnimals\public\data-sinhvat.xlsx');
+        Excel::import(new BaoTonImport, 'C:\xampp\htdocs\TheAnimals\public\data-baoton.xlsx');
+        Excel::import(new ToaDoImport, 'C:\xampp\htdocs\TheAnimals\public\data-toado.xlsx');
+        Excel::import(new MediaImport, 'C:\xampp\htdocs\TheAnimals\public\data-media.xlsx');
+
 
     }
 }

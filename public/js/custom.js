@@ -4,10 +4,11 @@ $(document).ready(() => {
     // $('.nav-link').each((i) => {
     //     console.log($(this))
     // })
-    $('.filter-btn').on('click', function (i){
+    $('.filter-btn').on('click', function (i) {
         $('.filter-btn').removeClass('bg-success')
         $(this).addClass('bg-success')
     })
+    
 })
 
 //Scroll navbar

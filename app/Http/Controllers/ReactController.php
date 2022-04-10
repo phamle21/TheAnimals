@@ -71,4 +71,15 @@ class ReactController extends Controller
 
         return response()->json($list);
     }
+
+    public function searchAnimal(Request $request)
+    {
+        $data = SinhVat::where('ten_tieng_viet', 'like', '%' . $request->value . '%')->get();
+
+        if($request->value == ""){
+            $data = SinhVat::take(0)->get();
+        }
+
+        return response()->json($data);
+    }
 }

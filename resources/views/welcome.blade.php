@@ -34,6 +34,9 @@
     <!-- Jquery 3.6 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    {{-- TypHead Search Smart --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    
     {{-- ReactJs --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 

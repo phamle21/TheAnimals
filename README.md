@@ -4,21 +4,22 @@
     </a>
 </p>
 
+#CÁC BƯỚC CHẠY CÁI WEB NÀY
 
 ## 1.Cấu hình:
 <p>Mở xampp, tạo CSDL tên: the_animal</p>
-<p>Sửa file env tại dòng như sau:</p>
+<p>Sửa file env tại dòng như sau (cùng với tên CSDL tạo ở trên là được):</p>
 <p>DB_DATABASE=the_animal</p>
-<p>Chạy lệnh cmd: </p>
-<p>php artisan migrate --seed</p>
+<p>Chạy lệnh cmd để tự động tạo table và nhập liệu: </p>
+<p>**php artisan migrate --seed**</p>
 
 ## 2.Lệnh chạy laravel: 
-php artisan serve
+<p>**php artisan serve**</p>
 
 ## 3.Lệnh chạy React: 
-<p>npm run watch </p>
+<p>**npm run watch**</p>
 <p>hoặc </p>
-<p>npm run watch-poll</p>
+<p>**npm run watch-poll**</p>
 
 ## 4.Chạy Project: 
 <p>Vào link http://localhost:8000/</p>

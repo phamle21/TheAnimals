@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('toa_do', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('loai_toa_do');
             $table->string('toa_do');
             $table->unsignedBigInteger('sinhvat_id')->nullable();
             $table->foreign('sinhvat_id')->references('id')->on('sinh_vat')

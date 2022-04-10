@@ -10,6 +10,7 @@ import Header from './component/Header';
 import Home from './component/Home';
 import About from './component/About';
 import Info from './component/Info';
+import Search from './component/Search';
 import Footer from './component/Footer';
 import Detail from './component/Detail';
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/how_it_work" element={<About />} />
                 <Route path="/info/list" element={<Info />} />
+                <Route path="/info/search" element={<Search />} />
                 <Route path="/detail/:Id" element={<Detail />} />
             </Routes>
             <Footer />

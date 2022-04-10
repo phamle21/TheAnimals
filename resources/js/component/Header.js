@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import '../../css/Header.css';
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = () => {
@@ -23,6 +23,9 @@ const Header = () => {
                         </li>
                         <li className="nav-item ">
                             <Link to="/info/list" className="nav-link nav-list-item__link">Thông tin</Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link to="/info/search" className="nav-link nav-list-item__link">Tìm kiếm</Link>
                         </li>
                     </ul>
                 </div>

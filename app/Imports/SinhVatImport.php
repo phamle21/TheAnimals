@@ -4,14 +4,10 @@ namespace App\Imports;
 
 use App\Models\SinhVat;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class SinhVatImport implements ToModel
+class SinhVatImport implements ToModel, WithStartRow
 {
-    /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
 
     public function startRow(): int
     {
@@ -21,7 +17,7 @@ class SinhVatImport implements ToModel
     public function model(array $row)
     {
         return new SinhVat([
-            'id' => $row[0], //Lay du lieu theo cot
+            'id' => $row[0],
             'ho_id' => $row[2],
             'ten_khoa_hoc' => $row[3],
             'ten_tieng_viet' => $row[4],
@@ -32,4 +28,5 @@ class SinhVatImport implements ToModel
             'sinh_canh' => $row[9],
         ]);
     }
+
 }

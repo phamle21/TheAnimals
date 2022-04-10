@@ -17,10 +17,13 @@ use App\Http\Controllers\ReactController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//SEARCH
+Route::get('/info/search', [ReactController::class, 'searchAnimal']);
 
 // INFO
 Route::get('/info/list', [ReactController::class, 'listAnimals']);
 Route::post('/info/{limit}', [ReactController::class, 'loadMoreInfo']);
+
 // DETAIL
 Route::get('/detail/{id}', [ReactController::class, 'detailAnimals']);
 Route::get('/detail/other/{id}', [ReactController::class, 'listAnimalsOther']);

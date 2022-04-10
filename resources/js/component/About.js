@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import './About.css';
+import '../../css/About.css';
 import Img from "../../../public/images/home_img.png";
 
 const About = () => {
@@ -32,7 +32,7 @@ const About = () => {
                             </div>
                         </div>
 
-                        <Link to="/" className='about-btn'>Hãy thử nào</Link>
+                        <Link to="/info/search" className='about-btn'>Hãy thử nào</Link>
                     </div>
                 </div>
             </div>

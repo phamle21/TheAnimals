@@ -39,4 +39,6 @@ html {
   border: 0 !important;
 }
 
-
+.cursor-pointer{
+  cursor: pointer;
+}

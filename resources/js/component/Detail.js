@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import './Detail.css';
+import '../../css/Detail.css';
 import Animal from './AnimalItem';
 import axios from "axios"
 
@@ -78,8 +78,8 @@ const Detail = () => {
             <div className="animal-name">{animal.ten_tieng_viet}</div>
 
             <div className="row">
-                <div className="col-md animal-images" >
-                    <div className="animal-img-current border border-success rounded d-flex align-items-center">
+                <div className="col-md mt-4" >
+                    <div className="animal-img-current border border-4 border-successs rounded d-flex align-items-center">
                         <img src={'../images/animal/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
                         <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>
@@ -96,8 +96,8 @@ const Detail = () => {
                         }
                     </div>
                 </div>
-                <div className="col-md">
-                    <div className="animal-taxonomy my-4">
+                <div className="col-md mt-4">
+                    <div className="animal-taxonomy my-4 mt-0">
                         <p className="taxonomy-title">Phân loại học</p>
 
                         <div className="taxonomy-wrap">
