@@ -5,9 +5,9 @@ import '../../css/AnimalItem.css';
 const AnimalItem = ({ animal }) => {
 
     return (
-        <div className="col-lg-2 col-md-3 col-sm-4 animal rounded" >
+        <div className="col-lg-2 col-md-3 col-sm-4 animal" >
             <Link to={"/detail/" + animal.id} className="animal-item">
-                <div className="card text-center" style={{ borderRadius: '20px' }} >
+                <div className="card text-center" style={{ borderRadius: '10px' }} >
                     <img src={'../images/animal/' + animal.image} className="card-img-top p-3 rounded" />
                     <div className="card-body">
                         <div className="card-title animal-item__name ">{animal.ten_tieng_viet}</div>

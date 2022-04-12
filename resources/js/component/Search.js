@@ -57,13 +57,15 @@ const Info = () => {
                 <div className="row info-heading">
                     <p className="title info-title">Tìm kiếm động vật</p>
                     <p className="info-des" >Nhập từ khóa bạn muốn tìm kiếm.</p>
-                    <form action="" id="frmInfoSearch" onSubmit={searchAnimal} >
-                        <div className='home-search d-flex justify-content-center align-items-center'>
-                            <input className='search-input my-4 mx-5 p-5' id="input-search-info" type="search" placeholder="Nhập vào đây để bắt đầu tìm kiếm..."></input>
-                            <button className="fas fa-search search-icon h-auto p-5 cursor-pointer" form='frmInfoSearch' type='submit'></button>
+                    <form action="" id="frmInfoSearch" className="ms-5" onSubmit={searchAnimal} >
+                        <div className='home-search d-flex justify-content-start align-items-center'>
+                            <input className='search-input my-4 m-0 me-5 p-3 ps-4 fs-2' id="input-search-info" type="search" placeholder="Nhập vào đây để bắt đầu tìm kiếm..."></input>
+                            <button className="fas fa-search search-icon h-auto p-4 cursor-pointer" form='frmInfoSearch' type='submit'></button>
+                        </div>
+                        <div className="ms-5">
+                            <p id="key_search" className="fw-bold fs-3 mt-2"></p>
                         </div>
                     </form>
-                    <p id="key_search" className="fw-bold fs-3 mt-2"></p>
                     <div className="info-filter w-fitcontent">
                         <p className="title-filter">Sắp xếp</p>
 

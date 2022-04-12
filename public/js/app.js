@@ -2376,14 +2376,14 @@ __webpack_require__.r(__webpack_exports__);
 var AnimalItem = function AnimalItem(_ref) {
   var animal = _ref.animal;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "col-lg-2 col-md-3 col-sm-4 animal rounded",
+    className: "col-lg-2 col-md-3 col-sm-4 animal",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: "/detail/" + animal.id,
       className: "animal-item",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "card text-center",
         style: {
-          borderRadius: '20px'
+          borderRadius: '10px'
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: '../images/animal/' + animal.image,
@@ -3175,26 +3175,30 @@ var Info = function Info() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "info-des",
           children: "Nh\u1EADp t\u1EEB kh\xF3a b\u1EA1n mu\u1ED1n t\xECm ki\u1EBFm."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
           action: "",
           id: "frmInfoSearch",
+          className: "ms-5",
           onSubmit: searchAnimal,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "home-search d-flex justify-content-center align-items-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "home-search d-flex justify-content-start align-items-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              className: "search-input my-4 mx-5 p-5",
+              className: "search-input my-4 m-0 me-5 p-3 ps-4 fs-2",
               id: "input-search-info",
               type: "search",
               placeholder: "Nh\u1EADp v\xE0o \u0111\xE2y \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u t\xECm ki\u1EBFm..."
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "fas fa-search search-icon h-auto p-5 cursor-pointer",
+              className: "fas fa-search search-icon h-auto p-4 cursor-pointer",
               form: "frmInfoSearch",
               type: "submit"
             })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          id: "key_search",
-          className: "fw-bold fs-3 mt-2"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "ms-5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              id: "key_search",
+              className: "fw-bold fs-3 mt-2"
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "info-filter w-fitcontent",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
@@ -3322,7 +3326,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: 'Roboto', sans-serif;\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n  border: none;\n  text-decoration: none;\n}\n\n:root {\n  --primary-color: #37D747;\n  --black-color: #130f40;\n  --light-color: #666666;\n  --white-color: #fff;\n  --bg-color: #ccfad0;\n  --bg-footer: #F1F1F1;\n  --box-shadow-color: 0 1rem 1rem rgba(0, 0, 0, .05);\n}\n\nul {\n  list-style: none;\n}\n\n.title {\n  font-size: 6rem;\n  font-weight: 900;\n  color: var(--black-color);\n}\n\nhtml {\n  font-size: 62.5%;\n  scroll-behavior: smooth;\n}\n\n.list-group-item{\n  background-color: transparent !important;\n  border: 0 !important;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: 'Roboto', sans-serif;\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n  border: none;\n  text-decoration: none;\n}\n\n:root {\n  --primary-color: #37D747;\n  --black-color: #130f40;\n  --light-color: #666666;\n  --white-color: #fff;\n  --bg-color: #eaffec;\n  --bg-footer: #F1F1F1;\n  --box-shadow-color: 0 1rem 1rem rgba(0, 0, 0, .05);\n}\n\nul {\n  list-style: none;\n}\n\n.title {\n  font-size: 6rem;\n  font-weight: 900;\n  color: var(--black-color);\n}\n\nhtml {\n  font-size: 62.5%;\n  scroll-behavior: smooth;\n}\n\n.list-group-item{\n  background-color: transparent !important;\n  border: 0 !important;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
