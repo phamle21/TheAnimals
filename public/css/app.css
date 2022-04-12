@@ -14,7 +14,7 @@
   --black-color: #130f40;
   --light-color: #666666;
   --white-color: #fff;
-  --bg-color: #c5ffca;
+  --bg-color: #ccfad0;
   --bg-footer: #F1F1F1;
   --box-shadow-color: 0 1rem 1rem rgba(0, 0, 0, .05);
 }
@@ -39,6 +39,4 @@ html {
   border: 0 !important;
 }
 
-.cursor-pointer{
-  cursor: pointer;
-}
+

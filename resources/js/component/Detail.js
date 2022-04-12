@@ -9,10 +9,12 @@ const Detail = () => {
 
     let { Id } = useParams();
 
-    const [animal, setAnimal] = React.useState({ ten_tieng_viet: 'Chi tiết động vật', id: Id });
+    const [animal, setAnimal] = React.useState({});
+    const [title, setTitle] = React.useState('Chi tiết động vật');
     const [media, setMedia] = React.useState([{}]);
     const [baoton, setBaoTon] = React.useState([{}]);
-    const [other, setOther] = React.useState([{}]);
+    const [toado, setToaDo] = React.useState([{}]);
+    const [other, setOther] = React.useState([{ id: Id }]);
 
     React.useEffect(() => {
         axios({
@@ -22,6 +24,10 @@ const Detail = () => {
         })
             .then(result => {
                 setAnimal(result.data)
+                setMedia(result.data.mediaList)
+                setBaoTon(result.data.baotonList)
+                setToaDo(result.data.toadoList)
+                setTitle(result.data.ten_tieng_viet)
             })
         axios({
             method: "get",
@@ -31,25 +37,9 @@ const Detail = () => {
             .then(result => {
                 setOther(result.data)
             })
-        axios({
-            method: "get",
-            withCredentials: true,
-            url: '../api/detail/baoton/' + Id
-        })
-            .then(result => {
-                setBaoTon(result.data)
-            })
-        axios({
-            method: "get",
-            withCredentials: true,
-            url: '../api/detail/media/' + Id
-        })
-            .then(result => {
-                setMedia(result.data)
-            })
     }, [Id])
 
-    document.title = animal.ten_tieng_viet + " | The Animals"
+    document.title = title + " | The Animals"
 
     const selectImg = (name) => {
         $('.show_video').addClass('d-none')
@@ -63,7 +53,6 @@ const Detail = () => {
         $('.show_video').removeClass('d-none')
         $('.show_video').attr("src", "../video/animal/" + name)
     }
-
 
     if (media[0].media_type == "image") {
         $('.show_video').addClass('d-none')
@@ -79,18 +68,18 @@ const Detail = () => {
 
             <div className="row">
                 <div className="col-md mt-4" >
-                    <div className="animal-img-current border border-4 border-successs rounded d-flex align-items-center">
+                    <div className="animal-img-current border border-4 border-success rounded d-flex align-items-center" >
                         <img src={'../images/animal/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
                         <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>
 
-                    <div className="animal-images__list d-flex">
+                    <div className="animal-images__list d-flex flex-wrap my-1">
                         {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {
-                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../images/animal/' + media.ten_media} alt="img-more" className='animal-img__more' />
+                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../images/animal/' + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
                                 } else {
-                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../video/animal/' + media.ten_media} className='animal-video'></video>
+                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../video/animal/' + media.ten_media} className='animal-video col m-2'></video>
                                 }
                             })
                         }
@@ -98,7 +87,7 @@ const Detail = () => {
                 </div>
                 <div className="col-md mt-4">
                     <div className="animal-taxonomy my-4 mt-0">
-                        <p className="taxonomy-title">Phân loại học</p>
+                        <p className="taxonomy-title pb-4 mb-4" >Thông tin cơ bản</p>
 
                         <div className="taxonomy-wrap">
                             <p className="taxonomy-label">Tên tiếng Việt: </p>
@@ -134,10 +123,6 @@ const Detail = () => {
                             <p className="taxonomy-label">Họ: </p>
                             <p className="animal-family taxonomy-values">{animal.ho}</p>
                         </div>
-                    </div>
-
-                    <div className="animal-taxonomy my-4">
-                        <p className="taxonomy-title">Thông tin khác</p>
 
                         <div className="taxonomy-wrap">
                             <p className="taxonomy-label">Sinh cảnh: </p>
@@ -148,16 +133,24 @@ const Detail = () => {
                             <p className="taxonomy-label">Giá trị sử dụng: </p>
                             <p className="animal-family taxonomy-values">{animal.gia_tri_su_dung}</p>
                         </div>
-
-
-                        {baoton.map((baoton) =>
-                            <div className="taxonomy-wrap" key={'baoton-' + baoton.id}>
-                                <p className="taxonomy-label">{baoton.loai_tt}:</p>
-                                <p className="animal-family taxonomy-values">{baoton.tinh_trang}</p>
-                            </div>
-                        )}
                     </div>
                 </div>
+            </div>
+
+            <div className="animal-taxonomy my-4">
+                <p className="taxonomy-title">Thông tin khác</p>
+                {baoton.map((baoton) =>
+                    <div className="taxonomy-wrap" key={'baoton-' + baoton.id}>
+                        <p className="taxonomy-label">{baoton.loai_tt}:</p>
+                        <p className="animal-family taxonomy-values">{baoton.tinh_trang}</p>
+                    </div>
+                )}
+                {toado.map((toado) =>
+                    <div className="taxonomy-wrap" key={'toado-' + toado.id}>
+                        <p className="taxonomy-label">{toado.loai_toa_do}:</p>
+                        <p className="animal-family taxonomy-values">{toado.toa_do}</p>
+                    </div>
+                )}
             </div>
             <div className="row">
                 <div className="col-md animal-characteristics">

@@ -40,6 +40,7 @@
 .animal-taxonomy {
     padding: 1rem;
     background-color: var(--bg-color);
+    min-height: 100%;
 }
 
 .taxonomy-title,

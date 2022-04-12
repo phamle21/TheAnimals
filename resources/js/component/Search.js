@@ -30,7 +30,8 @@ const Info = () => {
         setAnimal(arr.reverse())
     }
 
-    const searchAnimal = () => {
+    const searchAnimal = (e) => {
+        e.preventDefault()
         const keyword = $('#input-search-info').val()
         setKey(keyword)
         axios({
@@ -41,6 +42,7 @@ const Info = () => {
             .then(result => {
                 setAnimal(result.data)
             })
+
     }
 
     $(document).ready(() => {
@@ -55,10 +57,12 @@ const Info = () => {
                 <div className="row info-heading">
                     <p className="title info-title">Tìm kiếm động vật</p>
                     <p className="info-des" >Nhập từ khóa bạn muốn tìm kiếm.</p>
-                    <div className='home-search d-flex justify-content-center align-items-center'>
-                        <input className='search-input my-4 mx-5 p-5' id="input-search-info" type="search" placeholder="Nhập vào đây để bắt đầu tìm kiếm..."></input>
-                        <i className="fas fa-search search-icon h-auto p-5 cursor-pointer" onClick={() => searchAnimal()}></i>
-                    </div>
+                    <form action="" id="frmInfoSearch" onSubmit={searchAnimal} >
+                        <div className='home-search d-flex justify-content-center align-items-center'>
+                            <input className='search-input my-4 mx-5 p-5' id="input-search-info" type="search" placeholder="Nhập vào đây để bắt đầu tìm kiếm..."></input>
+                            <button className="fas fa-search search-icon h-auto p-5 cursor-pointer" form='frmInfoSearch' type='submit'></button>
+                        </div>
+                    </form>
                     <p id="key_search" className="fw-bold fs-3 mt-2"></p>
                     <div className="info-filter w-fitcontent">
                         <p className="title-filter">Sắp xếp</p>

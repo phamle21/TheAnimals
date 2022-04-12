@@ -27,5 +27,4 @@ Route::post('/info/{limit}', [ReactController::class, 'loadMoreInfo']);
 // DETAIL
 Route::get('/detail/{id}', [ReactController::class, 'detailAnimals']);
 Route::get('/detail/other/{id}', [ReactController::class, 'listAnimalsOther']);
-Route::get('/detail/baoton/{id}', [ReactController::class, 'listAnimalsBaoTon']);
 Route::get('/detail/media/{id}', [ReactController::class, 'listAnimalsMedia']);

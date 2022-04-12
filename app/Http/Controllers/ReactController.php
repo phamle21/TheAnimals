@@ -18,8 +18,16 @@ class ReactController extends Controller
     {
         $limit = 12;
 
-        // $list = SinhVat::whereBelongsTo(Ho::find(1))->take($limit)->get();
         $list = SinhVat::take($limit)->get();
+
+        foreach ($list as $sv) {
+            foreach (SinhVat::find($sv->id)->media as $m) {
+                if ($m->media_type == "image") {
+                    $sv->image = $m->ten_media;
+                    break;
+                }
+            }
+        }
 
         return response()->json($list);
     }
@@ -34,6 +42,14 @@ class ReactController extends Controller
             $list = SinhVat::all()->take($limit);
         }
 
+        foreach ($list as $sv) {
+            foreach (SinhVat::find($sv->id)->media as $m) {
+                if ($m->media_type == "image") {
+                    $sv->image = $m->ten_media;
+                    break;
+                }
+            }
+        }
         return response()->json($list);
     }
 
@@ -45,23 +61,27 @@ class ReactController extends Controller
         $detail->lop = SinhVat::find($id)->ho->bo->lop->ten_lop;
         $detail->bo = SinhVat::find($id)->ho->bo->ten_bo;
         $detail->ho = SinhVat::find($id)->ho->ten_ho;
+        $detail->mediaList = SinhVat::find($id)->media;
+        $detail->baotonList = SinhVat::find($id)->baoton;
+        $detail->toadoList = SinhVat::find($id)->toado;
 
-        // echo $detail;
         return response()->json($detail);
     }
 
     public function listAnimalsOther($id)
     {
         $sinhvat = SinhVat::find($id);
+
         $list = SinhVat::where('ho_id', $sinhvat->ho_id)->where('id', '<>', $id)->get();
 
-        return response()->json($list);
-    }
-
-    public function listAnimalsBaoTon($id)
-    {
-        $list = SinhVat::find($id)->baoton;
-
+        foreach ($list as $sv) {
+            foreach (SinhVat::find($sv->id)->media as $m) {
+                if ($m->media_type == "image") {
+                    $sv->image = $m->ten_media;
+                    break;
+                }
+            }
+        }
         return response()->json($list);
     }
 
@@ -74,12 +94,20 @@ class ReactController extends Controller
 
     public function searchAnimal(Request $request)
     {
-        $data = SinhVat::where('ten_tieng_viet', 'like', '%' . $request->value . '%')->get();
+        $list = SinhVat::where('ten_tieng_viet', 'like', '%' . $request->value . '%')->get();
 
-        if($request->value == ""){
-            $data = SinhVat::take(0)->get();
+        if ($request->value == "") {
+            $list = SinhVat::take(0)->get();
         }
 
-        return response()->json($data);
+        foreach ($list as $sv) {
+            foreach (SinhVat::find($sv->id)->media as $m) {
+                if ($m->media_type == "image") {
+                    $sv->image = $m->ten_media;
+                    break;
+                }
+            }
+        }
+        return response()->json($list);
     }
 }
