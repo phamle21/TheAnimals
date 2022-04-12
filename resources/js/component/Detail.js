@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import '../../css/Detail.css';
 import Animal from './AnimalItem';
-import axios from "axios"
+import axios from "axios";
 
 const Detail = () => {
 

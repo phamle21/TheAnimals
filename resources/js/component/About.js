@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import '../../css/About.css';
 import Img from "../../../public/images/home_img.png";
 
@@ -36,7 +36,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

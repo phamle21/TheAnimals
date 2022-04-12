@@ -9,6 +9,17 @@ $(document).ready(() => {
         $(this).addClass('bg-success')
     })
     
+    $('.nav-link').each(function () {
+        if (location.href == this.href) {
+            $('.nav-link').removeClass('active')
+            this.classList.add("active")
+        }
+    })
+
+    $('.nav-link').on('click', function () {
+        $('.nav-link').removeClass('active')
+        $(this).addClass('active')
+    })
 })
 
 //Scroll navbar

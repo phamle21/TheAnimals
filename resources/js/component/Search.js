@@ -7,7 +7,20 @@ const Info = () => {
     document.title = "Thông tin các loài động vật | The Animals"
 
     const [animal, setAnimal] = React.useState([]);
-    const [key, setKey] = React.useState(' ');
+    const [key, setKey] = React.useState('');
+    
+    React.useEffect(() => {
+        axios({
+            method: "get",
+            withCredentials: true,
+            url: '../api/info/search?value=' + key
+        })
+            .then(result => {
+                setAnimal(result.data)
+            })
+        setKey($('#input-search-info').val())
+
+    }, [key]);
 
     const sortAZ = () => {
 
@@ -32,20 +45,12 @@ const Info = () => {
 
     const searchAnimal = (e) => {
         e.preventDefault()
-        const keyword = $('#input-search-info').val()
-        setKey(keyword)
-        axios({
-            method: "get",
-            withCredentials: true,
-            url: '../api/info/search?value=' + keyword
-        })
-            .then(result => {
-                setAnimal(result.data)
-            })
 
+        setKey($('#input-search-info').val())
     }
 
     $(document).ready(() => {
+        console.log($('#input-search-info').val());
         $('#key_search').html("Có " + animal.length + " kết quả với từ khóa: \"" + key + "\"")
 
     })

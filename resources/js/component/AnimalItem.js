@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import '../../css/AnimalItem.css';
 
 const AnimalItem = ({ animal }) => {
+    const goTop = () => {
+        window.pageYOffset=0
+    }
 
     return (
-        <div className="col-lg-2 col-md-3 col-sm-4 animal" >
+        <div className="col-lg-2 col-md-3 col-sm-4 animal" onClick={goTop}>
             <Link to={"/detail/" + animal.id} className="animal-item">
                 <div className="card text-center" style={{ borderRadius: '10px' }} >
                     <img src={'../images/animal/' + animal.image} className="card-img-top p-3 rounded" />
