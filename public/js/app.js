@@ -3324,7 +3324,7 @@ var Header = function Header() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
               to: "/info/list",
               className: "nav-link nav-list-item__link",
-              children: "Th\xF4ng tin"
+              children: "Tham quan"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
             className: "nav-item ",
@@ -3485,6 +3485,11 @@ var Info = function Info() {
       animal = _React$useState2[0],
       setAnimal = _React$useState2[1];
 
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(12),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      limit = _React$useState4[0],
+      setLimit = _React$useState4[1];
+
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
     axios__WEBPACK_IMPORTED_MODULE_3___default()({
       method: "get",
@@ -3514,14 +3519,16 @@ var Info = function Info() {
   };
 
   var loadMore = function loadMore() {
-    var limit = animal.length;
-    axios__WEBPACK_IMPORTED_MODULE_3___default()({
-      method: "post",
-      withCredentials: true,
-      url: '../api/info/' + limit
-    }).then(function (result) {
-      setAnimal(result.data);
-    });
+    if (limit >= animal.length) {
+      alert("Đã hiện hết danh sách động vật!");
+      return false;
+    }
+
+    if (limit + 6 >= animal.length) {
+      $('#load_more').html("...Hết...");
+    }
+
+    setLimit(limit + 6);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3532,7 +3539,7 @@ var Info = function Info() {
         className: "row info-heading",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "title info-title",
-          children: "Th\xF4ng Tin C\xE1c Lo\xE0i \u0110\u1ED9ng V\u1EADt"
+          children: "Danh s\xE1ch t\u1EA5t c\u1EA3 Lo\xE0i \u0110\u1ED9ng V\u1EADt"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "info-des",
           children: "C\u1EADp nh\u1EADt th\xF4ng tin c\xE1c lo\xE0i \u0111\u1ED9ng v\u1EADt t\u1EEB kh\u1EAFp n\u01A1i tr\xEAn th\u1EBF gi\u1EDBi."
@@ -3554,13 +3561,14 @@ var Info = function Info() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "row info-list",
         id: "list_card",
-        children: animal.map(function (animal) {
+        children: animal.slice(0, limit).map(function (animal) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
             animal: animal
           }, animal.id);
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         className: "info-load-more w-100",
+        id: "load_more",
         onClick: loadMore,
         children: "T\u1EA3i th\xEAm..."
       })]
@@ -3630,6 +3638,11 @@ var Info = function Info() {
       key = _React$useState4[0],
       setKey = _React$useState4[1];
 
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(12),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      limit = _React$useState6[0],
+      setLimit = _React$useState6[1];
+
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
     axios__WEBPACK_IMPORTED_MODULE_3___default()({
       method: "get",
@@ -3662,6 +3675,19 @@ var Info = function Info() {
   var searchAnimal = function searchAnimal(e) {
     e.preventDefault();
     setKey($('#input-search-info').val());
+  };
+
+  var loadMore = function loadMore() {
+    if (limit >= animal.length) {
+      alert("Đã hiện hết danh sách động vật!");
+      return false;
+    }
+
+    if (limit + 6 >= animal.length) {
+      $('#load_more').html("...Hết...");
+    }
+
+    setLimit(limit + 6);
   };
 
   $(document).ready(function () {
@@ -3727,11 +3753,16 @@ var Info = function Info() {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
             children: "Kh\xF4ng c\xF3 \u0111\u1ED9ng v\u1EADt n\xE0o \u0111\u01B0\u1EE3c t\xECm th\u1EA5y!"
           })
-        }), animal.map(function (animal) {
+        }), animal.slice(0, limit).map(function (animal) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AnimalItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
             animal: animal
           }, animal.id);
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        className: "info-load-more w-100",
+        id: "load_more",
+        onClick: loadMore,
+        children: "T\u1EA3i th\xEAm..."
       })]
     })
   });

@@ -22,7 +22,7 @@ const Header = () => {
                             <Link to="/how_it_work" className="nav-link nav-list-item__link">Cách hoạt động</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link to="/info/list" className="nav-link nav-list-item__link">Thông tin</Link>
+                            <Link to="/info/list" className="nav-link nav-list-item__link">Tham quan</Link>
                         </li>
                         <li className="nav-item ">
                             <Link to="/info/search" className="nav-link nav-list-item__link">Tìm kiếm</Link>

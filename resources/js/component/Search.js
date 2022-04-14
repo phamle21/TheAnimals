@@ -8,7 +8,8 @@ const Info = () => {
 
     const [animal, setAnimal] = React.useState([]);
     const [key, setKey] = React.useState('');
-    
+    const [limit, setLimit] = React.useState(12);
+
     React.useEffect(() => {
         axios({
             method: "get",
@@ -49,6 +50,17 @@ const Info = () => {
         setKey($('#input-search-info').val())
     }
 
+    const loadMore = () => {
+        if (limit >= animal.length) {
+            alert("Đã hiện hết danh sách động vật!")
+            return false
+        }
+        if ((limit + 6) >= animal.length) {
+            $('#load_more').html("...Hết...");
+        }
+        setLimit(limit + 6)
+    }
+
     $(document).ready(() => {
         console.log($('#input-search-info').val());
         $('#key_search').html("Có " + animal.length + " kết quả với từ khóa: \"" + key + "\"")
@@ -86,10 +98,13 @@ const Info = () => {
                         </div>
                     )}
 
-                    {animal.map((animal) =>
+                    {animal.slice(0, limit).map((animal) =>
                         <Animal key={animal.id} animal={animal} />
                     )}
                 </div>
+
+                <p className="info-load-more w-100" id="load_more" onClick={loadMore}>Tải thêm...</p>
+
             </div>
         </div>
     );

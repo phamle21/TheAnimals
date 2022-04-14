@@ -16,9 +16,7 @@ class ReactController extends Controller
 {
     public function listAnimals()
     {
-        $limit = 12;
-
-        $list = SinhVat::take($limit)->get();
+        $list = SinhVat::all();
 
         foreach ($list as $sv) {
             foreach (SinhVat::find($sv->id)->media as $m) {
@@ -29,27 +27,6 @@ class ReactController extends Controller
             }
         }
 
-        return response()->json($list);
-    }
-
-    public function loadMoreInfo($limit)
-    {
-        $limit += 6;
-
-        if ($limit >= count(SinhVat::all())) {
-            $list = SinhVat::all();
-        } else {
-            $list = SinhVat::all()->take($limit);
-        }
-
-        foreach ($list as $sv) {
-            foreach (SinhVat::find($sv->id)->media as $m) {
-                if ($m->media_type == "image") {
-                    $sv->image = $m->ten_media;
-                    break;
-                }
-            }
-        }
         return response()->json($list);
     }
 

@@ -7,6 +7,7 @@ const Info = () => {
     document.title = "Thông tin các loài động vật | The Animals"
 
     const [animal, setAnimal] = React.useState([]);
+    const [limit, setLimit] = React.useState(12);
 
     React.useEffect(() => {
         axios({
@@ -41,25 +42,22 @@ const Info = () => {
     }
 
     const loadMore = () => {
-        const limit = animal.length
-
-        axios({
-            method: "post",
-            withCredentials: true,
-            url: '../api/info/' + limit
-        })
-            .then(result => {
-                setAnimal(result.data)
-            })
+        if (limit >= animal.length) {
+            alert("Đã hiện hết danh sách động vật!")
+            return false
+        }
+        if ((limit + 6) >= animal.length) {
+            $('#load_more').html("...Hết...");
+        }
+        setLimit(limit + 6)
     }
-
 
     return (
         <div className="container-fluid info">
             <div className="container ">
 
                 <div className="row info-heading">
-                    <p className="title info-title">Thông Tin Các Loài Động Vật</p>
+                    <p className="title info-title">Danh sách tất cả Loài Động Vật</p>
                     <p className="info-des">Cập nhật thông tin các loài động vật từ khắp nơi trên thế giới.</p>
 
                     <div className="info-filter w-fitcontent">
@@ -71,12 +69,12 @@ const Info = () => {
                 </div>
 
                 <div className="row info-list" id="list_card">
-                    {animal.map((animal) =>
-                        <Animal key={animal.id} animal={animal}  />
+                    {animal.slice(0, limit).map((animal) =>
+                        <Animal key={animal.id} animal={animal} />
                     )}
                 </div>
 
-                <p className="info-load-more w-100" onClick={loadMore}>Tải thêm...</p>
+                <p className="info-load-more w-100" id="load_more" onClick={loadMore}>Tải thêm...</p>
             </div>
         </div>
     );
