@@ -1,0 +1,173 @@
+.btn_search{
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    margin-left: -30px;
+    margin-top: 7px;
+}
+#input_product{
+    display: inline-block;
+}
+.notify_success{
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.notify_success i, .notify_fail i{
+    float: right;
+    cursor: pointer;
+}
+.notify_fail{
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.active_admin{
+    color: #ffffff !important;
+    background: rgba(110, 216, 219, 0.15) !important;
+    border-left-color: #ffffff !important;
+}
+.go_shop{
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.go_shop a:hover{
+    color: cyan;
+}
+.action_icon a{
+    margin: 10px;
+}
+
+.show_form_duyet{
+    margin-top: 5px;
+    display: none;
+}
+#btn_duyetlan2{
+    display: inline-block;
+    border: 2px solid white;
+    background-color: #00000000;
+    border-radius: 2px;
+    color: white;
+}
+th{
+    text-align: center;
+}
+.modal-content{
+    color: white;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#menu_table_cmt{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+#menu_table_cmt a{
+    margin: 5px 10px;
+    padding: 8px 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: max-content;
+}
+#menu_table_cmt a:hover{
+    background-color: #ccc;
+}
+#menu_table_cmt a:active, .active_btn_cmt{
+    background-color: rgb(192, 192, 192);
+}
+
+#div_comment_post_admin, #div_comment_qa{
+    display: none;
+}
+
+tbody tr:hover{
+    background-color: rgba(204, 204, 204, 0.205);
+}
+.hello_index{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    background-color: #cacacaab;
+    color: black;
+}
+.index_admin_body{
+    /* background-image: url('https://i.pinimg.com/564x/3a/f0/7d/3af07df1a6714f90df35eba593a6e86a.jpg'); */
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#bamboo_panda{
+    /* position: absolute; */
+    width: 550px;
+}
+.w-fitcontent{
+    width: fit-content;
+}

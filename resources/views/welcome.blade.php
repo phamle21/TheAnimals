@@ -24,7 +24,25 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <link href="./assets_admin/css/pace.min.css" rel="stylesheet" />
+    <script src="./assets_admin/js/pace.min.js"></script>
 
+    <link href="./assets_admin/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+
+    <link href="./assets_admin/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+
+    <link href="./assets_admin/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="./assets_admin/css/animate.css" rel="stylesheet" type="text/css" />
+
+    <link href="./assets_admin/css/icons.css" rel="stylesheet" type="text/css" />
+
+    <link href="./assets_admin/css/sidebar-menu.css" rel="stylesheet" />
+
+    <link href="./assets_admin/css/app-style.css" rel="stylesheet" />
+
+    <link href="./assets_admin/css/my-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
 <body>
@@ -36,7 +54,7 @@
 
     {{-- TypHead Search Smart --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
-    
+
     {{-- ReactJs --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 
