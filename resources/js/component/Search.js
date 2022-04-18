@@ -94,7 +94,7 @@ const Info = () => {
                 <div className="row info-list" id="list_card">
                     {animal.length > 0 || (
                         <div className="d-flex justify-content-center text-danger fs-1">
-                            <h1>Không có động vật nào được tìm thấy!</h1>
+                            <h1 className="text-dark" >Không có động vật nào được tìm thấy!</h1>
                         </div>
                     )}
 
@@ -103,7 +103,11 @@ const Info = () => {
                     )}
                 </div>
 
-                <p className="info-load-more w-100" id="load_more" onClick={loadMore}>Tải thêm...</p>
+                <div className="row text-center my-3">
+                    <div className="col">
+                        <p className="info-load-more p-1" id="load_more" onClick={loadMore}>Tải thêm...</p>
+                    </div>
+                </div>
 
             </div>
         </div>

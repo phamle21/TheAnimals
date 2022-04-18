@@ -74,7 +74,12 @@ const Info = () => {
                     )}
                 </div>
 
-                <p className="info-load-more w-100" id="load_more" onClick={loadMore}>Tải thêm...</p>
+                <div className="row text-center my-3">
+                    <div className="col">
+                        <p className="info-load-more p-1" id="load_more" onClick={loadMore}>Tải thêm...</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     );

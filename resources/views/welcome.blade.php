@@ -22,30 +22,16 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <link href="./assets_admin/css/pace.min.css" rel="stylesheet" />
-    <script src="./assets_admin/js/pace.min.js"></script>
+    <link href="../assets_admin/css/app-style.css" rel="stylesheet" />
 
-    <link href="./assets_admin/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 
-    <link href="./assets_admin/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-
-    <link href="./assets_admin/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="./assets_admin/css/animate.css" rel="stylesheet" type="text/css" />
-
-    <link href="./assets_admin/css/icons.css" rel="stylesheet" type="text/css" />
-
-    <link href="./assets_admin/css/sidebar-menu.css" rel="stylesheet" />
-
-    <link href="./assets_admin/css/app-style.css" rel="stylesheet" />
-
-    <link href="./assets_admin/css/my-style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
-<body>
+<body class="bg-theme">
 
     <div id="root"></div>
 
@@ -60,6 +46,8 @@
 
     {{-- Custom --}}
     <script src="{{ asset('js/custom.js') }}"></script>
+
+
 </body>
 
 </html>

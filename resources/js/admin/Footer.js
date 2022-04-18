@@ -48,29 +48,15 @@ const Footer = () => {
                 </div>
             </div>
 
-
             <Helmet>
-                <script src="./assets_admin/js/jquery.min.js"></script>
-                <script src="./assets_admin/js/popper.min.js"></script>
-                <script src="./assets_admin/js/bootstrap.min.js"></script>
-
-
-                <script src="./assets_admin/plugins/simplebar/js/simplebar.js"></script>
-
-                <script src="./assets_admin/js/sidebar-menu.js"></script>
-
-                <script src="./assets_admin/js/jquery.loading-indicator.js"></script>
-
-                <script src="./assets_admin/js/app-script.js"></script>
-
-
-                <script src="./assets_admin/plugins/Chart.js/Chart.min.js"></script>
-
-
-                <script src="./assets_admin/js/index.js"></script>
-                <script src="./assets_admin/js/custom.js"></script>
+                <script src="../assets_admin/js/jquery.min.js"></script>
+                <script src="../assets_admin/js/popper.min.js"></script>
+                <script src="../assets_admin/js/bootstrap.min.js"></script>
+                <script src="../assets_admin/plugins/simplebar/js/simplebar.js"></script>
+                <script src="../assets_admin/js/sidebar-menu.js"></script>
+                <script src="../assets_admin/js/app-script.js"></script>
+                <script src="../assets_admin/js/custom.js"></script>
             </Helmet>
-
         </Fragment>
     )
 }

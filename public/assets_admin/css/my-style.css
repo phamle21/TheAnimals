@@ -151,8 +151,8 @@ tbody tr:hover{
 .hello_index{
     border: 1px solid gray;
     border-radius: 10px;
-    padding: 15px;
-    font-size: 30px;
+    /* padding: 15px;
+    font-size: 30px; */
     font-weight: bold;
     font-family: cursive;
     background-color: #cacacaab;
@@ -169,5 +169,5 @@ tbody tr:hover{
     width: 550px;
 }
 .w-fitcontent{
-    width: fit-content;
+    width: fit-content !important;
 }

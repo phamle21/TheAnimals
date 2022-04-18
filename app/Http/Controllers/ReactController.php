@@ -14,6 +14,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ReactController extends Controller
 {
+    //Animal list
     public function listAnimals()
     {
         $list = SinhVat::all();
@@ -30,6 +31,7 @@ class ReactController extends Controller
         return response()->json($list);
     }
 
+    //Animal Detail
     public function detailAnimals($id)
     {
         $detail = SinhVat::find($id);
@@ -37,6 +39,7 @@ class ReactController extends Controller
         $detail->nganh = SinhVat::find($id)->ho->bo->lop->nganh->ten_nganh;
         $detail->lop = SinhVat::find($id)->ho->bo->lop->ten_lop;
         $detail->bo = SinhVat::find($id)->ho->bo->ten_bo;
+        $detail->ho_id = SinhVat::find($id)->ho->id;
         $detail->ho = SinhVat::find($id)->ho->ten_ho;
         $detail->mediaList = SinhVat::find($id)->media;
         $detail->baotonList = SinhVat::find($id)->baoton;
@@ -45,6 +48,7 @@ class ReactController extends Controller
         return response()->json($detail);
     }
 
+    //Other Animal
     public function listAnimalsOther($id)
     {
         $sinhvat = SinhVat::find($id);
@@ -62,6 +66,7 @@ class ReactController extends Controller
         return response()->json($list);
     }
 
+    //Animal Media
     public function listAnimalsMedia($id)
     {
         $list = SinhVat::find($id)->media;
@@ -69,6 +74,7 @@ class ReactController extends Controller
         return response()->json($list);
     }
 
+    //Search Animal
     public function searchAnimal(Request $request)
     {
         $list = SinhVat::where('ten_tieng_viet', 'like', '%' . $request->value . '%')->get();
@@ -85,6 +91,29 @@ class ReactController extends Controller
                 }
             }
         }
+        return response()->json($list);
+    }
+
+    //Animal type list
+    public function listAnimalType($type)
+    {
+        $list = null;
+
+        switch ($type) {
+            case 'nganh':
+                $list = Nganh::all();
+                break;
+            case 'lop':
+                $list = Lop::all();
+                break;
+            case 'bo':
+                $list = Bo::all();
+                break;
+            case 'ho':
+                $list = Ho::all();
+                break;
+        }
+
         return response()->json($list);
     }
 }

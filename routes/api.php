@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReactController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,11 +18,14 @@ use App\Http\Controllers\ReactController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 //SEARCH
 Route::get('/info/search', [ReactController::class, 'searchAnimal']);
 
 // INFO
 Route::get('/info/list', [ReactController::class, 'listAnimals']);
+
+Route::get('/animal-type/{type}', [ReactController::class, 'listAnimalType']);
 
 // DETAIL
 Route::get('/detail/{id}', [ReactController::class, 'detailAnimals']);
