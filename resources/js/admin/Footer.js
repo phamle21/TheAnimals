@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
 
 const Footer = () => {
     return (
@@ -47,16 +46,6 @@ const Footer = () => {
 
                 </div>
             </div>
-
-            <Helmet>
-                <script src="../assets_admin/js/jquery.min.js"></script>
-                <script src="../assets_admin/js/popper.min.js"></script>
-                <script src="../assets_admin/js/bootstrap.min.js"></script>
-                <script src="../assets_admin/plugins/simplebar/js/simplebar.js"></script>
-                <script src="../assets_admin/js/sidebar-menu.js"></script>
-                <script src="../assets_admin/js/app-script.js"></script>
-                <script src="../assets_admin/js/custom.js"></script>
-            </Helmet>
         </Fragment>
     )
 }

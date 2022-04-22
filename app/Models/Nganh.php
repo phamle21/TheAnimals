@@ -10,6 +10,10 @@ class Nganh extends Model
     use HasFactory;
 
     protected $table = 'nganh';
+    
+    protected $fillable = [
+        'ten_nganh',
+    ];
 
     public function lop()
     {

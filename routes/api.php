@@ -25,9 +25,19 @@ Route::get('/info/search', [ReactController::class, 'searchAnimal']);
 // INFO
 Route::get('/info/list', [ReactController::class, 'listAnimals']);
 
+//Animal
+Route::post('/animal/add', [ReactController::class, 'addAnimals']);
+
+
+//TYPE
 Route::get('/animal-type/{type}', [ReactController::class, 'listAnimalType']);
+Route::post('/action-type/add', [ReactController::class, 'addTypeAnimal']);
+Route::post('/action-type/edit', [ReactController::class, 'editTypeAnimal']);
 
 // DETAIL
-Route::get('/detail/{id}', [ReactController::class, 'detailAnimals']);
+Route::get('/detail/animal-{id}', [ReactController::class, 'detailAnimals']);
+Route::post('/detail/edit', [ReactController::class, 'editAnimals']);
+Route::post('/detail/edit-other', [ReactController::class, 'editOtherAnimals']);
+
 Route::get('/detail/other/{id}', [ReactController::class, 'listAnimalsOther']);
 Route::get('/detail/media/{id}', [ReactController::class, 'listAnimalsMedia']);

@@ -35,8 +35,19 @@ html {
   scroll-behavior: smooth;
 }
 
-.list-group-item{
+.list-group-item {
   background-color: transparent !important;
   border: 0 !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover-bg:hover {
+  background-color: rgb(201 201 201 / 50%) !important;
+}
+
+.text-transparent{
+  color: transparent !important;
+}

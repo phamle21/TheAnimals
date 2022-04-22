@@ -11,6 +11,11 @@ class Lop extends Model
     use HasFactory;
 
     protected $table = 'lop';
+    
+    protected $fillable = [
+        'ten_lop',
+        'nganh_id'
+    ];
 
     public function bo()
     {

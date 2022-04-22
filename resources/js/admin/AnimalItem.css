@@ -69,3 +69,6 @@
     color: var(--primary-color);
     cursor: pointer;
 }
+th, td{
+    color: white;
+}

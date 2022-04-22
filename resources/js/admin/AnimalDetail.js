@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import '../../css/Detail.css';
 import axios from "axios";
@@ -16,14 +16,15 @@ const Detail = () => {
     const [nganh, setNganh] = React.useState([]);
     const [lop, setLop] = React.useState([]);
     const [bo, setBo] = React.useState([]);
-    const [ho, setHo] = React.useState([]);
     const [hoList, setHoList] = React.useState([]);
+    const [hinhthai, setHinhthai] = React.useState('');
+    const [sinhthai, setSinhthai] = React.useState('');
 
     React.useEffect(() => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/' + Id
+            url: '../api/detail/animal-' + Id
         })
             .then(result => {
                 setAnimal(result.data)
@@ -54,7 +55,7 @@ const Detail = () => {
         $('.show_video').addClass('d-none')
         $('.show_video').get(0).pause();
         $('.show_img').removeClass('d-none')
-        $('.show_img').attr("src", "../images/animal/" + name)
+        $('.show_img').attr("src", "../media/" + name)
     }
 
     const selectVideo = (name) => {
@@ -71,20 +72,173 @@ const Detail = () => {
         $('.show_video').removeClass('d-none')
     }
 
-    const editInfoBasic = (type) => {
-        if (type == 'edit') {
-            $('#frmEditInfoBasic').removeClass('d-none');
-            $('.info-basic').addClass('d-none');
-        } else if (type == 'cancel') {
-            $('#frmEditInfoBasic').addClass('d-none');
-            $('.info-basic').removeClass('d-none');
+    const editBtn = (frm, type) => {
+        switch (frm) {
+            case 'info-basic':
+                if (type == 'edit') {
+                    $('#frmEditInfoBasic').removeClass('d-none');
+                    $('.info-basic').addClass('d-none');
+                } else if (type == 'cancel') {
+                    $('#frmEditInfoBasic').addClass('d-none');
+                    $('.info-basic').removeClass('d-none');
+                }
+                break;
+            case 'hinh-thai':
+                if (type == 'edit') {
+                    $('#frmEditHinhThai').removeClass('d-none');
+                    $('.dd_hinh_thai').addClass('d-none');
+                } else if (type == 'cancel') {
+                    $('#frmEditHinhThai').addClass('d-none');
+                    $('.dd_hinh_thai').removeClass('d-none');
+                }
+                break;
+            case 'sinh-thai':
+                if (type == 'edit') {
+                    $('#frmEditSinhThai').removeClass('d-none');
+                    $('.dd_sinh_thai').addClass('d-none');
+                } else if (type == 'cancel') {
+                    $('#frmEditSinhThai').addClass('d-none');
+                    $('.dd_sinh_thai').removeClass('d-none');
+                }
+                break;
+            case 'info-other':
+                if (type == 'edit') {
+                    $('#frmEditOther').removeClass('d-none');
+                    $('.info-other').addClass('d-none');
+                } else if (type == 'cancel') {
+                    $('#frmEditOther').addClass('d-none');
+                    $('.info-other').removeClass('d-none');
+                }
+                break;
         }
     }
 
-    // const selectHo = () => {
-        // alert(1123)
-        // alert($('#ho').val())
-    // }
+    const submitEditInfoBasic = (e) => {
+        e.preventDefault();
+
+        var formData = $('#frmEditInfoBasic').serialize();
+        formData += "&id=" + Id
+
+        axios({
+            method: "post",
+            withCredentials: true,
+            url: '../api/detail/edit/',
+            data: formData
+        })
+            .then(result => {
+                if (result.data.status == "success") {
+                    setAnimal(result.data)
+                    setMedia(result.data.mediaList)
+                    setBaoTon(result.data.baotonList)
+                    setToaDo(result.data.toadoList)
+                    setTitle(result.data.ten_tieng_viet)
+                    setNganh(result.data.nganh)
+                    setLop(result.data.lop)
+                    setBo(result.data.bo)
+                    editBtn('info-basic', 'cancel')
+                    alert("Đã cập nhật thông tin cơ bản thành công!")
+                } else {
+                    alert("Cập nhật thông tin cơ bản thất bại!")
+                }
+
+            })
+    }
+
+    const submitEditHinhThai = (e) => {
+        e.preventDefault();
+
+        console.log(frmEditHinhThai.mo_ta_hinh_thai)
+
+        axios({
+            method: "post",
+            withCredentials: true,
+            url: '../api/detail/edit/',
+            data: {
+                id: Id,
+                mo_ta_hinh_thai: frmEditHinhThai.mo_ta_hinh_thai.value
+            }
+        })
+            .then(result => {
+                if (result.data.status == "success") {
+                    setAnimal(result.data)
+                    setMedia(result.data.mediaList)
+                    setBaoTon(result.data.baotonList)
+                    setToaDo(result.data.toadoList)
+                    setTitle(result.data.ten_tieng_viet)
+                    setNganh(result.data.nganh)
+                    setLop(result.data.lop)
+                    setBo(result.data.bo)
+                    editBtn('hinh-thai', 'cancel')
+                    alert("Đã cập nhật đặc điểm hình thái thành công!")
+                } else {
+                    alert("Cập nhật đặc điểm hình thái thất bại!")
+                }
+
+            })
+    }
+
+    const submitEditSinhThai = (e) => {
+        e.preventDefault();
+
+        axios({
+            method: "post",
+            withCredentials: true,
+            url: '../api/detail/edit/',
+            data: {
+                id: Id,
+                mo_ta_sinh_thai: frmEditSinhThai.mo_ta_sinh_thai.value
+            }
+        })
+            .then(result => {
+                if (result.data.status == "success") {
+                    setAnimal(result.data)
+                    setMedia(result.data.mediaList)
+                    setBaoTon(result.data.baotonList)
+                    setToaDo(result.data.toadoList)
+                    setTitle(result.data.ten_tieng_viet)
+                    setNganh(result.data.nganh)
+                    setLop(result.data.lop)
+                    setBo(result.data.bo)
+                    editBtn('sinh-thai', 'cancel')
+                    alert("Đã cập nhật đặc điểm sinh thái thành công!")
+                } else {
+                    alert("Cập nhật đặc điểm sinh thái thất bại!")
+                }
+
+            })
+    }
+
+    const submitEditOther = (e) => {
+        e.preventDefault()
+
+        var formData = $('#frmEditOther').serialize();
+        formData += "&id=" + Id
+
+        axios({
+            method: "post",
+            withCredentials: true,
+            url: '../api/detail/edit-other',
+            data: formData
+        })
+            .then(result => {
+                console.log(result.data);
+                if (result.data.status == "success") {
+                    setAnimal(result.data)
+                    setMedia(result.data.mediaList)
+                    setBaoTon(result.data.baotonList)
+                    setToaDo(result.data.toadoList)
+                    setTitle(result.data.ten_tieng_viet)
+                    setNganh(result.data.nganh)
+                    setLop(result.data.lop)
+                    setBo(result.data.bo)
+                    editBtn('info-other', 'cancel')
+                    alert("Cập nhật thông tin thành công!")
+                } else {
+                    alert("Cập nhật thông tin thất bại!")
+                }
+
+            })
+    }
 
     return (
         <div className="container detail">
@@ -96,8 +250,8 @@ const Detail = () => {
                         <div className="position-absolute top-0 end-0 w-fitcontent">
                             <button className="fa fa-pen bg-transparent btn p-2 fs-2" />
                         </div>
-                        <img src={'../images/animal/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
-                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
+                        <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img h-100 mh-100 min-h-100' id="media_main" />
+                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current h-100 mh-100 min-h-100 d-none" ></video>
                     </div>
 
                     <div className="animal-images__list d-flex flex-wrap my-1">
@@ -105,9 +259,9 @@ const Detail = () => {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {
                                     return (
-                                        <div className="col m-2" key={'img-' + index} >
+                                        <div className="col-2 m-2" key={'img-' + index} >
                                             <img onClick={() => selectImg(media.ten_media)}
-                                                src={'../images/animal/' + media.ten_media} alt="img-more"
+                                                src={'../media/' + media.ten_media} alt="img-more"
                                                 className='animal-img__more h-100 col m-0 p-0' />
                                         </div>
                                     )
@@ -125,30 +279,26 @@ const Detail = () => {
                     </div>
                 </div>
                 <div className="col-md mt-4 ">
-                    <div className="animal-taxonomy mb-4 bg-light border border-success  text-dark">
-                        <p className="taxonomy-title pb-4 mb-4 text-dark" >
-                            Thông tin cơ bản <button className="fa fa-pen bg-transparent btn p-2 fs-2" onClick={() => editInfoBasic('edit')} />
+                    <div className="animal-taxonomy mb-4 bg-light border border-success  text-white">
+                        <p className="taxonomy-title pb-4 mb-4 text-white" >
+                            Thông tin cơ bản <button className="fa fa-pen bg-transparent btn p-2 fs-2" onClick={() => editBtn('info-basic', 'edit')} />
                         </p>
-                        <form className="d-none" id="frmEditInfoBasic">
+                        <form className="d-none" id="frmEditInfoBasic" onSubmit={submitEditInfoBasic}>
                             <Input type="text" name="ten_tieng_viet" value={animal.ten_tieng_viet} label="Tên Tiếng Việt" />
                             <Input type="text" name="ten_khoa_hoc" value={animal.ten_khoa_hoc} label="Tên Khoa Học" />
                             <Input type="text" name="ten_dia_phuong" value={animal.ten_dia_phuong} label="Tên Địa Phương" />
 
                             <div className="form-group">
-                                <label htmlFor="ho" className="form-label text-dark fs-6 ms-2" > Họ:</label>
+                                <label htmlFor="ho" className="form-label text-white fs-6 ms-2" > Họ:</label>
 
                                 <p className="text-normal fs-6 m-2">
                                     {nganh + " > " + lop + " > " + bo}
                                 </p>
 
-                                <select name="ho" className="form-control text-dark fs-4" id="ho" >
-                                    {hoList.map((option) => {
-                                        if (option.id == animal.ho_id) {
-                                            return <option key={option.id + option.ten_ho} value={option.id} selected >{option.ten_ho}</option>
-                                        } else {
-                                            return <option key={option.id + option.ten_ho} value={option.id} >{option.ten_ho}</option>
-                                        }
-                                    })}
+                                <select name="ho" value={animal.ho_id} className="form-control text-white fs-4" id="ho" >
+                                    {hoList.map((option) => (
+                                        <option key={option.id + option.ten_ho} value={option.id} >{option.ten_ho}</option>
+                                    ))}
                                 </select>
                             </div>
 
@@ -157,7 +307,7 @@ const Detail = () => {
 
                             <div className="form-group text-right">
                                 <button className="btn btn-success py-2 px-3 fs-5 m-2 mb-0" type="submit" form="frmEditInfoBasic">Lưu</button>
-                                <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditInfoBasic" onClick={() => editInfoBasic('cancel')}>Hủy</button>
+                                <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditInfoBasic" onClick={() => editBtn('info-basic', 'cancel')}>Hủy</button>
                             </div>
                         </form>
                         <div className="info-basic">
@@ -210,33 +360,71 @@ const Detail = () => {
                 </div>
             </div>
 
-            <div className="animal-taxonomy mt-4 bg-light border border-success  text-dark">
-                <p className="taxonomy-title text-dark">Thông tin khác <button className="fa fa-pen bg-transparent btn p-2 fs-2" /></p>
-                {baoton.map((baoton) =>
-                    <div className="taxonomy-wrap" key={'baoton-' + baoton.id}>
-                        <p className="taxonomy-label">{baoton.loai_tt}:</p>
-                        <p className="animal-family taxonomy-values">{baoton.tinh_trang}</p>
+            <div className="animal-taxonomy mt-4 bg-light border border-success text-white">
+                <p className="taxonomy-title text-white">Thông tin khác <button className="fa fa-pen bg-transparent btn p-2 fs-2" onClick={() => editBtn('info-other', 'edit')} /></p>
+                <div className="info-other">
+                    {baoton.map((baoton) =>
+                        <div className="taxonomy-wrap" key={'baoton-' + baoton.id}>
+                            <p className="taxonomy-label">{baoton.loai_tt}:</p>
+                            <p className="animal-family taxonomy-values">{baoton.tinh_trang}</p>
+                        </div>
+                    )}
+                    {toado.map((toado) =>
+                        <div className="taxonomy-wrap" key={'toado-' + toado.id}>
+                            <p className="taxonomy-label">{toado.loai_toa_do}:</p>
+                            <p className="animal-family taxonomy-values">{toado.toa_do}</p>
+                        </div>
+                    )}
+                </div>
+                <form id="frmEditOther" className="d-none" onSubmit={submitEditOther}>
+                    <div className="row justify-content-center">
+                        <div className="col-6">
+                            {baoton.map((baoton) =>
+                                <Fragment key={'baotonTT-' + baoton.id} >
+                                    <input type="hidden" name="baoton_id[]" value={baoton.id} />
+                                    <Input type="text" name="tinh_trang[]" value={baoton.tinh_trang} label={baoton.loai_tt} />
+                                </Fragment>
+                            )}
+                            {toado.map((toado) =>
+                                <Fragment key={'toadoEdit-' + toado.id} >
+                                    <input type="hidden" name="toado_id[]" value={toado.id} />
+                                    <Input type="text" name="toa_do[]" value={toado.toa_do} label={toado.loai_toa_do} />
+                                </Fragment>
+                            )}
+                            <div className="form-group text-right">
+                                <button className="btn btn-success py-2 px-3 fs-5 m-2 mb-0" type="submit" form="frmEditOther">Lưu</button>
+                                <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditOther" onClick={() => editBtn('info-other', 'cancel')}>Hủy</button>
+                            </div>
+                        </div>
                     </div>
-                )}
-                {toado.map((toado) =>
-                    <div className="taxonomy-wrap" key={'toado-' + toado.id}>
-                        <p className="taxonomy-label">{toado.loai_toa_do}:</p>
-                        <p className="animal-family taxonomy-values">{toado.toa_do}</p>
-                    </div>
-                )}
+                </form>
             </div>
 
             <div className="row">
-                <div className="col-md animal-characteristics  text-dark">
+                <div className="col-md animal-characteristics  text-white">
                     <div className="row">
                         <div className="col-md animal-morphological mx-3 bg-light border border-success">
-                            <p className="morphological-title text-dark">Đặc điểm hình thái <button className="fa fa-pen bg-transparent btn p-2 fs-2" /></p>
-                            <p className="morphological-des">{animal.mo_ta_hinh_thai}</p>
+                            <p className="morphological-title text-white">Đặc điểm hình thái <button className="fa fa-pen bg-transparent btn p-2 fs-2" onClick={() => editBtn('hinh-thai', 'edit')} /></p>
+                            <p className="morphological-des dd_hinh_thai">{animal.mo_ta_hinh_thai}</p>
+                            <form className="d-none" id="frmEditHinhThai" onSubmit={submitEditHinhThai}>
+                                <textarea name="mo_ta_hinh_thai" id="mo_ta_hinh_thai" value={hinhthai || animal.mo_ta_hinh_thai} onChange={e => setHinhthai(e.target.value)} className="form-control fs-3 w-100" rows="10"></textarea>
+                                <div className="form-group text-right">
+                                    <button className="btn btn-success py-2 px-3 fs-5 m-2 mb-0" type="submit" form="frmEditHinhThai">Lưu</button>
+                                    <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditHinhThai" onClick={() => editBtn('hinh-thai', 'cancel')}>Hủy</button>
+                                </div>
+                            </form>
                         </div>
 
                         <div className="col-md animal-ecological mx-3 bg-light border border-success">
-                            <p className="ecological-title text-dark">Đặc điểm sinh thái <button className="fa fa-pen bg-transparent btn p-2 fs-2" /></p>
-                            <p className="ecological-des">{animal.mo_ta_sinh_thai}</p>
+                            <p className="ecological-title text-white">Đặc điểm sinh thái <button className="fa fa-pen bg-transparent btn p-2 fs-2" onClick={() => editBtn('sinh-thai', 'edit')} /></p>
+                            <p className="ecological-des dd_sinh_thai dd_sinh_thai">{animal.mo_ta_sinh_thai}</p>
+                            <form className="d-none" id="frmEditSinhThai" onSubmit={submitEditSinhThai}>
+                                <textarea name="mo_ta_sinh_thai" id="mo_ta_sinh_thai" value={sinhthai || animal.mo_ta_sinh_thai} onChange={e => setSinhthai(e.target.value)} className="form-control fs-3 w-100" rows="10"></textarea>
+                                <div className="form-group text-right">
+                                    <button className="btn btn-success py-2 px-3 fs-5 m-2 mb-0" type="submit" form="frmEditSinhThai">Lưu</button>
+                                    <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditSinhThai" onClick={() => editBtn('sinh-thai', 'cancel')}>Hủy</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,6 @@ class SinhVat extends Model
     protected $table = 'sinh_vat';
 
     protected $fillable = [
-        'id',
         'ho_id',
         'ten_khoa_hoc',
         'ten_tieng_viet',

@@ -11,6 +11,12 @@ class BaoTon extends Model
 
     protected $table = 'bao_ton';
 
+    protected $fillable = [
+        'loai_tt',
+        'tinh_trang',
+        'sinhvat_id',
+    ];
+
     public function sinhVat(){
         return $this->belongsTo(SinhVat::class, 'sinhvat_id');
     }

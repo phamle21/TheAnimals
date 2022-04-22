@@ -7,7 +7,7 @@ const AnimalItem = ({ animal }) => {
         <div className="col-lg-2 col-md-3 col-sm-4 animal animal-items" >
             <Link to={"/admin/animal-detail-" + animal.id} className="animal-item bg-transparent">
                 <div className="card text-center" style={{ borderRadius: '10px' }} >
-                    <img src={'../images/animal/' + animal.image} className="card-img-top p-3 rounded" />
+                    <img src={'../media/' + animal.image} className="card-img-top p-3 rounded" />
                     <div className="card-body pt-0">
                         <div className="card-title animal-item__name mx-0"
                             style={{ color: 'greenyellow' }}>

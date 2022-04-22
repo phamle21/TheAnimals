@@ -8,7 +8,7 @@ $(document).ready(() => {
         $('.filter-btn').removeClass('bg-success')
         $(this).addClass('bg-success')
     })
-    
+
     $('.nav-link').each(function () {
         if (location.href == this.href) {
             $('.nav-link').removeClass('active')

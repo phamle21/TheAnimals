@@ -10,6 +10,11 @@ class Bo extends Model
     use HasFactory;
 
     protected $table = 'bo';
+    
+    protected $fillable = [
+        'ten_bo',
+        'lop_id'
+    ];
 
     public function ho(){
         return $this->hasMany(Ho::class, 'bo_id', 'id');

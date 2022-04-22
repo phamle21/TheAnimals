@@ -11,8 +11,14 @@ class ToaDo extends Model
 
     protected $table = 'toa_do';
 
-    public function sinhVat(){
+    protected $fillable = [
+        'loai_toa_do',
+        'toa_do',
+        'sinhvat_id',
+    ];
+
+    public function sinhVat()
+    {
         return $this->belongsTo(SinhVat::class, 'sinhvat_id');
     }
-
 }

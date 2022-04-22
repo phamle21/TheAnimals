@@ -12,21 +12,59 @@ const Header = () => {
                         <h5 className="d-inline text-normal fw-bold">.theAnimals</h5>
                     </Link>
                 </div>
-                <ul className="sidebar-menu do-nicescrol">
-                    <li className="sidebar-header fs-4 fw-bold">Quản lí</li>
+                <ul className="list-unstyled ps-0 sidebar-menu do-nicescrol">
+                    <li className="sidebar-header fs-3 fw-bold">Quản lí</li>
 
-                    <li className="sidebar-item">
-                        <Link to="/admin/animal-list" className="sidebar-link">
-                            <i className="far fa-alicorn"></i> <span>Động vật</span>
-                        </Link>
+                    <li className="mb-1 sidebar-item">
+                        <button className="btn btn-toggle align-items-center rounded sidebar-link text-white fs-4" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                            Động Vật <i className="fa fa-angle-down"></i>
+                        </button>
+                        <div className="collapse show" id="home-collapse">
+                            <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li className="sidebar-item p-3 my-2">
+                                    <Link to="/admin/animal-list" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Danh sách động vật</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar-item p-3 my-2">
+                                    <Link to="/admin/animal-add" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Thêm động vật</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-
-                    <li className="sidebar-item">
-                        <Link to="/admin/animal-type" className="sidebar-link">
-                            <i className="far fa-paw"></i> <span>Phân loại</span>
-                        </Link>
+                    <li className="mb-1 sidebar-item">
+                        <button className="btn btn-toggle align-items-center rounded sidebar-link text-white fs-4" data-bs-toggle="collapse" data-bs-target="#type-collapse" aria-expanded="true">
+                            Phân loại <i className="fa fa-angle-down"></i>
+                        </button>
+                        <div className="collapse" id="type-collapse">
+                            <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li className="sidebar-item my-3 p-3">
+                                    <Link to="/admin/type-nganh" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Ngành</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar-item my-3 p-3">
+                                    <Link to="/admin/type-lop" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Lớp</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar-item my-3 p-3">
+                                    <Link to="/admin/type-bo" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Bộ</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar-item my-3 p-3">
+                                    <Link to="/admin/type-ho" className="sidebar-link ms-5 pe-5 p-3 fs-5">
+                                        <i className="far fa-alicorn m-0"></i> <span>Họ</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
+
                 <div className="go_shop"><Link to="/">Đến trang người dùng</Link></div>
             </div>
 

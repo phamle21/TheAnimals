@@ -45,7 +45,7 @@ const Detail = () => {
         $('.show_video').addClass('d-none')
         $('.show_video').get(0).pause();
         $('.show_img').removeClass('d-none')
-        $('.show_img').attr("src", "../images/animal/" + name)
+        $('.show_img').attr("src", "../media/" + name)
     }
 
     const selectVideo = (name) => {
@@ -69,7 +69,7 @@ const Detail = () => {
             <div className="row">
                 <div className="col-md mt-4" >
                     <div className="animal-img-current border border-4 border-success rounded d-flex align-items-center" >
-                        <img src={'../images/animal/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
+                        <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
                         <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>
 
@@ -77,7 +77,7 @@ const Detail = () => {
                         {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {
-                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../images/animal/' + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
+                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../media/' + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
                                 } else {
                                     return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../video/animal/' + media.ten_media} className='animal-video col m-2'></video>
                                 }

@@ -41,8 +41,8 @@ const AdminRender = ({ component }) => {
                     {component}
                 </div>
             </div>
-
             <Admin.Footer />
+            <Admin.FooterJs />
         </div>
     )
 }
@@ -71,9 +71,17 @@ function App() {
                     element={<AdminRender component={<Admin.Animal />} />} />
                 <Route path="/admin/animal-detail-:Id"
                     element={<AdminRender component={<Admin.Detail />} />} />
+                <Route path="/admin/animal-add"
+                    element={<AdminRender component={<Admin.AnimalAdd />} />} />
 
-                <Route path="/admin/animal-type"
-                    element={<AdminRender component={<Admin.Detail />} />} />
+                <Route path="/admin/type-nganh"
+                    element={<AdminRender component={<Admin.TypeNganh />} />} />
+                <Route path="/admin/type-lop"
+                    element={<AdminRender component={<Admin.TypeLop />} />} />
+                <Route path="/admin/type-bo"
+                    element={<AdminRender component={<Admin.TypeBo />} />} />
+                <Route path="/admin/type-ho"
+                    element={<AdminRender component={<Admin.TypeHo />} />} />
             </Routes>
         </div>
     );

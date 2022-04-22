@@ -11,6 +11,12 @@ class Media extends Model
 
     protected $table = 'media';
 
+    protected $fillable = [
+        'media_type',
+        'ten_media',
+        'sinhvat_id',
+    ];
+
     public function sinhVat(){
         return $this->belongsTo(SinhVat::class, 'sinhvat_id');
     }

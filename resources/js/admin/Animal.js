@@ -1,7 +1,10 @@
 import React from "react";
 import AnimalItem from "./AnimalItem";
+import { Link } from "react-router-dom";
 
 const Animal = () => {
+    document.title = "Danh sách động vật | The Animals"
+
     const [animal, setAnimal] = React.useState([]);
     const [search, setSearch] = React.useState([]);
     const [limit, setLimit] = React.useState(12);
@@ -37,7 +40,7 @@ const Animal = () => {
 
         if (arrTemp.length < 1) {
             $('#load_more').html("...Hết...");
-        }else{
+        } else {
             $('#load_more').html("Tải thêm...");
         }
 
@@ -53,16 +56,22 @@ const Animal = () => {
                             <p className="fs-1"> Danh sách động vật </p>
                         </div>
                         <div className="card-body pt-0">
-                            <div className="mt-0 ">
-                                <form className="search-bar" onSubmit={(e) => e.preventDefault()} >
-                                    <input type="text" className="form-control d-inline"
-                                        id="keyword-search-admin"
-                                        placeholder="Tìm kiếm động vật (theo tên)"
-                                        onKeyUp={searchAnimal} />
-                                    <button className="btn_search" type="submit">
-                                        <i className="icon-magnifier"></i>
-                                    </button>
-                                </form>
+                            <div className="mt-0 row">
+                                <div className="col">
+                                    <form className="search-bar" onSubmit={(e) => e.preventDefault()} >
+                                        <input type="text" className="form-control d-inline"
+                                            id="keyword-search-admin"
+                                            placeholder="Tìm kiếm động vật (theo tên)"
+                                            onKeyUp={searchAnimal} />
+                                        <button className="btn_search" type="submit">
+                                            <i className="icon-magnifier"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div className="col d-flex justify-content-end">
+                                    <Link to="/admin/animal-add" className="btn btn-success p-2 fs-5 mt-5 me-2" style={{ height: 'fit-content' }} >Thêm động vật mới</Link>
+                                </div>
+
                             </div>
 
                             <div className="row mt-3 list-animal" >
