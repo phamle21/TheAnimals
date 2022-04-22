@@ -35,9 +35,17 @@ const Type = () => {
 
                 if (result.data.status = 'success') {
                     setNganhList(result.data)
-                    alert('Đã thêm 1 ngành mới')
+                    swal({
+                        title: "Thành công!",
+                        text: "Đã thêm 1 bộ mới!",
+                        icon: "success",
+                    })
                 } else {
-                    alert('Thêm ngành mới thất bại!!!')
+                    swal({
+                        title: "Thất bại!!!",
+                        text: "Thêm bộ mới thất bại!",
+                        icon: "error",
+                    })
                 }
             })
     }
@@ -64,10 +72,18 @@ const Type = () => {
             .then(result => {
                 console.log(result.data);
                 if (!result.data.status) {
-                    alert("Cập nhật thông tin thành công !")
                     setNganhList(result.data)
+                    swal({
+                        title: "Thành công!",
+                        text: "Chỉnh sửa thông tin thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật thông tin thất bại!")
+                    swal({
+                        title: "Thất bại!!!",
+                        text: "Chỉnh sửa thông tin thất bại!",
+                        icon: "error",
+                    })
                 }
                 setToggle('edit')
                 $('.ten_nganh').removeClass('d-none')

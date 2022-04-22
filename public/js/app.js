@@ -2221,7 +2221,11 @@ var Animal = function Animal() {
 
   var loadMore = function loadMore() {
     if (limit >= search.length) {
-      alert("Đã hiện hết danh sách động vật!");
+      swal({
+        title: "Hết rồi!!!",
+        text: "Đã hiện hết danh sách động vật!",
+        icon: "info"
+      });
       return false;
     }
 
@@ -2392,43 +2396,53 @@ var Detail = function Detail() {
 
   var submitAddAnimal = function submitAddAnimal(e) {
     e.preventDefault();
-    var formData = new FormData($('#frmAddAnimal')[0]);
 
-    for (var i = 0; i < selectedFile.length; i++) {
-      formData.append('files[]', selectedFile[i]);
+    if (selectedFile.length > 10) {
+      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+        title: "Quá tải!",
+        text: "Hãy chọn ít hơn hoặc bằng 10 file",
+        icon: "warning",
+        button: "Ok"
+      });
+    } else {
+      var formData = new FormData($('#frmAddAnimal')[0]);
+
+      for (var i = 0; i < selectedFile.length; i++) {
+        formData.append('files[]', selectedFile[i]);
+      }
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'post',
+        url: '../api/animal/add',
+        data: formData,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (result) {
+        // console.log(result.data);
+        if (result.data.status == 'success') {
+          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+            title: "Thành công!",
+            text: "Thêm thành công động vật mới, bạn muốn chuyển đến trang chi tiết?",
+            icon: "success",
+            buttons: true,
+            dangerMode: true
+          }).then(function (confirm) {
+            if (confirm) {
+              window.location = "./animal-detail-" + result.data.animal_id;
+            }
+          });
+          $('#frmAddAnimal').reset();
+        } else {
+          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+            title: "Thất bại!",
+            text: result.data,
+            icon: "error",
+            button: "Ok"
+          });
+        }
+      });
     }
-
-    axios__WEBPACK_IMPORTED_MODULE_2___default()({
-      method: 'post',
-      url: '../api/animal/add',
-      data: formData,
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }).then(function (result) {
-      // console.log(result.data);
-      if (result.data.status == 'success') {
-        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-          title: "Thành công!",
-          text: "Thêm thành công động vật mới, bạn muốn chuyển đến trang chi tiết?",
-          icon: "success",
-          buttons: true,
-          dangerMode: true
-        }).then(function (confirm) {
-          if (confirm) {
-            window.location = "./animal-detail-" + result.data.animal_id;
-          }
-        });
-        $('#frmAddAnimal').reset();
-      } else {
-        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-          title: "Thất bại!",
-          text: result.data,
-          icon: "error",
-          button: "Ok"
-        });
-      }
-    });
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -2843,9 +2857,17 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('info-basic', 'cancel');
-        alert("Đã cập nhật thông tin cơ bản thành công!");
+        swal({
+          title: "Thành công!",
+          text: "Cập nhật thông tin cơ bản thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin cơ bản thất bại!");
+        swal({
+          title: "Thất bại!",
+          text: "Cập nhật thông tin cơ bản thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -2872,9 +2894,17 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('hinh-thai', 'cancel');
-        alert("Đã cập nhật đặc điểm hình thái thành công!");
+        swal({
+          title: "Thành công!",
+          text: "Cập nhật đặc điểm hình thái thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật đặc điểm hình thái thất bại!");
+        swal({
+          title: "Thất bại!",
+          text: "Cập nhật đặc điểm hình thái thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -2900,9 +2930,17 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('sinh-thai', 'cancel');
-        alert("Đã cập nhật đặc điểm sinh thái thành công!");
+        swal({
+          title: "Thành công!",
+          text: "Cập nhật đặc điểm sinh thái thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật đặc điểm sinh thái thất bại!");
+        swal({
+          title: "Thất bại!",
+          text: "Cập nhật đặc điểm sinh thái thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -2929,9 +2967,17 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('info-other', 'cancel');
-        alert("Cập nhật thông tin thành công!");
+        swal({
+          title: "Thành công!",
+          text: "Cập nhật thông tin thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin thất bại!");
+        swal({
+          title: "Thất bại!",
+          text: "Cập nhật thông tin thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -3948,9 +3994,17 @@ var Type = function Type() {
 
       if (result.data.status = 'success') {
         setTypeList(result.data);
-        alert('Đã thêm 1 bộ mới');
+        swal({
+          title: "Thành công!",
+          text: "Đã thêm 1 bộ mới!",
+          icon: "success"
+        });
       } else {
-        alert('Thêm bộ mới thất bại!!!');
+        swal({
+          title: "Thất bại!!!",
+          text: "Thêm bộ mới thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -3974,10 +4028,18 @@ var Type = function Type() {
       console.log(result.data);
 
       if (!result.data.status) {
-        alert("Cập nhật thông tin thành công !");
         setTypeList(result.data);
+        swal({
+          title: "Thành công!",
+          text: "Chỉnh sửa thông tin thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin thất bại!");
+        swal({
+          title: "Thất bại!!!",
+          text: "Chỉnh sửa thông tin thất bại!",
+          icon: "error"
+        });
       }
 
       setToggle('edit');
@@ -4202,9 +4264,17 @@ var Type = function Type() {
 
       if (result.data.status = 'success') {
         setTypeList(result.data);
-        alert('Đã thêm 1 họ mới');
+        swal({
+          title: "Thành công!",
+          text: "Đã thêm 1 bộ mới!",
+          icon: "success"
+        });
       } else {
-        alert('Thêm họ mới thất bại!!!');
+        swal({
+          title: "Thất bại!!!",
+          text: "Thêm bộ mới thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -4228,10 +4298,18 @@ var Type = function Type() {
       console.log(result.data);
 
       if (!result.data.status) {
-        alert("Cập nhật thông tin thành công !");
         setTypeList(result.data);
+        swal({
+          title: "Thành công!",
+          text: "Chỉnh sửa thông tin thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin thất bại!");
+        swal({
+          title: "Thất bại!!!",
+          text: "Chỉnh sửa thông tin thất bại!",
+          icon: "error"
+        });
       }
 
       setToggle('edit');
@@ -4456,9 +4534,17 @@ var Type = function Type() {
 
       if (result.data.status = 'success') {
         setTypeList(result.data);
-        alert('Đã thêm 1 lớp mới');
+        swal({
+          title: "Thành công!",
+          text: "Đã thêm 1 bộ mới!",
+          icon: "success"
+        });
       } else {
-        alert('Thêm lớp mới thất bại!!!');
+        swal({
+          title: "Thất bại!!!",
+          text: "Thêm bộ mới thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -4482,10 +4568,18 @@ var Type = function Type() {
       console.log(result.data);
 
       if (!result.data.status) {
-        alert("Cập nhật thông tin thành công !");
         setTypeList(result.data);
+        swal({
+          title: "Thành công!",
+          text: "Chỉnh sửa thông tin thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin thất bại!");
+        swal({
+          title: "Thất bại!!!",
+          text: "Chỉnh sửa thông tin thất bại!",
+          icon: "error"
+        });
       }
 
       setToggle('edit');
@@ -4697,9 +4791,17 @@ var Type = function Type() {
 
       if (result.data.status = 'success') {
         setNganhList(result.data);
-        alert('Đã thêm 1 ngành mới');
+        swal({
+          title: "Thành công!",
+          text: "Đã thêm 1 bộ mới!",
+          icon: "success"
+        });
       } else {
-        alert('Thêm ngành mới thất bại!!!');
+        swal({
+          title: "Thất bại!!!",
+          text: "Thêm bộ mới thất bại!",
+          icon: "error"
+        });
       }
     });
   };
@@ -4723,10 +4825,18 @@ var Type = function Type() {
       console.log(result.data);
 
       if (!result.data.status) {
-        alert("Cập nhật thông tin thành công !");
         setNganhList(result.data);
+        swal({
+          title: "Thành công!",
+          text: "Chỉnh sửa thông tin thành công!",
+          icon: "success"
+        });
       } else {
-        alert("Cập nhật thông tin thất bại!");
+        swal({
+          title: "Thất bại!!!",
+          text: "Chỉnh sửa thông tin thất bại!",
+          icon: "error"
+        });
       }
 
       setToggle('edit');
@@ -4972,15 +5082,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _css_App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/App.css */ "./resources/css/App.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./client */ "./resources/js/client.js");
 /* harmony import */ var _admin_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./admin_link */ "./resources/js/admin_link.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -4994,8 +5107,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var ClientRender = function ClientRender(_ref) {
   var component = _ref.component;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Header, {}), component, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Footer, {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Header, {}), component, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Footer, {})]
   });
 };
 
@@ -5009,89 +5122,89 @@ var AdminRender = function AdminRender(_ref2) {
       }
     });
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     id: "wrapper",
     className: "",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Head, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Head, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "clearfix"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "content-wrapper",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "container-fluid ",
         children: component
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Footer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.FooterJs, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Footer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.FooterJs, {})]
   });
 };
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ClientRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Home, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ClientRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Home, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/how_it_work",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ClientRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.About, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ClientRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.About, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/info/list",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ClientRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Info, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ClientRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Info, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/info/search",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ClientRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Search, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ClientRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Search, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/detail/:Id",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ClientRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Detail, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ClientRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_client__WEBPACK_IMPORTED_MODULE_4__.Detail, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/home",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Home, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Home, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/animal-list",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Animal, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Animal, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/animal-detail-:Id",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Detail, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.Detail, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/animal-add",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.AnimalAdd, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.AnimalAdd, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/type-nganh",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeNganh, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeNganh, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/type-lop",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeLop, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeLop, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/type-bo",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeBo, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeBo, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/admin/type-ho",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AdminRender, {
-          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeHo, {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AdminRender, {
+          component: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_admin_link__WEBPACK_IMPORTED_MODULE_5__.TypeHo, {})
         })
       })]
     })
@@ -5100,9 +5213,9 @@ function App() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 var root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById("root"));
-root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(App, {})
+root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(App, {})
   })
 }));
 
@@ -5955,7 +6068,11 @@ var Info = function Info() {
 
   var loadMore = function loadMore() {
     if (limit >= animal.length) {
-      alert("Đã hiện hết danh sách động vật!");
+      swal({
+        title: "Hết rồi!!!",
+        text: "Đã hiện hết danh sách động vật!",
+        icon: "info"
+      });
       return false;
     }
 
@@ -6120,7 +6237,11 @@ var Info = function Info() {
 
   var loadMore = function loadMore() {
     if (limit >= animal.length) {
-      alert("Đã hiện hết danh sách động vật!");
+      swal({
+        title: "Hết rồi!!!",
+        text: "Đã hiện hết danh sách động vật!",
+        icon: "info"
+      });
       return false;
     }
 

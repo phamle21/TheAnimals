@@ -136,9 +136,17 @@ const Detail = () => {
                     setLop(result.data.lop)
                     setBo(result.data.bo)
                     editBtn('info-basic', 'cancel')
-                    alert("Đã cập nhật thông tin cơ bản thành công!")
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật thông tin cơ bản thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật thông tin cơ bản thất bại!")
+                    swal({
+                        title: "Thất bại!",
+                        text: "Cập nhật thông tin cơ bản thất bại!",
+                        icon: "error",
+                    })
                 }
 
             })
@@ -169,9 +177,17 @@ const Detail = () => {
                     setLop(result.data.lop)
                     setBo(result.data.bo)
                     editBtn('hinh-thai', 'cancel')
-                    alert("Đã cập nhật đặc điểm hình thái thành công!")
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật đặc điểm hình thái thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật đặc điểm hình thái thất bại!")
+                    swal({
+                        title: "Thất bại!",
+                        text: "Cập nhật đặc điểm hình thái thất bại!",
+                        icon: "error",
+                    })
                 }
 
             })
@@ -200,9 +216,18 @@ const Detail = () => {
                     setLop(result.data.lop)
                     setBo(result.data.bo)
                     editBtn('sinh-thai', 'cancel')
-                    alert("Đã cập nhật đặc điểm sinh thái thành công!")
+
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật đặc điểm sinh thái thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật đặc điểm sinh thái thất bại!")
+                    swal({
+                        title: "Thất bại!",
+                        text: "Cập nhật đặc điểm sinh thái thất bại!",
+                        icon: "error",
+                    })
                 }
 
             })
@@ -232,9 +257,18 @@ const Detail = () => {
                     setLop(result.data.lop)
                     setBo(result.data.bo)
                     editBtn('info-other', 'cancel')
-                    alert("Cập nhật thông tin thành công!")
+
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật thông tin thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật thông tin thất bại!")
+                    swal({
+                        title: "Thất bại!",
+                        text: "Cập nhật thông tin thất bại!",
+                        icon: "error",
+                    })
                 }
 
             })

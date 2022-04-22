@@ -23,7 +23,11 @@ const Animal = () => {
 
     const loadMore = () => {
         if (limit >= search.length) {
-            alert("Đã hiện hết danh sách động vật!")
+            swal({
+                title: "Hết rồi!!!",
+                text: "Đã hiện hết danh sách động vật!",
+                icon: "info",
+            })
             return false
         }
         if ((limit + 6) >= search.length) {

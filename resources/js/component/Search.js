@@ -52,7 +52,11 @@ const Info = () => {
 
     const loadMore = () => {
         if (limit >= animal.length) {
-            alert("Đã hiện hết danh sách động vật!")
+            swal({
+                title: "Hết rồi!!!",
+                text: "Đã hiện hết danh sách động vật!",
+                icon: "info",
+            })
             return false
         }
         if ((limit + 6) >= animal.length) {

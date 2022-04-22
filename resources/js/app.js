@@ -7,6 +7,7 @@ import '../css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Client from './client';
 import * as Admin from './admin_link';
+import swal from 'sweetalert';
 
 const ClientRender = ({ component }) => {
     return (

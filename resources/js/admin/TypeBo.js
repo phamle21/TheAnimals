@@ -45,9 +45,17 @@ const Type = () => {
 
                 if (result.data.status = 'success') {
                     setTypeList(result.data)
-                    alert('Đã thêm 1 bộ mới')
+                    swal({
+                        title: "Thành công!",
+                        text: "Đã thêm 1 bộ mới!",
+                        icon: "success",
+                    })
                 } else {
-                    alert('Thêm bộ mới thất bại!!!')
+                    swal({
+                        title: "Thất bại!!!",
+                        text: "Thêm bộ mới thất bại!",
+                        icon: "error",
+                    })
                 }
             })
     }
@@ -74,10 +82,18 @@ const Type = () => {
             .then(result => {
                 console.log(result.data);
                 if (!result.data.status) {
-                    alert("Cập nhật thông tin thành công !")
                     setTypeList(result.data)
+                    swal({
+                        title: "Thành công!",
+                        text: "Chỉnh sửa thông tin thành công!",
+                        icon: "success",
+                    })
                 } else {
-                    alert("Cập nhật thông tin thất bại!")
+                    swal({
+                        title: "Thất bại!!!",
+                        text: "Chỉnh sửa thông tin thất bại!",
+                        icon: "error",
+                    })
                 }
                 setToggle('edit')
                 $('.type_name').removeClass('d-none')

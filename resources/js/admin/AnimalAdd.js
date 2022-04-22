@@ -24,45 +24,54 @@ const Detail = () => {
     const submitAddAnimal = (e) => {
         e.preventDefault();
 
-        var formData = new FormData($('#frmAddAnimal')[0]);
+        if (selectedFile.length > 10) {
+            swal({
+                title: "Quá tải!",
+                text: "Hãy chọn ít hơn hoặc bằng 10 file",
+                icon: "warning",
+                button: "Ok",
+            });
+        } else {
 
-        for (var i = 0; i < selectedFile.length; i++) {
-            formData.append('files[]', selectedFile[i])
-        }
+            var formData = new FormData($('#frmAddAnimal')[0]);
 
-        axios({
-            method: 'post',
-            url: '../api/animal/add',
-            data: formData,
-            headers: {
-                'Content-Type': 'multipart/form-data'
+            for (var i = 0; i < selectedFile.length; i++) {
+                formData.append('files[]', selectedFile[i])
             }
-        }).then(result => {
-            // console.log(result.data);
-            if (result.data.status == 'success') {
-                swal({
-                    title: "Thành công!",
-                    text: "Thêm thành công động vật mới, bạn muốn chuyển đến trang chi tiết?",
-                    icon: "success",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                    .then((confirm) => {
-                        if (confirm) {
-                            window.location = "./animal-detail-"+result.data.animal_id
-                        }
+
+            axios({
+                method: 'post',
+                url: '../api/animal/add',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(result => {
+                // console.log(result.data);
+                if (result.data.status == 'success') {
+                    swal({
+                        title: "Thành công!",
+                        text: "Thêm thành công động vật mới, bạn muốn chuyển đến trang chi tiết?",
+                        icon: "success",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                        .then((confirm) => {
+                            if (confirm) {
+                                window.location = "./animal-detail-" + result.data.animal_id
+                            }
+                        });
+                    $('#frmAddAnimal').reset();
+                } else {
+                    swal({
+                        title: "Thất bại!",
+                        text: result.data,
+                        icon: "error",
+                        button: "Ok",
                     });
-                $('#frmAddAnimal').reset();
-            } else {
-                swal({
-                    title: "Thất bại!",
-                    text: result.data,
-                    icon: "error",
-                    button: "Ok",
-                  });
-            }
-        });
-
+                }
+            });
+        }
     }
 
     return (
