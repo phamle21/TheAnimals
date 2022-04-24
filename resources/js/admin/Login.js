@@ -27,7 +27,7 @@ const Login = () => {
     }
 
     return (
-        <div id="wrapper m-0 p-0 " style={{ background: '#28d9d6', height: '100vh' }}>
+        <div id="wrapper m-0 " style={{ background: '#28d9d6', height: '100vh', paddingTop: '15vh' }}>
             <div className="card card-authentication1 mx-auto py-auto" >
                 <div className="card-body">
                     <div className="card-content p-2">

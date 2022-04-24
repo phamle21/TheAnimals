@@ -3972,10 +3972,11 @@ var Login = function Login() {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    id: "wrapper m-0 p-0 ",
+    id: "wrapper m-0 ",
     style: {
       background: '#28d9d6',
-      height: '100vh'
+      height: '100vh',
+      paddingTop: '15vh'
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "card card-authentication1 mx-auto py-auto",
