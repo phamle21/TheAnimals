@@ -12,9 +12,11 @@ use App\Models\Nganh;
 use App\Models\SinhVat;
 use App\Models\ToaDo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use stdClass;
+use Illuminate\Support\Str;
 
 class ReactController extends Controller
 {
@@ -37,6 +39,40 @@ class ReactController extends Controller
 
             return $detail;
         }
+    }
+
+    //LOGIN
+    public function login(Request $request)
+    {
+        $data = new stdClass();
+
+        $user = $request->username;
+        $pass = $request->password;
+
+        if ($user < 1 || $pass < 1) {
+            $data->status = "Tài khoản hoặc mật khẩu trống!";
+            return response()->json($data);
+        }
+
+        $login_email = [
+            'email' =>  $request->username,
+            'password' => $request->password,
+        ];
+
+        $login_phone = [
+            'phone' => $request->username,
+            'password' => $request->password
+        ];
+
+        if ((Auth::attempt($login_email) || Auth::attempt($login_phone))) {
+            Auth::user()->remember_token = Str::random(60);
+            $data->token = Auth::user()->remember_token;
+            $data->status = "success";
+        } else {
+            $data->status = "Tài khoản hoặc mặt khẩu sai";
+        }
+
+        return response()->json($data);
     }
 
     //Animal list
@@ -327,7 +363,7 @@ class ReactController extends Controller
                 foreach ($request->file('files') as $file) {
                     $extension = $file->getClientOriginalExtension();
                     // $filename = $file->store('media');
-                    $filename = Storage::disk('public_uploads')->put('',$file);
+                    $filename = Storage::disk('public_uploads')->put('', $file);
                     if ($extension == 'mp4') {
                         Media::create([
                             'media_type' => 'video',

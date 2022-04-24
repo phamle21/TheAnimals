@@ -2,6 +2,12 @@ import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+    const logout = () => {
+        localStorage.removeItem('token_user_theanimals')
+        window.location = "../admin/login"
+    }
+
     return (
         <Fragment>
             <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
@@ -102,7 +108,9 @@ const Header = () => {
                                 <li className="dropdown-divider"></li>
                                 <li className="dropdown-divider"></li>
                                 <li className="dropdown-item">
-                                    <a href="./xuly_admin/logout.php"><i className="icon-power mr-2"></i> Logout</a>
+                                    <p onClick={logout} className="cursor-pointer">
+                                        <i className="icon-power mr-2"></i> Logout
+                                    </p>
                                 </li>
                             </ul>
                         </li>

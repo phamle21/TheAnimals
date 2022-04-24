@@ -20,11 +20,6 @@ const ClientRender = ({ component }) => {
 }
 
 const AdminRender = ({ component }) => {
-    const [token, setToken] = useState();
-
-    if(!token) {
-      return <Amin.Login setToken={setToken} />
-    }
 
     React.useEffect(() => {
         $('.sidebar-link').removeClass('active_admin')
@@ -35,23 +30,37 @@ const AdminRender = ({ component }) => {
             }
         })
     });
-   
-    
-    return (
-        <div id="wrapper" className="">
-            <Admin.Head />
-            <Admin.Header />
-            <div className="clearfix"></div>
 
-            <div className="content-wrapper">
-                <div className="container-fluid ">
-                    {component}
+    if ("token_user_theanimals" in localStorage) {
+
+        return (
+            <div id="wrapper" className="">
+                <Admin.Head />
+                <Admin.Header />
+                <div className="clearfix"></div>
+
+                <div className="content-wrapper">
+                    <div className="container-fluid ">
+                        {component}
+                    </div>
                 </div>
+                <Admin.Footer />
+                <Admin.FooterJs />
             </div>
-            <Admin.Footer />
-            <Admin.FooterJs />
-        </div>
-    )
+        )
+
+    } else {
+        swal({
+            title: "Login",
+            text: "Bạn chưa đăng nhập, hãy đăng nhập để trải nghiệm trang web này!",
+            icon: "warning",
+        }).then(() => {
+            window.location = "../admin/login"
+        });
+
+    }
+
+
 }
 
 function App() {
