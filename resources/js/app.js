@@ -20,6 +20,11 @@ const ClientRender = ({ component }) => {
 }
 
 const AdminRender = ({ component }) => {
+    const [token, setToken] = useState();
+
+    if(!token) {
+      return <Amin.Login setToken={setToken} />
+    }
 
     React.useEffect(() => {
         $('.sidebar-link').removeClass('active_admin')

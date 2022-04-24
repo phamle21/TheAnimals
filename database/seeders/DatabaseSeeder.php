@@ -14,6 +14,9 @@ use Illuminate\Database\Seeder;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SinhVatImport;
 use App\Imports\ToaDoImport;
+use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +28,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        User::create([
+            'fullname' => 'admin',
+            'email' => 'admin',
+            'phone' => '0941649826',
+            'password' => Hash::make('admin'),
+            'remember_token' => Str::random(60),
+        ]);
 
         Nganh::insert([
             'ten_nganh' => 'Động vật có dây sống (chordata)'
