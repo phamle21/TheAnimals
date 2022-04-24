@@ -110,6 +110,15 @@ const Detail = () => {
                     $('.info-other').removeClass('d-none');
                 }
                 break;
+            case 'media':
+                if (type == 'edit') {
+                    $('#frmEditMedia').removeClass('d-none');
+                    $('.sel_media_list .show_media').addClass('d-none');
+                } else if (type == 'cancel') {
+                    $('#frmEditMedia').addClass('d-none');
+                    $('.sel_media_list .show_media').removeClass('d-none');
+                }
+                break;
         }
     }
 
@@ -282,13 +291,18 @@ const Detail = () => {
                 <div className="col-md mt-4" >
                     <div className="animal-img-current border border-4 border-success rounded d-flex align-items-center bg-light position-relative" >
                         <div className="position-absolute top-0 end-0 w-fitcontent">
-                            <button className="fa fa-pen bg-transparent btn p-2 fs-2" />
+                            <button className="fa fa-pen bg-transparent btn p-2 fs-2 " onClick={() => editBtn('media', 'edit')} />
                         </div>
-                        <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img h-100 mh-100 min-h-100' id="media_main" />
-                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current h-100 mh-100 min-h-100 d-none" ></video>
+                        <form id="frmEditMedia" >
+                            <label htmlFor="input-media" className="animal-img-current border border-4 border-success rounded d-flex align-items-center justify-content-center hover-bg bg-light cursor-pointer" >
+                                <input id="input-media" type="file" onChange={e => setSelectedFile(e.target.files)} name="media" multiple accept="image/*, video/*" className="fs-2" />
+                            </label>
+                        </form>
+                        <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img show_media h-100 mh-100 min-h-100' id="media_main" />
+                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none" ></video>
                     </div>
 
-                    <div className="animal-images__list d-flex flex-wrap my-1">
+                    <div className="animal-images__list d-flex flex-wrap my-1 sel_media_list">
                         {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\SinhVatImport;
 use App\Models\BaoTon;
 use App\Models\Bo;
 use App\Models\Ho;
@@ -14,7 +13,6 @@ use App\Models\ToaDo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Maatwebsite\Excel\Facades\Excel;
 use stdClass;
 use Illuminate\Support\Str;
 
@@ -67,6 +65,7 @@ class ReactController extends Controller
         if ((Auth::attempt($login_email) || Auth::attempt($login_phone))) {
             Auth::user()->remember_token = Str::random(60);
             $data->token = Auth::user()->remember_token;
+            $data->fullname = Auth::user()->fullname;
             $data->status = "success";
         } else {
             $data->status = "Tài khoản hoặc mặt khẩu sai";

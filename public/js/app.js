@@ -2834,6 +2834,17 @@ var Detail = function Detail() {
         }
 
         break;
+
+      case 'media':
+        if (type == 'edit') {
+          $('#frmEditMedia').removeClass('d-none');
+          $('.sel_media_list .show_media').addClass('d-none');
+        } else if (type == 'cancel') {
+          $('#frmEditMedia').addClass('d-none');
+          $('.sel_media_list .show_media').removeClass('d-none');
+        }
+
+        break;
     }
   };
 
@@ -2996,21 +3007,41 @@ var Detail = function Detail() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "position-absolute top-0 end-0 w-fitcontent",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "fa fa-pen bg-transparent btn p-2 fs-2"
+              className: "fa fa-pen bg-transparent btn p-2 fs-2 ",
+              onClick: function onClick() {
+                return editBtn('media', 'edit');
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+            id: "frmEditMedia",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+              htmlFor: "input-media",
+              className: "animal-img-current border border-4 border-success rounded d-flex align-items-center justify-content-center hover-bg bg-light cursor-pointer",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                id: "input-media",
+                type: "file",
+                onChange: function onChange(e) {
+                  return setSelectedFile(e.target.files);
+                },
+                name: "media",
+                multiple: true,
+                accept: "image/*, video/*",
+                className: "fs-2"
+              })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: '../media/' + media[0].ten_media,
             alt: "img-current",
-            className: "animal-img__current show_img h-100 mh-100 min-h-100",
+            className: "animal-img__current show_img show_media h-100 mh-100 min-h-100",
             id: "media_main"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
             src: '../video/animal/' + media[0].ten_media,
             controls: true,
             autoPlay: true,
-            className: "show_video animal-img__current h-100 mh-100 min-h-100 d-none"
+            className: "show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "animal-images__list d-flex flex-wrap my-1",
+          className: "animal-images__list d-flex flex-wrap my-1 sel_media_list",
           children: media.map(function (media, index) {
             if (media.media_type == "image") {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3568,9 +3599,11 @@ __webpack_require__.r(__webpack_exports__);
 var Header = function Header() {
   var logout = function logout() {
     localStorage.removeItem('token_user_theanimals');
+    localStorage.removeItem('fullname_user_theanimals');
     window.location = "../admin/login";
   };
 
+  var fullname_user = localStorage.getItem('fullname_user_theanimals');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       id: "sidebar-wrapper",
@@ -3757,7 +3790,7 @@ var Header = function Header() {
                       className: "media-body",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
                         className: "mt-2 user-title",
-                        children: "Ph\u1EA1m L\xEA"
+                        children: fullname_user
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
                         className: "user-subtitle",
                         children: "Adminstator"
@@ -3963,6 +3996,7 @@ var Login = function Login() {
     axios__WEBPACK_IMPORTED_MODULE_0___default().post('../api/login', formData).then(function (res) {
       if (res.data.status == 'success') {
         localStorage.setItem('token_user_theanimals', res.data.token);
+        localStorage.setItem('fullname_user_theanimals', res.data.fullname);
         history.back();
       } else {
         setErr(res.data.status);

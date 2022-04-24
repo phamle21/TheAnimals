@@ -18,6 +18,7 @@ const Login = () => {
         axios.post('../api/login', formData).then((res) => {
             if (res.data.status == 'success') {
                 localStorage.setItem('token_user_theanimals', res.data.token)
+                localStorage.setItem('fullname_user_theanimals', res.data.fullname)
                 history.back()
             } else {
                 setErr(res.data.status)

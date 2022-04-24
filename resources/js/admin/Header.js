@@ -5,8 +5,11 @@ const Header = () => {
 
     const logout = () => {
         localStorage.removeItem('token_user_theanimals')
+        localStorage.removeItem('fullname_user_theanimals')
         window.location = "../admin/login"
     }
+
+    var fullname_user = localStorage.getItem('fullname_user_theanimals')
 
     return (
         <Fragment>
@@ -98,7 +101,7 @@ const Header = () => {
 
                                             </div>
                                             <div className="media-body">
-                                                <h6 className="mt-2 user-title">Phạm Lê</h6>
+                                                <h6 className="mt-2 user-title">{fullname_user}</h6>
                                                 <p className="user-subtitle">Adminstator</p>
                                             </div>
                                         </div>
