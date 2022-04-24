@@ -41,20 +41,24 @@ const Detail = () => {
 
     document.title = title + " | The Animals"
 
-    const selectImg = (name) => {
+    const selectImg = (type, name) => {
         $('.show_video').addClass('d-none')
         $('.show_video').get(0).pause();
         $('.show_img').removeClass('d-none')
-        $('.show_img').attr("src", "../media/" + name)
+        if(type == 'drive'){
+            $('.show_img').attr("src", name)
+        }else{
+            $('.show_img').attr("src", "../media/" + name)
+        }
     }
 
     const selectVideo = (name) => {
         $('.show_img').addClass('d-none')
         $('.show_video').removeClass('d-none')
-        $('.show_video').attr("src", "../video/animal/" + name)
+        $('.show_video').attr("src", "../media/" + name)
     }
 
-    if (media[0].media_type == "image") {
+    if (media[0].media_type != "video") {
         $('.show_video').addClass('d-none')
         $('.show_img').removeClass('d-none')
     } else {
@@ -69,17 +73,17 @@ const Detail = () => {
             <div className="row">
                 <div className="col-md mt-4" >
                     <div className="animal-img-current border border-4 border-success rounded d-flex align-items-center" >
-                        <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
-                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
+                        <img src={media[0].media_type === "drive" ? media[0].ten_media : '../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
+                        <video src={'../media/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>
 
                     <div className="animal-images__list d-flex flex-wrap my-1">
                         {
                             media.map((media, index) => {
-                                if (media.media_type == "image") {
-                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../media/' + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
+                                if (media.media_type != "video") {
+                                    return <img key={'img-' + index} onClick={() => selectImg(media.media_type, media.ten_media)} src={media.media_type === "drive" ? media.ten_media : "../media/" + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
                                 } else {
-                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../video/animal/' + media.ten_media} className='animal-video col m-2'></video>
+                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../media/' + media.ten_media} className='animal-video col m-2'></video>
                                 }
                             })
                         }

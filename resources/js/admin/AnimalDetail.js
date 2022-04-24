@@ -61,7 +61,7 @@ const Detail = () => {
     const selectVideo = (name) => {
         $('.show_img').addClass('d-none')
         $('.show_video').removeClass('d-none')
-        $('.show_video').attr("src", "../video/animal/" + name)
+        $('.show_video').attr("src", "../media/" + name)
     }
 
     if (media[0].media_type == "image") {
@@ -299,7 +299,7 @@ const Detail = () => {
                             </label>
                         </form>
                         <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img show_media h-100 mh-100 min-h-100' id="media_main" />
-                        <video src={'../video/animal/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none" ></video>
+                        <video src={'../media/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none" ></video>
                     </div>
 
                     <div className="animal-images__list d-flex flex-wrap my-1 sel_media_list">
@@ -317,7 +317,7 @@ const Detail = () => {
                                     return (
                                         <div className="col m-2" key={'video-' + index} >
                                             <video onClick={() => selectVideo(media.ten_media)}
-                                                src={'../video/animal/' + media.ten_media}
+                                                src={'../media/' + media.ten_media}
                                                 className='animal-video h-100 col m-0 p-0'></video>
                                         </div>
                                     )

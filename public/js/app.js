@@ -2778,7 +2778,7 @@ var Detail = function Detail() {
   var selectVideo = function selectVideo(name) {
     $('.show_img').addClass('d-none');
     $('.show_video').removeClass('d-none');
-    $('.show_video').attr("src", "../video/animal/" + name);
+    $('.show_video').attr("src", "../media/" + name);
   };
 
   if (media[0].media_type == "image") {
@@ -3035,7 +3035,7 @@ var Detail = function Detail() {
             className: "animal-img__current show_img show_media h-100 mh-100 min-h-100",
             id: "media_main"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
-            src: '../video/animal/' + media[0].ten_media,
+            src: '../media/' + media[0].ten_media,
             controls: true,
             autoPlay: true,
             className: "show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none"
@@ -3062,7 +3062,7 @@ var Detail = function Detail() {
                   onClick: function onClick() {
                     return selectVideo(media.ten_media);
                   },
-                  src: '../video/animal/' + media.ten_media,
+                  src: '../media/' + media.ten_media,
                   className: "animal-video h-100 col m-0 p-0"
                 })
               }, 'video-' + index);
@@ -5611,8 +5611,12 @@ var AnimalItem = function AnimalItem(_ref) {
           borderRadius: '10px'
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: '../media/' + animal.image,
-          className: "card-img-top p-3 rounded"
+          src: animal.media_type === "drive" ? animal.media : "../media/" + animal.media,
+          className: "card-img-top p-3 rounded",
+          style: {
+            maxHeight: '120px',
+            minHeight: '120px'
+          }
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "card-body",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -5733,20 +5737,25 @@ var Detail = function Detail() {
   }, [Id]);
   document.title = title + " | The Animals";
 
-  var selectImg = function selectImg(name) {
+  var selectImg = function selectImg(type, name) {
     $('.show_video').addClass('d-none');
     $('.show_video').get(0).pause();
     $('.show_img').removeClass('d-none');
-    $('.show_img').attr("src", "../media/" + name);
+
+    if (type == 'drive') {
+      $('.show_img').attr("src", name);
+    } else {
+      $('.show_img').attr("src", "../media/" + name);
+    }
   };
 
   var selectVideo = function selectVideo(name) {
     $('.show_img').addClass('d-none');
     $('.show_video').removeClass('d-none');
-    $('.show_video').attr("src", "../video/animal/" + name);
+    $('.show_video').attr("src", "../media/" + name);
   };
 
-  if (media[0].media_type == "image") {
+  if (media[0].media_type != "video") {
     $('.show_video').addClass('d-none');
     $('.show_img').removeClass('d-none');
   } else {
@@ -5766,12 +5775,12 @@ var Detail = function Detail() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "animal-img-current border border-4 border-success rounded d-flex align-items-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            src: '../media/' + media[0].ten_media,
+            src: media[0].media_type === "drive" ? media[0].ten_media : '../media/' + media[0].ten_media,
             alt: "img-current",
             className: "animal-img__current show_img",
             id: "media_main"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
-            src: '../video/animal/' + media[0].ten_media,
+            src: '../media/' + media[0].ten_media,
             controls: true,
             autoPlay: true,
             className: "show_video animal-img__current d-none"
@@ -5779,12 +5788,12 @@ var Detail = function Detail() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "animal-images__list d-flex flex-wrap my-1",
           children: media.map(function (media, index) {
-            if (media.media_type == "image") {
+            if (media.media_type != "video") {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                 onClick: function onClick() {
-                  return selectImg(media.ten_media);
+                  return selectImg(media.media_type, media.ten_media);
                 },
-                src: '../media/' + media.ten_media,
+                src: media.media_type === "drive" ? media.ten_media : "../media/" + media.ten_media,
                 alt: "img-more",
                 className: "animal-img__more col m-2"
               }, 'img-' + index);
@@ -5793,7 +5802,7 @@ var Detail = function Detail() {
                 onClick: function onClick() {
                   return selectVideo(media.ten_media);
                 },
-                src: '../video/animal/' + media.ten_media,
+                src: '../media/' + media.ten_media,
                 className: "animal-video col m-2"
               }, 'video-' + index);
             }

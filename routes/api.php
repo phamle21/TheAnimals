@@ -44,3 +44,20 @@ Route::post('/detail/edit-other', [ReactController::class, 'editOtherAnimals']);
 
 Route::get('/detail/other/{id}', [ReactController::class, 'listAnimalsOther']);
 Route::get('/detail/media/{id}', [ReactController::class, 'listAnimalsMedia']);
+
+
+//TEST
+// Route::get('/test', function () {
+
+//     $pattern = '/(?<=id=)([^&\n]*)(?=&)?/';
+//     $string = 'https://drive.google.com/open?id=1SPt5-5-Eu5eLhNXVGMijMrIqagolFZ4i';
+//     echo $string;
+
+//     preg_match($pattern, $string, $matches);
+
+    
+//     echo '<pre>';
+//     echo $matches[0];
+//     // print_r($matches);
+//     echo '</pre>';
+// });

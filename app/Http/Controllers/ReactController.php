@@ -81,10 +81,9 @@ class ReactController extends Controller
 
         foreach ($list as $sv) {
             foreach (SinhVat::find($sv->id)->media as $m) {
-                if ($m->media_type == "image") {
-                    $sv->image = $m->ten_media;
-                    break;
-                }
+                $sv->media_type = $m->media_type;
+                $sv->media = $m->ten_media;
+                break;
             }
         }
 
@@ -154,10 +153,9 @@ class ReactController extends Controller
 
         foreach ($list as $sv) {
             foreach (SinhVat::find($sv->id)->media as $m) {
-                if ($m->media_type == "image") {
-                    $sv->image = $m->ten_media;
-                    break;
-                }
+                $sv->media_type = $m->media_type;
+                $sv->media = $m->ten_media;
+                break;
             }
         }
         return response()->json($list);
