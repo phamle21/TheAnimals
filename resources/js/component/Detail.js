@@ -20,7 +20,7 @@ const Detail = () => {
         axios({
             method: "get",
             withCredentials: true,
-            url: '../api/detail/' + Id
+            url: '../api/detail/animal-' + Id
         })
             .then(result => {
                 setAnimal(result.data)

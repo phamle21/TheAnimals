@@ -30,7 +30,8 @@ const AdminRender = ({ component }) => {
             }
         })
     });
-
+   
+    
     return (
         <div id="wrapper" className="">
             <Admin.Head />
@@ -62,10 +63,12 @@ function App() {
                     element={<ClientRender component={<Client.Info />} />} />
                 <Route path="/info/search"
                     element={<ClientRender component={<Client.Search />} />} />
-                <Route path="/detail/:Id"
+                <Route path="/detail/animal-:Id"
                     element={<ClientRender component={<Client.Detail />} />} />
 
                 {/* Admin */}
+                <Route path="/admin/login"
+                    element={<Admin.Login />} />
                 <Route path="/admin/home"
                     element={<AdminRender component={<Admin.Home />} />} />
                 <Route path="/admin/animal-list"

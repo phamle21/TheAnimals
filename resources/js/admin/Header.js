@@ -100,9 +100,10 @@ const Header = () => {
                                 </li>
 
                                 <li className="dropdown-divider"></li>
-                                <li className="dropdown-item"><a data-toggle="modal" data-target="#modalEditProfile"><i className="fa fa-user-circle"></i> Profile</a></li>
                                 <li className="dropdown-divider"></li>
-                                <li className="dropdown-item"><a href="./xuly_admin/logout.php"><i className="icon-power mr-2"></i> Logout</a></li>
+                                <li className="dropdown-item">
+                                    <a href="./xuly_admin/logout.php"><i className="icon-power mr-2"></i> Logout</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

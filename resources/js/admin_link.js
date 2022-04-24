@@ -8,6 +8,7 @@ import TypeLop from './admin/TypeLop';
 import TypeBo from './admin/TypeBo';
 import TypeHo from './admin/TypeHo';
 import AnimalAdd from './admin/AnimalAdd';
+import Login from './admin/Login';
 
 import { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
@@ -42,7 +43,7 @@ const FooterJs = () => {
     )
 }
 export {
-    Head, Header, Footer, Home,
+    Head, Header, Footer, Home, Login,
     Animal, Detail, FooterJs, TypeNganh,
     TypeLop, TypeBo, TypeHo, AnimalAdd
 }

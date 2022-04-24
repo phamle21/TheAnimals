@@ -61,7 +61,6 @@ class ReactController extends Controller
     {
         $detail = detailSinhVat($id);
 
-
         return response()->json($detail);
     }
 

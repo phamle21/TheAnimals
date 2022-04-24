@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/Info.css';
 import Animal from './AnimalItem';
 import axios from "axios"
+import swal from 'sweetalert';
 
 const Info = () => {
     document.title = "Thông tin các loài động vật | The Animals"
