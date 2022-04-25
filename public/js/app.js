@@ -5612,7 +5612,11 @@ var AnimalItem = function AnimalItem(_ref) {
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: '../media/' + animal.image,
-          className: "card-img-top p-3 rounded"
+          className: "card-img-top p-3 rounded",
+          style: {
+            minHeight: '120px',
+            maxHeight: '120px'
+          }
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "card-body",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
