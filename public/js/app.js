@@ -3463,7 +3463,11 @@ var AnimalItem = function AnimalItem(_ref) {
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: '../media/' + animal.image,
-          className: "card-img-top p-3 rounded"
+          className: "card-img-top p-3 rounded",
+          style: {
+            minHeight: '120px',
+            maxHeight: '120px'
+          }
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "card-body pt-0",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -4039,6 +4043,7 @@ var Login = function Login() {
               className: "form-group",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
                 htmlFor: "exampleInputPhone",
+                className: "text-dark",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                   className: "icon-user"
                 }), " Username"]
@@ -4059,6 +4064,7 @@ var Login = function Login() {
               className: "form-group",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
                 htmlFor: "exampleInputPassword",
+                className: "text-dark",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
                   className: "icon-lock"
                 }), " Password"]
@@ -5716,6 +5722,7 @@ var Detail = function Detail() {
       setOther = _React$useState12[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    window.scrollTo(0, 0);
     axios__WEBPACK_IMPORTED_MODULE_3___default()({
       method: "get",
       withCredentials: true,

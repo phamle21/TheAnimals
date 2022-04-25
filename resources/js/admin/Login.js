@@ -39,14 +39,14 @@ const Login = () => {
                         <p className="text-cetner text-danger">{err}</p>
                         <form id="frmLogin" onSubmit={submitLogin}>
                             <div className="form-group">
-                                <label htmlFor="exampleInputPhone"><i className="icon-user"></i> Username</label>
+                                <label htmlFor="exampleInputPhone" className="text-dark"><i className="icon-user"></i> Username</label>
                                 <div className="position-relative has-icon-right">
                                     <input type="text" id="exampleInputPhone" onChange={e => setUserName(e.target.value)}
                                         name="username" className="form-control input-shadow text-dark" placeholder="Enter Your Phone" />
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="exampleInputPassword"><i className="icon-lock"></i> Password</label>
+                                <label htmlFor="exampleInputPassword" className="text-dark"><i className="icon-lock"></i> Password</label>
                                 <div className="position-relative has-icon-right">
                                     <input type="password" id="exampleInputPassword" onChange={e => setPassword(e.target.value)}
                                         name="password" className="form-control input-shadow text-dark" placeholder="Choose Password" />

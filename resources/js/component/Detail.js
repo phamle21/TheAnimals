@@ -17,6 +17,8 @@ const Detail = () => {
     const [other, setOther] = React.useState([{ id: Id }]);
 
     React.useEffect(() => {
+        window.scrollTo(0, 0);
+
         axios({
             method: "get",
             withCredentials: true,
