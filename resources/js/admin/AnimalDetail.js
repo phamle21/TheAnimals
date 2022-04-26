@@ -63,20 +63,6 @@ const Detail = () => {
         $('.show_video').removeClass('d-none')
         $('.show_video').attr("src", "../media/" + name)
     }
-
-
-    //LOADDDDDDDD
-    if (media[0].media_type == "image") {
-        $('.show_video').addClass('d-none')
-        $('.show_img').removeClass('d-none')
-    } else {
-        $('.show_img').addClass('d-none')
-        $('.show_video').removeClass('d-none')
-    }
-    $('#frmEditMedia').addClass('d-none');
-    $('.sel_media_list').removeClass('d-none');
-    $('.show_media').removeClass('d-none');
-
     const editBtn = (frm, type) => {
         switch (frm) {
             case 'info-basic':
@@ -128,6 +114,17 @@ const Detail = () => {
                 break;
         }
     }
+
+    //LOADDDDDDDD
+    if (media[0].media_type == "image") {
+        $('.show_video').addClass('d-none')
+        $('.show_img').removeClass('d-none')
+    } else {
+        $('.show_img').addClass('d-none')
+        $('.show_video').removeClass('d-none')
+    }
+
+    editBtn('media', 'cancel');
 
     const submitEditInfoBasic = (e) => {
         e.preventDefault();
@@ -333,6 +330,62 @@ const Detail = () => {
             })
     }
 
+    const submitAddFileMedia = (e) => {
+        e.preventDefault();
+
+        if (e.target.files.length > 10) {
+            swal({
+                title: "Quá tải!",
+                text: "Hãy chọn ít hơn hoặc bằng 10 file",
+                icon: "warning",
+                button: "Ok",
+            });
+        } else {
+
+            var formData = new FormData();
+            for (var i = 0; i < e.target.files.length; i++) {
+                formData.append('files[]', e.target.files[i])
+            }
+
+            formData.append('animal_id', Id)
+
+            axios({
+                method: "post",
+                withCredentials: true,
+                url: '../api/detail/add-media',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+                .then(result => {
+                    console.log(result.data);
+                    if (result.data.status == "success") {
+                        setAnimal(result.data)
+                        setMedia(result.data.mediaList)
+                        setBaoTon(result.data.baotonList)
+                        setToaDo(result.data.toadoList)
+                        setTitle(result.data.ten_tieng_viet)
+                        setNganh(result.data.nganh)
+                        setLop(result.data.lop)
+                        setBo(result.data.bo)
+                        editBtn('media', 'cancel')
+                        swal({
+                            title: "Thành công!",
+                            text: "Đã thêm media mới thành công!",
+                            icon: "success",
+                        })
+                    } else {
+                        swal({
+                            title: "Thất bại!",
+                            text: "Thêm file media thất bại!",
+                            icon: "error",
+                        })
+                    }
+
+                })
+        }
+    }
 
     return (
         <div className="container detail">
@@ -352,7 +405,7 @@ const Detail = () => {
                                 {
                                     media.map((media, index) => {
                                         return (
-                                            <label htmlFor={"media_new" + media.id} className="col-4 m-1 my-5" key={'img-' + index} >
+                                            <label htmlFor={"media_new" + media.id} className="col-4 col-md-3 m-1 my-5" key={'img-' + index} >
                                                 <input type="file" className="fs-5 mb-2 d-none" onChange={(e) => submitFileMedia(e, media.id)} name="new_media[]" id={"media_new" + media.id} accept="image/*, video/*" />
                                                 <img src={'../media/' + media.ten_media} alt="img-more"
                                                     className='animal-img__more h-100 col m-0 p-0 new_animal_img' />
@@ -361,7 +414,17 @@ const Detail = () => {
                                     })
                                 }
                             </div>
-
+                            <hr />
+                            <div className="row ">
+                                <label htmlFor="media_new" className="m-1 my-5 d-flex flex-column justify-content-center align-items-center" >
+                                    <input type="file" className="fs-5 mb-2 d-none"
+                                        onChange={(e) => submitAddFileMedia(e)} multiple
+                                        name="new_media_file[]" id="media_new" accept="image/*, video/*" />
+                                    <img src="../../images/plus.png" alt="img-more"
+                                        className='animal-img__more h-100 col m-0 p-0 new_animal_img' />
+                                    <h5 className="mt-2">Thêm ảnh mới!</h5>
+                                </label>
+                            </div>
                             <div className="form-group text-right m-5">
                                 {/* <button className="btn btn-success py-2 px-3 fs-5 m-2 mb-0" type="submit" form="frmEditMedia">Lưu</button> */}
                                 <button className="btn btn-danger py-2 px-3 fs-5 m-2 mb-0" type="reset" form="frmEditMedia" onClick={() => editBtn('media', 'cancel')}>Hủy</button>

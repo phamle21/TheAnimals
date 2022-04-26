@@ -2482,17 +2482,17 @@ var Detail = function Detail() {
               children: "Th\xF4ng tin c\u01A1 b\u1EA3n"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "ten_tieng_viet",
               label: "T\xEAn Ti\u1EBFng Vi\u1EC7t"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "ten_khoa_hoc",
               label: "T\xEAn Khoa H\u1ECDc"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "ten_dia_phuong",
               label: "T\xEAn \u0110\u1ECBa Ph\u01B0\u01A1ng"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -2514,12 +2514,12 @@ var Detail = function Detail() {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "sinh_canh",
               label: "Sinh c\u1EA3nh"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "gia_tri_su_dung",
               label: "Gi\xE1 tr\u1ECB s\u1EED d\u1EE5ng"
             })]
@@ -2536,47 +2536,47 @@ var Detail = function Detail() {
             className: "col-6",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "tinh_trang[]",
               label: "T\xECnh tr\u1EA1ng b\u1EA3o t\u1ED3n theo IUCN"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "tinh_trang[]",
               label: "T\xECnh tr\u1EA1ng b\u1EA3o t\u1ED3n theo s\xE1ch \u0111\u1ECF Vi\u1EC7t Nam"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "tinh_trang[]",
               label: "T\xECnh tr\u1EA1ng b\u1EA3o t\u1ED3n theo Ngh\u1ECB \u0111\u1ECBnh 32/2006/N\u0110CP"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "tinh_trang[]",
               label: "T\xECnh tr\u1EA1ng b\u1EA3o t\u1ED3n theo CITES (40/2013/TT-BNNPTNT)"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "toa_do[]",
               label: "T\u1ECDa \u0111\u1ED9 1"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "toa_do[]",
               label: "T\u1ECDa \u0111\u1ED9 2"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "toa_do[]",
               label: "T\u1ECDa \u0111\u1ED9 3"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "toa_do[]",
               label: "T\u1ECDa \u0111\u1ED9 4"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
-              value: "test",
+              value: "",
               name: "toa_do[]",
               label: "T\u1ECDa \u0111\u1ED9 5"
             })]
@@ -2779,20 +2779,7 @@ var Detail = function Detail() {
     $('.show_img').addClass('d-none');
     $('.show_video').removeClass('d-none');
     $('.show_video').attr("src", "../media/" + name);
-  }; //LOADDDDDDDD
-
-
-  if (media[0].media_type == "image") {
-    $('.show_video').addClass('d-none');
-    $('.show_img').removeClass('d-none');
-  } else {
-    $('.show_img').addClass('d-none');
-    $('.show_video').removeClass('d-none');
-  }
-
-  $('#frmEditMedia').addClass('d-none');
-  $('.sel_media_list').removeClass('d-none');
-  $('.show_media').removeClass('d-none');
+  };
 
   var editBtn = function editBtn(frm, type) {
     switch (frm) {
@@ -2853,7 +2840,18 @@ var Detail = function Detail() {
 
         break;
     }
-  };
+  }; //LOADDDDDDDD
+
+
+  if (media[0].media_type == "image") {
+    $('.show_video').addClass('d-none');
+    $('.show_img').removeClass('d-none');
+  } else {
+    $('.show_img').addClass('d-none');
+    $('.show_video').removeClass('d-none');
+  }
+
+  editBtn('media', 'cancel');
 
   var submitEditInfoBasic = function submitEditInfoBasic(e) {
     e.preventDefault();
@@ -3039,6 +3037,61 @@ var Detail = function Detail() {
     });
   };
 
+  var submitAddFileMedia = function submitAddFileMedia(e) {
+    e.preventDefault();
+
+    if (e.target.files.length > 10) {
+      swal({
+        title: "Quá tải!",
+        text: "Hãy chọn ít hơn hoặc bằng 10 file",
+        icon: "warning",
+        button: "Ok"
+      });
+    } else {
+      var formData = new FormData();
+
+      for (var i = 0; i < e.target.files.length; i++) {
+        formData.append('files[]', e.target.files[i]);
+      }
+
+      formData.append('animal_id', Id);
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: "post",
+        withCredentials: true,
+        url: '../api/detail/add-media',
+        data: formData,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (result) {
+        console.log(result.data);
+
+        if (result.data.status == "success") {
+          setAnimal(result.data);
+          setMedia(result.data.mediaList);
+          setBaoTon(result.data.baotonList);
+          setToaDo(result.data.toadoList);
+          setTitle(result.data.ten_tieng_viet);
+          setNganh(result.data.nganh);
+          setLop(result.data.lop);
+          setBo(result.data.bo);
+          editBtn('media', 'cancel');
+          swal({
+            title: "Thành công!",
+            text: "Đã thêm media mới thành công!",
+            icon: "success"
+          });
+        } else {
+          swal({
+            title: "Thất bại!",
+            text: "Thêm file media thất bại!",
+            icon: "error"
+          });
+        }
+      });
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "container detail",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3078,7 +3131,7 @@ var Detail = function Detail() {
               children: media.map(function (media, index) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
                   htmlFor: "media_new" + media.id,
-                  className: "col-4 m-1 my-5",
+                  className: "col-4 col-md-3 m-1 my-5",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                     type: "file",
                     className: "fs-5 mb-2 d-none",
@@ -3094,6 +3147,30 @@ var Detail = function Detail() {
                     className: "animal-img__more h-100 col m-0 p-0 new_animal_img"
                   })]
                 }, 'img-' + index);
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "row ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+                htmlFor: "media_new",
+                className: "m-1 my-5 d-flex flex-column justify-content-center align-items-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "file",
+                  className: "fs-5 mb-2 d-none",
+                  onChange: function onChange(e) {
+                    return submitAddFileMedia(e);
+                  },
+                  multiple: true,
+                  name: "new_media_file[]",
+                  id: "media_new",
+                  accept: "image/*, video/*"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                  src: "../../images/plus.png",
+                  alt: "img-more",
+                  className: "animal-img__more h-100 col m-0 p-0 new_animal_img"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+                  className: "mt-2",
+                  children: "Th\xEAm \u1EA3nh m\u1EDBi!"
+                })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "form-group text-right m-5",

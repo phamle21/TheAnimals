@@ -89,9 +89,9 @@ const Detail = () => {
                             <p className="taxonomy-title pb-4 mb-4 text-white" >
                                 Thông tin cơ bản
                             </p>
-                            <Input type="text" value="test" name="ten_tieng_viet" label="Tên Tiếng Việt" />
-                            <Input type="text" value="test" name="ten_khoa_hoc" label="Tên Khoa Học" />
-                            <Input type="text" value="test" name="ten_dia_phuong" label="Tên Địa Phương" />
+                            <Input type="text" value="" name="ten_tieng_viet" label="Tên Tiếng Việt" />
+                            <Input type="text" value="" name="ten_khoa_hoc" label="Tên Khoa Học" />
+                            <Input type="text" value="" name="ten_dia_phuong" label="Tên Địa Phương" />
 
                             <div className="form-group">
                                 <label htmlFor="ho" className="form-label text-white fs-6 ms-2" > Họ:</label>
@@ -103,8 +103,8 @@ const Detail = () => {
                                 </select>
                             </div>
 
-                            <Input type="text" value="test" name="sinh_canh" label="Sinh cảnh" />
-                            <Input type="text" value="test" name="gia_tri_su_dung" label="Giá trị sử dụng" />
+                            <Input type="text" value="" name="sinh_canh" label="Sinh cảnh" />
+                            <Input type="text" value="" name="gia_tri_su_dung" label="Giá trị sử dụng" />
                         </div>
                     </div>
                 </div>
@@ -113,15 +113,15 @@ const Detail = () => {
                     <p className="taxonomy-title text-white">Thông tin khác </p>
                     <div className="row justify-content-center">
                         <div className="col-6">
-                            <Input type="text" value="test" name="tinh_trang[]" label="Tình trạng bảo tồn theo IUCN" />
-                            <Input type="text" value="test" name="tinh_trang[]" label="Tình trạng bảo tồn theo sách đỏ Việt Nam" />
-                            <Input type="text" value="test" name="tinh_trang[]" label="Tình trạng bảo tồn theo Nghị định 32/2006/NĐCP" />
-                            <Input type="text" value="test" name="tinh_trang[]" label="Tình trạng bảo tồn theo CITES (40/2013/TT-BNNPTNT)" />
-                            <Input type="text" value="test" name="toa_do[]" label="Tọa độ 1" />
-                            <Input type="text" value="test" name="toa_do[]" label="Tọa độ 2" />
-                            <Input type="text" value="test" name="toa_do[]" label="Tọa độ 3" />
-                            <Input type="text" value="test" name="toa_do[]" label="Tọa độ 4" />
-                            <Input type="text" value="test" name="toa_do[]" label="Tọa độ 5" />
+                            <Input type="text" value="" name="tinh_trang[]" label="Tình trạng bảo tồn theo IUCN" />
+                            <Input type="text" value="" name="tinh_trang[]" label="Tình trạng bảo tồn theo sách đỏ Việt Nam" />
+                            <Input type="text" value="" name="tinh_trang[]" label="Tình trạng bảo tồn theo Nghị định 32/2006/NĐCP" />
+                            <Input type="text" value="" name="tinh_trang[]" label="Tình trạng bảo tồn theo CITES (40/2013/TT-BNNPTNT)" />
+                            <Input type="text" value="" name="toa_do[]" label="Tọa độ 1" />
+                            <Input type="text" value="" name="toa_do[]" label="Tọa độ 2" />
+                            <Input type="text" value="" name="toa_do[]" label="Tọa độ 3" />
+                            <Input type="text" value="" name="toa_do[]" label="Tọa độ 4" />
+                            <Input type="text" value="" name="toa_do[]" label="Tọa độ 5" />
                         </div>
                     </div>
                 </div>
