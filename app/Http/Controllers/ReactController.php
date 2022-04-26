@@ -414,6 +414,11 @@ class ReactController extends Controller
             // nếu không có file nào vi phạm validate thì tiến hành lưu DB
             if ($exe_flg) {
                 foreach ($request->file('files') as $file) {
+                    
+                    $file_old = Media::find($request->media_id)->ten_media;
+
+                    $del_file = Storage::disk('public_uploads')->delete($file_old);
+
                     $extension = $file->getClientOriginalExtension();
                     // $filename = $file->store('media');
                     $filename = Storage::disk('public_uploads')->put('', $file);
@@ -494,6 +499,33 @@ class ReactController extends Controller
         } else {
             $action->status = 'Không có file';
         }
+        return response()->json($action);
+    }
+
+    //Delete Media
+    public function deleteMediaAnimals(Request $request)
+    {
+        $action = new stdClass();
+
+        $file = Media::find($request->media_id)->ten_media;
+
+        $del_file = Storage::disk('public_uploads')->delete($file);
+
+        if ($del_file) {
+            $del = Media::find($request->media_id)->delete();
+
+            if ($del) {
+                $action = detailSinhVat($request->animal_id);
+
+                $action->status = "success";
+            } else {
+                $action->status = "Lỗi rồi";
+            }
+        } else {
+            $action->status = "Lỗi xóa file";
+        }
+
+
         return response()->json($action);
     }
 }

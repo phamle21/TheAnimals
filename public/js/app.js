@@ -2656,12 +2656,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _css_Detail_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/Detail.css */ "./resources/css/Detail.css");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input */ "./resources/js/admin/Input.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2682,8 +2684,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Detail = function Detail() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
       Id = _useParams.Id;
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState({}),
@@ -2873,13 +2876,13 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('info-basic', 'cancel');
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thành công!",
           text: "Cập nhật thông tin cơ bản thành công!",
           icon: "success"
         });
       } else {
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thất bại!",
           text: "Cập nhật thông tin cơ bản thất bại!",
           icon: "error"
@@ -2910,13 +2913,13 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('hinh-thai', 'cancel');
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thành công!",
           text: "Cập nhật đặc điểm hình thái thành công!",
           icon: "success"
         });
       } else {
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thất bại!",
           text: "Cập nhật đặc điểm hình thái thất bại!",
           icon: "error"
@@ -2946,13 +2949,13 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('sinh-thai', 'cancel');
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thành công!",
           text: "Cập nhật đặc điểm sinh thái thành công!",
           icon: "success"
         });
       } else {
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thất bại!",
           text: "Cập nhật đặc điểm sinh thái thất bại!",
           icon: "error"
@@ -2983,54 +2986,15 @@ var Detail = function Detail() {
         setLop(result.data.lop);
         setBo(result.data.bo);
         editBtn('info-other', 'cancel');
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thành công!",
           text: "Cập nhật thông tin thành công!",
           icon: "success"
         });
       } else {
-        swal({
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
           title: "Thất bại!",
           text: "Cập nhật thông tin thất bại!",
-          icon: "error"
-        });
-      }
-    });
-  };
-
-  var submitFileMedia = function submitFileMedia(e, media_id) {
-    e.preventDefault();
-    var formData = new FormData($('#frmAddAnimal')[0]);
-    formData.append('files[]', e.target.files[0]);
-    formData.append('animal_id', Id);
-    formData.append('media_id', media_id);
-    axios__WEBPACK_IMPORTED_MODULE_2___default()({
-      method: "post",
-      withCredentials: true,
-      url: '../api/detail/edit-media',
-      data: formData
-    }).then(function (result) {
-      console.log(result.data);
-
-      if (result.data.status == "success") {
-        setAnimal(result.data);
-        setMedia(result.data.mediaList);
-        setBaoTon(result.data.baotonList);
-        setToaDo(result.data.toadoList);
-        setTitle(result.data.ten_tieng_viet);
-        setNganh(result.data.nganh);
-        setLop(result.data.lop);
-        setBo(result.data.bo);
-        editBtn('info-basic', 'cancel');
-        swal({
-          title: "Thành công!",
-          text: "Cập nhật hình ảnh thành công!",
-          icon: "success"
-        });
-      } else {
-        swal({
-          title: "Thất bại!",
-          text: "Cập nhật thông tin cơ bản thất bại!",
           icon: "error"
         });
       }
@@ -3041,7 +3005,7 @@ var Detail = function Detail() {
     e.preventDefault();
 
     if (e.target.files.length > 10) {
-      swal({
+      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
         title: "Quá tải!",
         text: "Hãy chọn ít hơn hoặc bằng 10 file",
         icon: "warning",
@@ -3076,13 +3040,13 @@ var Detail = function Detail() {
           setLop(result.data.lop);
           setBo(result.data.bo);
           editBtn('media', 'cancel');
-          swal({
+          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
             title: "Thành công!",
             text: "Đã thêm media mới thành công!",
             icon: "success"
           });
         } else {
-          swal({
+          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
             title: "Thất bại!",
             text: "Thêm file media thất bại!",
             icon: "error"
@@ -3092,68 +3056,190 @@ var Detail = function Detail() {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  var submitFileMedia = function submitFileMedia(e, media_id) {
+    e.preventDefault();
+    var formData = new FormData();
+    formData.append('files[]', e.target.files[0]);
+    formData.append('animal_id', Id);
+    formData.append('media_id', media_id);
+    axios__WEBPACK_IMPORTED_MODULE_2___default()({
+      method: "post",
+      withCredentials: true,
+      url: '../api/detail/edit-media',
+      data: formData
+    }).then(function (result) {
+      console.log(result.data);
+
+      if (result.data.status == "success") {
+        setAnimal(result.data);
+        setMedia(result.data.mediaList);
+        setBaoTon(result.data.baotonList);
+        setToaDo(result.data.toadoList);
+        setTitle(result.data.ten_tieng_viet);
+        setNganh(result.data.nganh);
+        setLop(result.data.lop);
+        setBo(result.data.bo);
+        editBtn('info-basic', 'cancel');
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+          title: "Thành công!",
+          text: "Cập nhật hình ảnh thành công!",
+          icon: "success"
+        });
+      } else {
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+          title: "Thất bại!",
+          text: "Cập nhật hình ảnh thất bại!",
+          icon: "error"
+        });
+      }
+    });
+  };
+
+  var clickSubmitFileMedia = function clickSubmitFileMedia(media_id) {
+    sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("Bạn muốn thực hiện chức năng nào?", {
+      buttons: {
+        edit: {
+          text: "Sửa",
+          value: "edit"
+        },
+        danger: {
+          text: "Xóa",
+          value: "del"
+        },
+        cancel: "Hủy!"
+      },
+      dangerMode: true
+    }).then(function (value) {
+      switch (value) {
+        case "edit":
+          $('#new_media_label' + media_id).trigger("click");
+          break;
+
+        case "del":
+          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("Hành động không thể khôi phuc!\nBạn chắc chắn muốn xóa?", {
+            buttons: {
+              danger: {
+                text: "Xóa",
+                value: "del"
+              },
+              cancel: "Hủy!"
+            },
+            dangerMode: true
+          }).then(function (value) {
+            switch (value) {
+              case "del":
+                var formData = new FormData();
+                formData.append('animal_id', Id);
+                formData.append('media_id', media_id);
+                axios__WEBPACK_IMPORTED_MODULE_2___default()({
+                  method: "post",
+                  withCredentials: true,
+                  url: '../api/detail/delete-media',
+                  data: formData
+                }).then(function (result) {
+                  // console.log(result.data);
+                  if (result.data.status == "success") {
+                    setAnimal(result.data);
+                    setMedia(result.data.mediaList);
+                    setBaoTon(result.data.baotonList);
+                    setToaDo(result.data.toadoList);
+                    setTitle(result.data.ten_tieng_viet);
+                    setNganh(result.data.nganh);
+                    setLop(result.data.lop);
+                    setBo(result.data.bo);
+                    editBtn('info-basic', 'cancel');
+                    sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+                      title: "Thành công!",
+                      text: "Xóa hình ảnh thành công!",
+                      icon: "success"
+                    });
+                  } else {
+                    sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+                      title: "Thất bại!",
+                      text: "Xóa hình ảnh thất bại!",
+                      icon: "error"
+                    });
+                  }
+                });
+                break;
+
+              default:
+            }
+          });
+          break;
+
+        default:
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container detail",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "animal-name bg-light ",
       children: animal.ten_tieng_viet
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "row mb-4",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "col-md mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "animal-img-current border border-4 border-success rounded d-flex justify-content-center align-items-center bg-light position-relative",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "position-absolute top-0 end-0 w-fitcontent",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen ",
               onClick: function onClick() {
                 return editBtn('media', 'edit');
               }
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: '../media/' + media[0].ten_media,
             alt: "img-current",
             className: "animal-img__current show_img show_media h-100 mh-100 min-h-100",
             id: "media_main"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("video", {
             src: '../media/' + media[0].ten_media,
             controls: true,
             autoPlay: true,
             className: "show_video animal-img__current h-100 mh-100 min-h-100 d-none"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
             id: "frmEditMedia",
             className: "top-0 start-0 mt-4 ms-5 d-none",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h4", {
               children: "Ch\u1ECDn h\xECnh mu\u1ED1n s\u1EEDa:"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "animal-images__list d-flex flex-wrap my-1",
               children: media.map(function (media, index) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-                  htmlFor: "media_new" + media.id,
-                  className: "col-4 col-md-3 m-1 my-5",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                    type: "file",
-                    className: "fs-5 mb-2 d-none",
-                    onChange: function onChange(e) {
-                      return submitFileMedia(e, media.id);
-                    },
-                    name: "new_media[]",
-                    id: "media_new" + media.id,
-                    accept: "image/*, video/*"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                     src: '../media/' + media.ten_media,
                     alt: "img-more",
-                    className: "animal-img__more h-100 col m-0 p-0 new_animal_img"
+                    onClick: function onClick() {
+                      return clickSubmitFileMedia(media.id);
+                    },
+                    className: "animal-img__more col-5 wrap_img_animal_more m-2"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                    htmlFor: "new_media" + media.id,
+                    id: "new_media_label" + media.id,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                      type: "file",
+                      className: "fs-5 mb-2 d-none",
+                      onChange: function onChange(e) {
+                        return submitFileMedia(e, media.id);
+                      },
+                      name: "new_media[]",
+                      id: "new_media" + media.id,
+                      accept: "image/*, video/*"
+                    })
                   })]
                 }, 'img-' + index);
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "row ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
                 htmlFor: "media_new",
                 className: "m-1 my-5 d-flex flex-column justify-content-center align-items-center",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
                   type: "file",
                   className: "fs-5 mb-2 d-none",
                   onChange: function onChange(e) {
@@ -3163,18 +3249,18 @@ var Detail = function Detail() {
                   name: "new_media_file[]",
                   id: "media_new",
                   accept: "image/*, video/*"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                   src: "../../images/plus.png",
                   alt: "img-more",
-                  className: "animal-img__more h-100 col m-0 p-0 new_animal_img"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+                  className: "animal-img__more col-2 m-0 p-0 new_animal_img"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
                   className: "mt-2",
                   children: "Th\xEAm \u1EA3nh m\u1EDBi!"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "form-group text-right m-5",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
                 type: "reset",
                 form: "frmEditMedia",
@@ -3185,105 +3271,99 @@ var Detail = function Detail() {
               })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "animal-images__list d-flex flex-wrap my-1 sel_media_list",
           children: media.map(function (media, index) {
             if (media.media_type == "image") {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "col-2 m-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                  onClick: function onClick() {
-                    return selectImg(media.ten_media);
-                  },
-                  src: '../media/' + media.ten_media,
-                  alt: "img-more",
-                  className: "animal-img__more h-100 col m-0 p-0"
-                })
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                onClick: function onClick() {
+                  return selectImg(media.ten_media);
+                },
+                src: '../media/' + media.ten_media,
+                alt: "img-more",
+                className: "animal-img__more col-2 item_animal_more m-2"
               }, 'img-' + index);
             } else {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "col m-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
-                  onClick: function onClick() {
-                    return selectVideo(media.ten_media);
-                  },
-                  src: '../media/' + media.ten_media,
-                  className: "animal-video h-100 col m-0 p-0"
-                })
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("video", {
+                onClick: function onClick() {
+                  return selectVideo(media.ten_media);
+                },
+                src: '../media/' + media.ten_media,
+                className: "animal-video col-2 item_animal_more m-2"
               }, 'video-' + index);
             }
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "col-md mt-4 ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "animal-taxonomy mb-4 bg-light border border-success  text-white",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
             className: "taxonomy-title pb-4 mb-4 text-white",
-            children: ["Th\xF4ng tin c\u01A1 b\u1EA3n ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            children: ["Th\xF4ng tin c\u01A1 b\u1EA3n ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
               onClick: function onClick() {
                 return editBtn('info-basic', 'edit');
               }
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
             className: "d-none",
             id: "frmEditInfoBasic",
             onSubmit: submitEditInfoBasic,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
               name: "ten_tieng_viet",
               value: animal.ten_tieng_viet,
               label: "T\xEAn Ti\u1EBFng Vi\u1EC7t"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
               name: "ten_khoa_hoc",
               value: animal.ten_khoa_hoc,
               label: "T\xEAn Khoa H\u1ECDc"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
               name: "ten_dia_phuong",
               value: animal.ten_dia_phuong,
               label: "T\xEAn \u0110\u1ECBa Ph\u01B0\u01A1ng"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "form-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
                 htmlFor: "ho",
                 className: "form-label text-white fs-6 ms-2",
                 children: " H\u1ECD:"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "text-normal fs-6 m-2",
                 children: nganh + " > " + lop + " > " + bo
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("select", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
                 name: "ho",
                 value: animal.ho_id,
                 className: "form-control text-white fs-4",
                 id: "ho",
                 children: hoList.map(function (option) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
                     value: option.id,
                     children: option.ten_ho
                   }, option.id + option.ten_ho);
                 })
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
               name: "sinh_canh",
               value: animal.sinh_canh,
               label: "Sinh c\u1EA3nh"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "text",
               name: "gia_tri_su_dung",
               value: animal.gia_tri_su_dung,
               label: "Gi\xE1 tr\u1ECB s\u1EED d\u1EE5ng"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "form-group text-right",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "btn btn-success py-2 px-3 fs-5 m-2 mb-0",
                 type: "submit",
                 form: "frmEditInfoBasic",
                 children: "L\u01B0u"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
                 type: "reset",
                 form: "frmEditInfoBasic",
@@ -3293,86 +3373,86 @@ var Detail = function Detail() {
                 children: "H\u1EE7y"
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "info-basic",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "T\xEAn ti\u1EBFng Vi\u1EC7t: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
                 className: "science-name taxonomy-values",
                 children: [animal.ten_tieng_viet, " "]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "T\xEAn khoa h\u1ECDc: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
                 className: "science-name taxonomy-values",
                 children: [animal.ten_khoa_hoc, " "]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "T\xEAn \u0111\u1ECBa ph\u01B0\u01A1ng: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "science-name-local taxonomy-values",
                 children: animal.ten_dia_phuong
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "Ng\xE0nh: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "animal-phylum taxonomy-values",
                 children: animal.nganh
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "L\u1EDBp: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
                 className: "animal-class taxonomy-values",
                 children: [animal.lop, " "]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "B\u1ED9: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "animal-order taxonomy-values",
                 children: animal.bo
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "H\u1ECD: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "animal-family taxonomy-values",
                 children: animal.ho
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "Sinh c\u1EA3nh: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "animal-family taxonomy-values",
                 children: animal.sinh_canh
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "taxonomy-wrap",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "taxonomy-label",
                 children: "Gi\xE1 tr\u1ECB s\u1EED d\u1EE5ng: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                 className: "animal-family taxonomy-values",
                 children: animal.gia_tri_su_dung
               })]
@@ -3380,56 +3460,56 @@ var Detail = function Detail() {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "animal-taxonomy mt-4 bg-light border border-success text-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
         className: "taxonomy-title text-white",
-        children: ["Th\xF4ng tin kh\xE1c ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        children: ["Th\xF4ng tin kh\xE1c ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
           onClick: function onClick() {
             return editBtn('info-other', 'edit');
           }
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "info-other",
         children: [baoton.map(function (baoton) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "taxonomy-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
               className: "taxonomy-label",
               children: [baoton.loai_tt, ":"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
               className: "animal-family taxonomy-values",
               children: baoton.tinh_trang
             })]
           }, 'baoton-' + baoton.id);
         }), toado.map(function (toado) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "taxonomy-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
               className: "taxonomy-label",
               children: [toado.loai_toa_do, ":"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
               className: "animal-family taxonomy-values",
               children: toado.toa_do
             })]
           }, 'toado-' + toado.id);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("form", {
         id: "frmEditOther",
         className: "d-none",
         onSubmit: submitEditOther,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "row justify-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "col-6",
             children: [baoton.map(function (baoton) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
                   type: "hidden",
                   name: "baoton_id[]",
                   value: baoton.id
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                   type: "text",
                   name: "tinh_trang[]",
                   value: baoton.tinh_trang,
@@ -3437,26 +3517,26 @@ var Detail = function Detail() {
                 })]
               }, 'baotonTT-' + baoton.id);
             }), toado.map(function (toado) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
                   type: "hidden",
                   name: "toado_id[]",
                   value: toado.id
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                   type: "text",
                   name: "toa_do[]",
                   value: toado.toa_do,
                   label: toado.loai_toa_do
                 })]
               }, 'toadoEdit-' + toado.id);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "form-group text-right",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "btn btn-success py-2 px-3 fs-5 m-2 mb-0",
                 type: "submit",
                 form: "frmEditOther",
                 children: "L\u01B0u"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
                 type: "reset",
                 form: "frmEditOther",
@@ -3469,30 +3549,30 @@ var Detail = function Detail() {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "row",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "col-md animal-characteristics  text-white",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "row",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "col-md animal-morphological mx-3 bg-light border border-success",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
               className: "morphological-title text-white",
-              children: ["\u0110\u1EB7c \u0111i\u1EC3m h\xECnh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: ["\u0110\u1EB7c \u0111i\u1EC3m h\xECnh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
                 onClick: function onClick() {
                   return editBtn('hinh-thai', 'edit');
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
               className: "morphological-des dd_hinh_thai",
               children: animal.mo_ta_hinh_thai
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
               className: "d-none",
               id: "frmEditHinhThai",
               onSubmit: submitEditHinhThai,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
                 name: "mo_ta_hinh_thai",
                 id: "mo_ta_hinh_thai",
                 value: hinhthai || animal.mo_ta_hinh_thai,
@@ -3501,14 +3581,14 @@ var Detail = function Detail() {
                 },
                 className: "form-control fs-3 w-100",
                 rows: "10"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 className: "form-group text-right",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                   className: "btn btn-success py-2 px-3 fs-5 m-2 mb-0",
                   type: "submit",
                   form: "frmEditHinhThai",
                   children: "L\u01B0u"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                   className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
                   type: "reset",
                   form: "frmEditHinhThai",
@@ -3519,24 +3599,24 @@ var Detail = function Detail() {
                 })]
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "col-md animal-ecological mx-3 bg-light border border-success",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
               className: "ecological-title text-white",
-              children: ["\u0110\u1EB7c \u0111i\u1EC3m sinh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: ["\u0110\u1EB7c \u0111i\u1EC3m sinh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                 className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
                 onClick: function onClick() {
                   return editBtn('sinh-thai', 'edit');
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
               className: "ecological-des dd_sinh_thai dd_sinh_thai",
               children: animal.mo_ta_sinh_thai
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
               className: "d-none",
               id: "frmEditSinhThai",
               onSubmit: submitEditSinhThai,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
                 name: "mo_ta_sinh_thai",
                 id: "mo_ta_sinh_thai",
                 value: sinhthai || animal.mo_ta_sinh_thai,
@@ -3545,14 +3625,14 @@ var Detail = function Detail() {
                 },
                 className: "form-control fs-3 w-100",
                 rows: "10"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 className: "form-group text-right",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                   className: "btn btn-success py-2 px-3 fs-5 m-2 mb-0",
                   type: "submit",
                   form: "frmEditSinhThai",
                   children: "L\u01B0u"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
                   className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
                   type: "reset",
                   form: "frmEditSinhThai",
@@ -5942,7 +6022,7 @@ var Detail = function Detail() {
                 },
                 src: '../media/' + media.ten_media,
                 alt: "img-more",
-                className: "animal-img__more col m-2"
+                className: "animal-img__more col-2 item_animal_more m-2"
               }, 'img-' + index);
             } else {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
@@ -5950,7 +6030,7 @@ var Detail = function Detail() {
                   return selectVideo(media.ten_media);
                 },
                 src: '../media/' + media.ten_media,
-                className: "animal-video col m-2"
+                className: "animal-video col-2 item_animal_more m-2"
               }, 'video-' + index);
             }
           })
@@ -6822,7 +6902,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".detail {\r\n    padding: 0 0 100px 0;\r\n}\r\n\r\n.animal-name {\r\n    font-size: 3rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-images {\r\n    margin-top: 40px;\r\n}\r\n.animal-img-current{\r\n    min-height: 450px !important;\r\n}\r\n.animal-img__current {\r\n    width: auto;\r\n    height: 440px !important;\r\n    max-width: 550px;\r\n    max-height: 450px !important;\r\n}\r\n\r\n.animal-images__list {\r\n    margin: 30px 0;\r\n}\r\n\r\n.animal-img__more, .animal-video {\r\n    width: 100px;\r\n    margin-right: 15px;\r\n    cursor: pointer;\r\n    transition: all 0.5s;\r\n    border: 2px solid rgb(0, 97, 13);\r\n}\r\n.animal-img__more:hover, .animal-video:hover{\r\n    box-shadow: 0 0 10px rgb(0, 255, 0);\r\n    transform: scale(1.1);\r\n    border: 2px solid rgb(255, 255, 255);\r\n\r\n}\r\n.animal-taxonomy {\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n    min-height: 100%;\r\n}\r\n\r\n.taxonomy-title,\r\n.morphological-title,\r\n.ecological-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 1rem;\r\n    color: var(--primary-color);\r\n}\r\n\r\n.taxonomy-wrap {\r\n    display: flex;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.taxonomy-label {\r\n    font-size: 1.8rem;\r\n    font-weight: 700;\r\n    margin-right: 4px;\r\n}\r\n\r\n.taxonomy-values {\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.animal-morphological,\r\n.animal-ecological {\r\n    margin-top: 40px;\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.morphological-des,\r\n.ecological-des {\r\n    font-size: 1.8rem;\r\n    text-align: justify;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.detail-search-input {\r\n    border: 1px solid black;\r\n    font-size: 1.6rem;\r\n    padding: .75rem;\r\n    margin-left: 20px;\r\n    margin-top: 80px;\r\n    margin-right: 30px;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n}\r\n\r\n.detail-search-icon {\r\n    font-size: 2.2rem;\r\n    background-color: var(--primary-color);\r\n    padding: 1.2rem;\r\n    border-radius: 50%;\r\n}\r\n\r\n.detail-search-icon:hover {\r\n    color: var(--white-color);\r\n}\r\n\r\n.detail-search-icon:active {\r\n    color: var(--black-color);\r\n}\r\n\r\n.animal-related {\r\n    margin-top: 40px;\r\n}\r\n\r\n.animal-related-title {\r\n    font-size: 2.8rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    margin: 0 0 40px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-related__list {\r\n    background-color: var(--bg-color);\r\n    margin-top: 40px;\r\n    padding: 40px 0;\r\n}\r\n.btn_edit_pen:hover{\r\n    color: black;\r\n    background-color: #9efffa9f !important;\r\n    box-shadow: 0 0 5px 0 green;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".detail {\r\n    padding: 0 0 100px 0;\r\n}\r\n\r\n.animal-name {\r\n    font-size: 3rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-images {\r\n    margin-top: 40px;\r\n}\r\n.animal-img-current{\r\n    min-height: 450px !important;\r\n}\r\n.animal-img__current {\r\n    width: auto;\r\n    height: 440px !important;\r\n    max-width: 550px;\r\n    max-height: 450px !important;\r\n}\r\n\r\n.animal-images__list {\r\n    margin: 30px 0;\r\n}\r\n\r\n.animal-img__more, .animal-video {\r\n    width: 100%;\r\n    margin-right: 15px;\r\n    cursor: pointer;\r\n    transition: all 0.5s;\r\n    border: 2px solid rgb(0, 97, 13);\r\n}\r\n.animal-img__more:hover, .animal-video:hover{\r\n    box-shadow: 0 0 10px rgb(0, 255, 0);\r\n    transform: scale(1.1);\r\n    border: 2px solid rgb(255, 255, 255);\r\n\r\n}\r\n.animal-taxonomy {\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n    min-height: 100%;\r\n}\r\n\r\n.taxonomy-title,\r\n.morphological-title,\r\n.ecological-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 1rem;\r\n    color: var(--primary-color);\r\n}\r\n\r\n.taxonomy-wrap {\r\n    display: flex;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.taxonomy-label {\r\n    font-size: 1.8rem;\r\n    font-weight: 700;\r\n    margin-right: 4px;\r\n}\r\n\r\n.taxonomy-values {\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.animal-morphological,\r\n.animal-ecological {\r\n    margin-top: 40px;\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.morphological-des,\r\n.ecological-des {\r\n    font-size: 1.8rem;\r\n    text-align: justify;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.detail-search-input {\r\n    border: 1px solid black;\r\n    font-size: 1.6rem;\r\n    padding: .75rem;\r\n    margin-left: 20px;\r\n    margin-top: 80px;\r\n    margin-right: 30px;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n}\r\n\r\n.detail-search-icon {\r\n    font-size: 2.2rem;\r\n    background-color: var(--primary-color);\r\n    padding: 1.2rem;\r\n    border-radius: 50%;\r\n}\r\n\r\n.detail-search-icon:hover {\r\n    color: var(--white-color);\r\n}\r\n\r\n.detail-search-icon:active {\r\n    color: var(--black-color);\r\n}\r\n\r\n.animal-related {\r\n    margin-top: 40px;\r\n}\r\n\r\n.animal-related-title {\r\n    font-size: 2.8rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    margin: 0 0 40px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-related__list {\r\n    background-color: var(--bg-color);\r\n    margin-top: 40px;\r\n    padding: 40px 0;\r\n}\r\n.btn_edit_pen:hover{\r\n    color: black;\r\n    background-color: #9efffa9f !important;\r\n    box-shadow: 0 0 5px 0 green;\r\n}\r\n.wrap_img_animal_more{\r\n    max-width: 100px !important;\r\n    max-height: 100px !important;\r\n}\r\n.item_animal_more{\r\n    max-width: 100px !important;\r\n    max-height: 60px !important;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

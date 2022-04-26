@@ -79,9 +79,9 @@ const Detail = () => {
                         {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {
-                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../media/' + media.ten_media} alt="img-more" className='animal-img__more col m-2' />
+                                    return <img key={'img-' + index} onClick={() => selectImg(media.ten_media)} src={'../media/' + media.ten_media} alt="img-more" className='animal-img__more col-2 item_animal_more m-2' />
                                 } else {
-                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../media/' + media.ten_media} className='animal-video col m-2'></video>
+                                    return <video key={'video-' + index} onClick={() => selectVideo(media.ten_media)} src={'../media/' + media.ten_media} className='animal-video col-2 item_animal_more m-2'></video>
                                 }
                             })
                         }

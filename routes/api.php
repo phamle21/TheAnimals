@@ -43,6 +43,7 @@ Route::post('/detail/edit', [ReactController::class, 'editAnimals']);
 Route::post('/detail/edit-other', [ReactController::class, 'editOtherAnimals']);
 Route::post('/detail/edit-media', [ReactController::class, 'editMediaAnimals']);
 Route::post('/detail/add-media', [ReactController::class, 'addMediaAnimals']);
+Route::post('/detail/delete-media', [ReactController::class, 'deleteMediaAnimals']);
 
 Route::get('/detail/other/{id}', [ReactController::class, 'listAnimalsOther']);
 Route::get('/detail/media/{id}', [ReactController::class, 'listAnimalsMedia']);

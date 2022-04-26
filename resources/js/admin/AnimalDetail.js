@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../../css/Detail.css';
 import axios from "axios";
 import Input from './Input';
+import swal from 'sweetalert';
 
 const Detail = () => {
 
@@ -287,49 +288,6 @@ const Detail = () => {
             })
     }
 
-    const submitFileMedia = (e, media_id) => {
-        e.preventDefault();
-
-        var formData = new FormData($('#frmAddAnimal')[0]);
-
-        formData.append('files[]', e.target.files[0])
-        formData.append('animal_id', Id)
-        formData.append('media_id', media_id)
-
-        axios({
-            method: "post",
-            withCredentials: true,
-            url: '../api/detail/edit-media',
-            data: formData,
-        })
-            .then(result => {
-                console.log(result.data);
-                if (result.data.status == "success") {
-                    setAnimal(result.data)
-                    setMedia(result.data.mediaList)
-                    setBaoTon(result.data.baotonList)
-                    setToaDo(result.data.toadoList)
-                    setTitle(result.data.ten_tieng_viet)
-                    setNganh(result.data.nganh)
-                    setLop(result.data.lop)
-                    setBo(result.data.bo)
-                    editBtn('info-basic', 'cancel')
-                    swal({
-                        title: "Thành công!",
-                        text: "Cập nhật hình ảnh thành công!",
-                        icon: "success",
-                    })
-                } else {
-                    swal({
-                        title: "Thất bại!",
-                        text: "Cập nhật thông tin cơ bản thất bại!",
-                        icon: "error",
-                    })
-                }
-
-            })
-    }
-
     const submitAddFileMedia = (e) => {
         e.preventDefault();
 
@@ -387,6 +345,132 @@ const Detail = () => {
         }
     }
 
+    const submitFileMedia = (e, media_id) => {
+
+        e.preventDefault();
+        var formData = new FormData();
+
+        formData.append('files[]', e.target.files[0])
+        formData.append('animal_id', Id)
+        formData.append('media_id', media_id)
+
+        axios({
+            method: "post",
+            withCredentials: true,
+            url: '../api/detail/edit-media',
+            data: formData,
+        })
+            .then(result => {
+                console.log(result.data);
+                if (result.data.status == "success") {
+                    setAnimal(result.data)
+                    setMedia(result.data.mediaList)
+                    setBaoTon(result.data.baotonList)
+                    setToaDo(result.data.toadoList)
+                    setTitle(result.data.ten_tieng_viet)
+                    setNganh(result.data.nganh)
+                    setLop(result.data.lop)
+                    setBo(result.data.bo)
+                    editBtn('info-basic', 'cancel')
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật hình ảnh thành công!",
+                        icon: "success",
+                    })
+                } else {
+                    swal({
+                        title: "Thất bại!",
+                        text: "Cập nhật hình ảnh thất bại!",
+                        icon: "error",
+                    })
+                }
+
+            })
+    }
+
+    const clickSubmitFileMedia = (media_id) => {
+        swal("Bạn muốn thực hiện chức năng nào?", {
+            buttons: {
+                edit: {
+                    text: "Sửa",
+                    value: "edit",
+                },
+                danger: {
+                    text: "Xóa",
+                    value: "del",
+                },
+                cancel: "Hủy!",
+            },
+            dangerMode: true
+        })
+            .then((value) => {
+                switch (value) {
+                    case "edit":
+                        $('#new_media_label' + media_id).trigger("click")
+                        break;
+
+                    case "del":
+                        swal("Hành động không thể khôi phuc!\nBạn chắc chắn muốn xóa?", {
+                            buttons: {
+                                danger: {
+                                    text: "Xóa",
+                                    value: "del",
+                                },
+                                cancel: "Hủy!",
+                            },
+                            dangerMode: true
+                        })
+                            .then((value) => {
+                                switch (value) {
+                                    case "del":
+                                        var formData = new FormData();
+
+                                        formData.append('animal_id', Id)
+                                        formData.append('media_id', media_id)
+                                        axios({
+                                            method: "post",
+                                            withCredentials: true,
+                                            url: '../api/detail/delete-media',
+                                            data: formData,
+                                        })
+                                            .then(result => {
+                                                // console.log(result.data);
+                                                if (result.data.status == "success") {
+                                                    setAnimal(result.data)
+                                                    setMedia(result.data.mediaList)
+                                                    setBaoTon(result.data.baotonList)
+                                                    setToaDo(result.data.toadoList)
+                                                    setTitle(result.data.ten_tieng_viet)
+                                                    setNganh(result.data.nganh)
+                                                    setLop(result.data.lop)
+                                                    setBo(result.data.bo)
+                                                    editBtn('info-basic', 'cancel')
+                                                    swal({
+                                                        title: "Thành công!",
+                                                        text: "Xóa hình ảnh thành công!",
+                                                        icon: "success",
+                                                    })
+                                                } else {
+                                                    swal({
+                                                        title: "Thất bại!",
+                                                        text: "Xóa hình ảnh thất bại!",
+                                                        icon: "error",
+                                                    })
+                                                }
+
+                                            })
+                                        break;
+
+                                    default:
+                                }
+                            });
+                        break;
+
+                    default:
+                }
+            });
+    }
+
     return (
         <div className="container detail">
             <div className="animal-name bg-light ">{animal.ten_tieng_viet}</div>
@@ -405,11 +489,14 @@ const Detail = () => {
                                 {
                                     media.map((media, index) => {
                                         return (
-                                            <label htmlFor={"media_new" + media.id} className="col-4 col-md-3 m-1 my-5" key={'img-' + index} >
-                                                <input type="file" className="fs-5 mb-2 d-none" onChange={(e) => submitFileMedia(e, media.id)} name="new_media[]" id={"media_new" + media.id} accept="image/*, video/*" />
-                                                <img src={'../media/' + media.ten_media} alt="img-more"
-                                                    className='animal-img__more h-100 col m-0 p-0 new_animal_img' />
-                                            </label>
+                                            <Fragment key={'img-' + index}>
+                                                <img src={'../media/' + media.ten_media} alt="img-more" onClick={() => clickSubmitFileMedia(media.id)}
+                                                    className='animal-img__more col-5 wrap_img_animal_more m-2' />
+                                                <label htmlFor={"new_media" + media.id} id={"new_media_label" + media.id}>
+                                                    <input type="file" className="fs-5 mb-2 d-none" onChange={(e) => submitFileMedia(e, media.id)}
+                                                        name="new_media[]" id={"new_media" + media.id} accept="image/*, video/*" />
+                                                </label>
+                                            </Fragment>
                                         )
                                     })
                                 }
@@ -421,7 +508,7 @@ const Detail = () => {
                                         onChange={(e) => submitAddFileMedia(e)} multiple
                                         name="new_media_file[]" id="media_new" accept="image/*, video/*" />
                                     <img src="../../images/plus.png" alt="img-more"
-                                        className='animal-img__more h-100 col m-0 p-0 new_animal_img' />
+                                        className='animal-img__more col-2 m-0 p-0 new_animal_img' />
                                     <h5 className="mt-2">Thêm ảnh mới!</h5>
                                 </label>
                             </div>
@@ -437,19 +524,15 @@ const Detail = () => {
                             media.map((media, index) => {
                                 if (media.media_type == "image") {
                                     return (
-                                        <div className="col-2 m-2" key={'img-' + index} >
-                                            <img onClick={() => selectImg(media.ten_media)}
-                                                src={'../media/' + media.ten_media} alt="img-more"
-                                                className='animal-img__more h-100 col m-0 p-0' />
-                                        </div>
+                                        <img onClick={() => selectImg(media.ten_media)}
+                                            src={'../media/' + media.ten_media} alt="img-more" key={'img-' + index}
+                                            className='animal-img__more col-2 item_animal_more m-2' />
                                     )
                                 } else {
                                     return (
-                                        <div className="col m-2" key={'video-' + index} >
-                                            <video onClick={() => selectVideo(media.ten_media)}
-                                                src={'../media/' + media.ten_media}
-                                                className='animal-video h-100 col m-0 p-0'></video>
-                                        </div>
+                                        <video onClick={() => selectVideo(media.ten_media)}
+                                            src={'../media/' + media.ten_media} key={'video-' + index}
+                                            className='animal-video col-2 item_animal_more m-2'></video>
                                     )
                                 }
                             })

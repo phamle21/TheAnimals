@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "prop-types": "^15.8.1",
-        "sweetalert": "^2.1.2"
+        "sweetalert": "^2.1.2",
+        "sweetalert2": "^11.4.9"
     }
 }
