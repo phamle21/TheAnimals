@@ -388,4 +388,57 @@ class ReactController extends Controller
 
         return response()->json($action);
     }
+
+    //Edit Media
+    public function editMediaAnimals(Request $request)
+    {
+        $action = new stdClass();
+
+        // kiểm tra có files sẽ xử lý
+        if ($request->hasFile('files')) {
+            $allowedfileExtension = ['jpg', 'png', 'gif', 'png', 'jpeg', 'svg', 'mp4'];
+            $files = $request->file('files');
+            // flag xem có thực hiện lưu DB không. Mặc định là có
+            $exe_flg = true;
+            // kiểm tra tất cả các files xem có đuôi mở rộng đúng không
+            foreach ($files as $file) {
+                $extension = $file->getClientOriginalExtension();
+                $check = in_array($extension, $allowedfileExtension);
+
+                if (!$check) {
+                    // nếu có file nào không đúng đuôi mở rộng thì đổi flag thành false
+                    $exe_flg = false;
+                    break;
+                }
+            }
+            // nếu không có file nào vi phạm validate thì tiến hành lưu DB
+            if ($exe_flg) {
+                foreach ($request->file('files') as $file) {
+                    $extension = $file->getClientOriginalExtension();
+                    // $filename = $file->store('media');
+                    $filename = Storage::disk('public_uploads')->put('', $file);
+                    if ($extension == 'mp4') {
+                        Media::find($request->media_id)->update([
+                            'media_type' => 'video',
+                            'ten_media' => $filename,
+                        ]);
+                    } else {
+                        Media::find($request->media_id)->update([
+                            'media_type' => 'image',
+                            'ten_media' => $filename,
+                        ]);
+                    }
+                }
+
+                $action = detailSinhVat($request->animal_id);
+                
+                $action->status = "success";
+            } else {
+                $action->status = 'Lỗi định dạng file tải lên không đúng!';
+            }
+        } else {
+            $action->status = 'Không có file';
+        }
+        return response()->json($action);
+    }
 }

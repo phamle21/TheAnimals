@@ -70,7 +70,7 @@ const Detail = () => {
 
             <div className="row">
                 <div className="col-md mt-4" >
-                    <div className="animal-img-current border border-4 border-success rounded d-flex align-items-center" >
+                    <div className="animal-img-current border border-4 border-success rounded d-flex justify-content-center align-items-center" >
                         <img src={'../media/' + media[0].ten_media} alt="img-current" className='animal-img__current show_img' id="media_main" />
                         <video src={'../media/' + media[0].ten_media} controls={true} autoPlay={true} className="show_video animal-img__current d-none" ></video>
                     </div>

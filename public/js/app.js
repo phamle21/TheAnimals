@@ -2778,8 +2778,9 @@ var Detail = function Detail() {
   var selectVideo = function selectVideo(name) {
     $('.show_img').addClass('d-none');
     $('.show_video').removeClass('d-none');
-    $('.show_video').attr("src", "../video/animal/" + name);
-  };
+    $('.show_video').attr("src", "../media/" + name);
+  }; //LOADDDDDDDD
+
 
   if (media[0].media_type == "image") {
     $('.show_video').addClass('d-none');
@@ -2788,6 +2789,10 @@ var Detail = function Detail() {
     $('.show_img').addClass('d-none');
     $('.show_video').removeClass('d-none');
   }
+
+  $('#frmEditMedia').addClass('d-none');
+  $('.sel_media_list').removeClass('d-none');
+  $('.show_media').removeClass('d-none');
 
   var editBtn = function editBtn(frm, type) {
     switch (frm) {
@@ -2838,10 +2843,12 @@ var Detail = function Detail() {
       case 'media':
         if (type == 'edit') {
           $('#frmEditMedia').removeClass('d-none');
-          $('.sel_media_list .show_media').addClass('d-none');
+          $('.sel_media_list').addClass('d-none');
+          $('.show_media').addClass('d-none');
         } else if (type == 'cancel') {
           $('#frmEditMedia').addClass('d-none');
-          $('.sel_media_list .show_media').removeClass('d-none');
+          $('.sel_media_list').removeClass('d-none');
+          $('.show_media').removeClass('d-none');
         }
 
         break;
@@ -2993,6 +3000,45 @@ var Detail = function Detail() {
     });
   };
 
+  var submitFileMedia = function submitFileMedia(e, media_id) {
+    e.preventDefault();
+    var formData = new FormData($('#frmAddAnimal')[0]);
+    formData.append('files[]', e.target.files[0]);
+    formData.append('animal_id', Id);
+    formData.append('media_id', media_id);
+    axios__WEBPACK_IMPORTED_MODULE_2___default()({
+      method: "post",
+      withCredentials: true,
+      url: '../api/detail/edit-media',
+      data: formData
+    }).then(function (result) {
+      console.log(result.data);
+
+      if (result.data.status == "success") {
+        setAnimal(result.data);
+        setMedia(result.data.mediaList);
+        setBaoTon(result.data.baotonList);
+        setToaDo(result.data.toadoList);
+        setTitle(result.data.ten_tieng_viet);
+        setNganh(result.data.nganh);
+        setLop(result.data.lop);
+        setBo(result.data.bo);
+        editBtn('info-basic', 'cancel');
+        swal({
+          title: "Thành công!",
+          text: "Cập nhật hình ảnh thành công!",
+          icon: "success"
+        });
+      } else {
+        swal({
+          title: "Thất bại!",
+          text: "Cập nhật thông tin cơ bản thất bại!",
+          icon: "error"
+        });
+      }
+    });
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "container detail",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3003,31 +3049,14 @@ var Detail = function Detail() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "col-md mt-4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "animal-img-current border border-4 border-success rounded d-flex align-items-center bg-light position-relative",
+          className: "animal-img-current border border-4 border-success rounded d-flex justify-content-center align-items-center bg-light position-relative",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "position-absolute top-0 end-0 w-fitcontent",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "fa fa-pen bg-transparent btn p-2 fs-2 ",
+              className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen ",
               onClick: function onClick() {
                 return editBtn('media', 'edit');
               }
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
-            id: "frmEditMedia",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-              htmlFor: "input-media",
-              className: "animal-img-current border border-4 border-success rounded d-flex align-items-center justify-content-center hover-bg bg-light cursor-pointer",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                id: "input-media",
-                type: "file",
-                onChange: function onChange(e) {
-                  return setSelectedFile(e.target.files);
-                },
-                name: "media",
-                multiple: true,
-                accept: "image/*, video/*",
-                className: "fs-2"
-              })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: '../media/' + media[0].ten_media,
@@ -3035,10 +3064,49 @@ var Detail = function Detail() {
             className: "animal-img__current show_img show_media h-100 mh-100 min-h-100",
             id: "media_main"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("video", {
-            src: '../video/animal/' + media[0].ten_media,
+            src: '../media/' + media[0].ten_media,
             controls: true,
             autoPlay: true,
-            className: "show_video animal-img__current show_media h-100 mh-100 min-h-100 d-none"
+            className: "show_video animal-img__current h-100 mh-100 min-h-100 d-none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+            id: "frmEditMedia",
+            className: "top-0 start-0 mt-4 ms-5 d-none",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
+              children: "Ch\u1ECDn h\xECnh mu\u1ED1n s\u1EEDa:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "animal-images__list d-flex flex-wrap my-1",
+              children: media.map(function (media, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+                  htmlFor: "media_new" + media.id,
+                  className: "col-4 m-1 my-5",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                    type: "file",
+                    className: "fs-5 mb-2 d-none",
+                    onChange: function onChange(e) {
+                      return submitFileMedia(e, media.id);
+                    },
+                    name: "new_media[]",
+                    id: "media_new" + media.id,
+                    accept: "image/*, video/*"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                    src: '../media/' + media.ten_media,
+                    alt: "img-more",
+                    className: "animal-img__more h-100 col m-0 p-0 new_animal_img"
+                  })]
+                }, 'img-' + index);
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "form-group text-right m-5",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                className: "btn btn-danger py-2 px-3 fs-5 m-2 mb-0",
+                type: "reset",
+                form: "frmEditMedia",
+                onClick: function onClick() {
+                  return editBtn('media', 'cancel');
+                },
+                children: "H\u1EE7y"
+              })
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "animal-images__list d-flex flex-wrap my-1 sel_media_list",
@@ -3062,7 +3130,7 @@ var Detail = function Detail() {
                   onClick: function onClick() {
                     return selectVideo(media.ten_media);
                   },
-                  src: '../video/animal/' + media.ten_media,
+                  src: '../media/' + media.ten_media,
                   className: "animal-video h-100 col m-0 p-0"
                 })
               }, 'video-' + index);
@@ -3076,7 +3144,7 @@ var Detail = function Detail() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
             className: "taxonomy-title pb-4 mb-4 text-white",
             children: ["Th\xF4ng tin c\u01A1 b\u1EA3n ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "fa fa-pen bg-transparent btn p-2 fs-2",
+              className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
               onClick: function onClick() {
                 return editBtn('info-basic', 'edit');
               }
@@ -3240,7 +3308,7 @@ var Detail = function Detail() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
         className: "taxonomy-title text-white",
         children: ["Th\xF4ng tin kh\xE1c ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "fa fa-pen bg-transparent btn p-2 fs-2",
+          className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
           onClick: function onClick() {
             return editBtn('info-other', 'edit');
           }
@@ -3335,7 +3403,7 @@ var Detail = function Detail() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
               className: "morphological-title text-white",
               children: ["\u0110\u1EB7c \u0111i\u1EC3m h\xECnh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-                className: "fa fa-pen bg-transparent btn p-2 fs-2",
+                className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
                 onClick: function onClick() {
                   return editBtn('hinh-thai', 'edit');
                 }
@@ -3379,7 +3447,7 @@ var Detail = function Detail() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
               className: "ecological-title text-white",
               children: ["\u0110\u1EB7c \u0111i\u1EC3m sinh th\xE1i ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-                className: "fa fa-pen bg-transparent btn p-2 fs-2",
+                className: "fa fa-pen bg-transparent btn p-2 fs-2 btn_edit_pen",
                 onClick: function onClick() {
                   return editBtn('sinh-thai', 'edit');
                 }
@@ -5775,7 +5843,7 @@ var Detail = function Detail() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "col-md mt-4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "animal-img-current border border-4 border-success rounded d-flex align-items-center",
+          className: "animal-img-current border border-4 border-success rounded d-flex justify-content-center align-items-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: '../media/' + media[0].ten_media,
             alt: "img-current",
@@ -6677,7 +6745,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".detail {\r\n    padding: 0 0 100px 0;\r\n}\r\n\r\n.animal-name {\r\n    font-size: 3rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-images {\r\n    margin-top: 40px;\r\n}\r\n.animal-img-current{\r\n    min-height: 450px !important;\r\n}\r\n.animal-img__current {\r\n    width: 100%;\r\n}\r\n\r\n.animal-images__list {\r\n    margin: 30px 0;\r\n}\r\n\r\n.animal-img__more, .animal-video {\r\n    width: 100px;\r\n    margin-right: 15px;\r\n    cursor: pointer;\r\n    transition: all 0.5s;\r\n    border: 2px solid rgb(0, 97, 13);\r\n}\r\n.animal-img__more:hover, .animal-video:hover{\r\n    box-shadow: 0 0 10px rgb(0, 255, 0);\r\n    transform: scale(1.1);\r\n    border: 2px solid rgb(255, 255, 255);\r\n\r\n}\r\n.animal-taxonomy {\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n    min-height: 100%;\r\n}\r\n\r\n.taxonomy-title,\r\n.morphological-title,\r\n.ecological-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 1rem;\r\n    color: var(--primary-color);\r\n}\r\n\r\n.taxonomy-wrap {\r\n    display: flex;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.taxonomy-label {\r\n    font-size: 1.8rem;\r\n    font-weight: 700;\r\n    margin-right: 4px;\r\n}\r\n\r\n.taxonomy-values {\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.animal-morphological,\r\n.animal-ecological {\r\n    margin-top: 40px;\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.morphological-des,\r\n.ecological-des {\r\n    font-size: 1.8rem;\r\n    text-align: justify;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.detail-search-input {\r\n    border: 1px solid black;\r\n    font-size: 1.6rem;\r\n    padding: .75rem;\r\n    margin-left: 20px;\r\n    margin-top: 80px;\r\n    margin-right: 30px;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n}\r\n\r\n.detail-search-icon {\r\n    font-size: 2.2rem;\r\n    background-color: var(--primary-color);\r\n    padding: 1.2rem;\r\n    border-radius: 50%;\r\n}\r\n\r\n.detail-search-icon:hover {\r\n    color: var(--white-color);\r\n}\r\n\r\n.detail-search-icon:active {\r\n    color: var(--black-color);\r\n}\r\n\r\n.animal-related {\r\n    margin-top: 40px;\r\n}\r\n\r\n.animal-related-title {\r\n    font-size: 2.8rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    margin: 0 0 40px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-related__list {\r\n    background-color: var(--bg-color);\r\n    margin-top: 40px;\r\n    padding: 40px 0;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".detail {\r\n    padding: 0 0 100px 0;\r\n}\r\n\r\n.animal-name {\r\n    font-size: 3rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-images {\r\n    margin-top: 40px;\r\n}\r\n.animal-img-current{\r\n    min-height: 450px !important;\r\n}\r\n.animal-img__current {\r\n    width: auto;\r\n    height: 440px !important;\r\n    max-width: 550px;\r\n    max-height: 450px !important;\r\n}\r\n\r\n.animal-images__list {\r\n    margin: 30px 0;\r\n}\r\n\r\n.animal-img__more, .animal-video {\r\n    width: 100px;\r\n    margin-right: 15px;\r\n    cursor: pointer;\r\n    transition: all 0.5s;\r\n    border: 2px solid rgb(0, 97, 13);\r\n}\r\n.animal-img__more:hover, .animal-video:hover{\r\n    box-shadow: 0 0 10px rgb(0, 255, 0);\r\n    transform: scale(1.1);\r\n    border: 2px solid rgb(255, 255, 255);\r\n\r\n}\r\n.animal-taxonomy {\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n    min-height: 100%;\r\n}\r\n\r\n.taxonomy-title,\r\n.morphological-title,\r\n.ecological-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 1rem;\r\n    color: var(--primary-color);\r\n}\r\n\r\n.taxonomy-wrap {\r\n    display: flex;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.taxonomy-label {\r\n    font-size: 1.8rem;\r\n    font-weight: 700;\r\n    margin-right: 4px;\r\n}\r\n\r\n.taxonomy-values {\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.animal-morphological,\r\n.animal-ecological {\r\n    margin-top: 40px;\r\n    padding: 1rem;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.morphological-des,\r\n.ecological-des {\r\n    font-size: 1.8rem;\r\n    text-align: justify;\r\n    padding: 0 1rem;\r\n}\r\n\r\n.detail-search-input {\r\n    border: 1px solid black;\r\n    font-size: 1.6rem;\r\n    padding: .75rem;\r\n    margin-left: 20px;\r\n    margin-top: 80px;\r\n    margin-right: 30px;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n}\r\n\r\n.detail-search-icon {\r\n    font-size: 2.2rem;\r\n    background-color: var(--primary-color);\r\n    padding: 1.2rem;\r\n    border-radius: 50%;\r\n}\r\n\r\n.detail-search-icon:hover {\r\n    color: var(--white-color);\r\n}\r\n\r\n.detail-search-icon:active {\r\n    color: var(--black-color);\r\n}\r\n\r\n.animal-related {\r\n    margin-top: 40px;\r\n}\r\n\r\n.animal-related-title {\r\n    font-size: 2.8rem;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    padding: 2.4rem;\r\n    margin: 0 0 40px 0;\r\n    background-color: var(--bg-color);\r\n}\r\n\r\n.animal-related__list {\r\n    background-color: var(--bg-color);\r\n    margin-top: 40px;\r\n    padding: 40px 0;\r\n}\r\n.btn_edit_pen:hover{\r\n    color: black;\r\n    background-color: #9efffa9f !important;\r\n    box-shadow: 0 0 5px 0 green;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
